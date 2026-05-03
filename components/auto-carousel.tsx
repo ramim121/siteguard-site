@@ -26,8 +26,6 @@ export function AutoCarousel({ slides }: AutoCarouselProps) {
     return () => window.clearInterval(timer);
   }, [slides.length]);
 
-  const active = slides[index];
-
   return (
     <div className="auto-carousel">
       <div className="auto-carousel-frame">
@@ -35,18 +33,28 @@ export function AutoCarousel({ slides }: AutoCarouselProps) {
           <span />
           <span />
           <span />
-          <p>{active.label}</p>
+          <p>{slides[index]?.label}</p>
         </div>
         <div className="auto-carousel-media">
-          <Image
-            src={active.src}
-            alt={active.alt}
-            fill
-            style={{
-              objectFit: "cover",
-              objectPosition: active.objectPosition ?? "center",
-            }}
-          />
+          <div
+            className="auto-carousel-track"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {slides.map((slide) => (
+              <div className="auto-carousel-slide" key={slide.label}>
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 50vw"
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: slide.objectPosition ?? "center",
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="auto-carousel-dots" aria-label="Carousel navigation">

@@ -28,11 +28,9 @@ export default function HomePage() {
         ]}
         visual={
           <HeroVisual
-            src="/hero/home-hero.svg"
-            alt="Abstract SiteGuard hero illustration showing dashboard surfaces, analytics, and real-time monitoring."
-            label="SiteGuard command layer"
-            accent="orb-teal"
-            chips={["Existing CCTV", "Real-time alerts", "Cross-industry deployment"]}
+            src="/hero/home-dashboard-reference.png"
+            alt="SiteGuard AI dashboard reference showing automated site supervision, alert counts, charts, and recent alerts."
+            label="SiteGuard AI dashboard"
           />
         }
       />
@@ -76,7 +74,7 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="showcase-stack reveal float">
+          <div className="showcase-stack">
             <div className="home-showcase-carousel">
               <AutoCarousel slides={workflowCarouselSlides} />
             </div>

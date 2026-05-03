@@ -20,8 +20,8 @@ export default function ContactPage() {
         compact
         visual={
           <HeroVisual
-            src="/hero/contact-hero.svg"
-            alt="Contact illustration for SiteGuard AI with elegant cards and contact cues."
+            src="/hero/contact-hero.png"
+            alt="Generated SiteGuard contact hero showing direct contact details and deployment inquiry interface."
             label="Direct contact"
             accent="orb-teal"
             chips={["ashraf.siddiquee@maxgroup-bd.com", "01730589252", "site-guard.ai"]}

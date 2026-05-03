@@ -22,8 +22,8 @@ export default function SolutionsPage() {
         compact
         visual={
           <HeroVisual
-            src="/hero/solutions-hero.svg"
-            alt="SiteGuard solutions illustration showing connected detection categories."
+            src="/hero/solutions-hero.png"
+            alt="Generated SiteGuard solutions hero showing connected AI detection systems for safety, security, behavior, people, and vehicles."
             label="Various detection systems"
             accent="orb-teal"
             chips={["PPE", "Intrusion", "Behavior", "People flow", "Parking"]}

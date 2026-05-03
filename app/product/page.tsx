@@ -24,8 +24,8 @@ export default function ProductPage() {
         compact
         visual={
           <HeroVisual
-            src="/hero/platform-hero.svg"
-            alt="SiteGuard platform illustration showing dashboard, analytics, and operational cards."
+            src="/hero/platform-hero.png"
+            alt="Generated SiteGuard platform hero showing live camera monitoring, recent alerts, and operational command panels."
             label="Platform overview"
             accent="orb-amber"
             chips={["Live view", "Instant alerts", "Reports & analytics"]}
