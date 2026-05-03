@@ -1,0 +1,39 @@
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="960" rx="44" fill="#F5EFE5"/>
+  <rect x="54" y="54" width="1332" height="852" rx="34" fill="url(#paint0_linear)"/>
+  <circle cx="240" cy="192" r="102" fill="#DCE8E0"/>
+  <circle cx="1218" cy="202" r="130" fill="#E7D1B7"/>
+  <rect x="136" y="172" width="560" height="344" rx="28" fill="#10212B"/>
+  <rect x="166" y="202" width="500" height="38" rx="12" fill="#203742"/>
+  <rect x="166" y="266" width="220" height="212" rx="20" fill="#243D49"/>
+  <rect x="406" y="266" width="260" height="92" rx="18" fill="#2B4F4B"/>
+  <rect x="406" y="378" width="260" height="100" rx="18" fill="#E7B47B"/>
+  <path d="M784 220C784 190.177 808.177 166 838 166H1208C1237.82 166 1262 190.177 1262 220V496C1262 525.823 1237.82 550 1208 550H838C808.177 550 784 525.823 784 496V220Z" fill="#FFF9F2"/>
+  <path d="M840 244H1204" stroke="#D6DBDA" stroke-width="2"/>
+  <circle cx="868" cy="208" r="8" fill="#C68858"/>
+  <circle cx="898" cy="208" r="8" fill="#8AACA6"/>
+  <circle cx="928" cy="208" r="8" fill="#D6DBDA"/>
+  <rect x="840" y="284" width="156" height="156" rx="22" fill="#EEF2ED"/>
+  <rect x="1022" y="284" width="182" height="34" rx="10" fill="#E7EEE8"/>
+  <rect x="1022" y="338" width="140" height="16" rx="8" fill="#274946"/>
+  <rect x="1022" y="372" width="166" height="16" rx="8" fill="#8AACA6"/>
+  <rect x="1022" y="406" width="120" height="16" rx="8" fill="#D4B08B"/>
+  <rect x="840" y="580" width="364" height="186" rx="26" fill="#FFF9F2"/>
+  <path d="M888 714L954 646L1010 676L1074 626L1148 690" stroke="#274946" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="888" cy="714" r="10" fill="#C68858"/>
+  <circle cx="954" cy="646" r="10" fill="#C68858"/>
+  <circle cx="1010" cy="676" r="10" fill="#C68858"/>
+  <circle cx="1074" cy="626" r="10" fill="#C68858"/>
+  <circle cx="1148" cy="690" r="10" fill="#C68858"/>
+  <path d="M182 658C182 632.595 202.595 612 228 612H688C713.405 612 734 632.595 734 658V754C734 779.405 713.405 800 688 800H228C202.595 800 182 779.405 182 754V658Z" fill="#FFFBF4"/>
+  <rect x="220" y="646" width="132" height="24" rx="12" fill="#D7E5DD"/>
+  <rect x="220" y="694" width="210" height="18" rx="9" fill="#203742"/>
+  <rect x="220" y="732" width="152" height="18" rx="9" fill="#70818A"/>
+  <rect x="486" y="660" width="210" height="92" rx="22" fill="#E9D7C1"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="202" y1="124" x2="1258" y2="844" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F4ED"/>
+      <stop offset="1" stop-color="#ECE4D9"/>
+    </linearGradient>
+  </defs>
+</svg>
