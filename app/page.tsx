@@ -161,9 +161,13 @@ export default function HomePage() {
 
       <section className="section section-compact">
         <div className="section-inner cta-panel reveal rise">
-          <div>
+          <div className="cta-copy">
             <span className="eyebrow">Ready to stop watching?</span>
-            <h2>Start detecting with a calmer, more accountable site operation.</h2>
+            <h2>Start detecting with a calmer, more accountable operation.</h2>
+            <p>
+              Move from passive monitoring to immediate, evidence-backed
+              supervision across every critical zone.
+            </p>
           </div>
           <div className="cta-actions">
             <Link className="button button-primary" href="/contact">

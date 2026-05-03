@@ -901,6 +901,18 @@ img {
   height: 1.75rem;
 }
 
+.card-icon-small-accent {
+  width: 1.85rem;
+  height: 1.85rem;
+  background: rgba(246, 139, 31, 0.08);
+  color: var(--teal-deep);
+}
+
+.card-icon-small-accent svg {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+
 .industry-card-top .card-icon {
   width: 1.9rem;
   height: 1.9rem;
@@ -918,11 +930,76 @@ img {
   gap: 1rem;
 }
 
+.industry-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.industry-overview-card {
+  padding: 1.3rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 252, 247, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.industry-overview-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(31, 43, 77, 0.14);
+  border-color: rgba(246, 139, 31, 0.26);
+}
+
+.industry-overview-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.industry-overview-head span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  color: var(--amber);
+  margin-bottom: 0.35rem;
+}
+
+.industry-overview-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.industry-overview-card p {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.industry-overview-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.55rem;
+}
+
 .industry-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.industry-detail-grid-redesigned {
+  gap: 1rem;
+}
+
+.industry-detail-head-redesigned {
+  margin-bottom: 0.9rem;
 }
 
 .industry-columns h4 {
@@ -932,15 +1009,46 @@ img {
 
 .cta-panel {
   border-radius: calc(var(--radius-lg) + 0.2rem);
-  padding: 2rem;
+  padding: 2.4rem 2.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 2rem;
+  min-height: 18rem;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(246, 139, 31, 0.08), transparent 24%),
+    radial-gradient(circle at 88% 50%, rgba(31, 43, 77, 0.06), transparent 26%),
+    rgba(255, 252, 247, 0.82);
 }
 
 .cta-panel h2 {
-  max-width: 11ch;
+  max-width: 10ch;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+
+.cta-copy {
+  max-width: 38rem;
+}
+
+.cta-copy .eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+.cta-copy p {
+  margin: 1.15rem 0 0;
+  max-width: 30rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.cta-actions {
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0;
+  min-width: 23rem;
 }
 
 .solution-architecture-layout {
@@ -1034,7 +1142,7 @@ img {
 }
 
 .footer-copy {
-  max-width: 36rem;
+  max-width: 34rem;
 }
 
 .footer-developed {
@@ -1042,8 +1150,42 @@ img {
   font-weight: 600;
 }
 
-.footer-address-block {
-  margin-top: 1rem;
+.footer-contact-stack {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.footer-contact-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.footer-contact-item span {
+  display: block;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.64rem;
+  color: var(--amber);
+}
+
+.footer-contact-item p {
+  margin: 0;
+}
+
+.card-icon-footer {
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-bottom: 0;
+  background: rgba(246, 139, 31, 0.08);
+}
+
+.card-icon-footer svg {
+  width: 0.8rem;
+  height: 0.8rem;
 }
 
 .footer-grid {
@@ -1148,6 +1290,7 @@ img {
   .industry-grid,
   .moment-grid,
   .solution-grid-modern,
+  .industry-overview-grid,
   .platform-stat-row,
   .solution-stat-grid,
   .timeline-grid-architecture {
@@ -1171,6 +1314,11 @@ img {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .cta-actions {
+    justify-content: flex-start;
+    min-width: 0;
   }
 
   .footer-inner,
@@ -1208,6 +1356,7 @@ img {
   .moment-grid,
   .solution-grid-modern,
   .solution-intro-grid,
+  .industry-overview-grid,
   .platform-stat-row,
   .solution-stat-grid,
   .timeline-grid-architecture {
@@ -1227,6 +1376,16 @@ img {
   .contact-point-card,
   .solution-stat-card {
     padding: 1.2rem;
+  }
+
+  .cta-panel {
+    min-height: auto;
+    padding: 1.6rem;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(2.35rem, 10vw, 3.5rem);
+    max-width: 12ch;
   }
 
   .section {
