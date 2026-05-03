@@ -13,35 +13,6 @@ export function Footer() {
             AI-powered visual intelligence for real-time safety, compliance,
             and operational supervision.
           </p>
-          <div className="footer-contact-stack">
-            <div className="footer-contact-item">
-              <div className="card-icon card-icon-footer">
-                <IconMark name="user" />
-              </div>
-              <div>
-                <span>Contact</span>
-                <p>Md Ashraf Siddiquee</p>
-              </div>
-            </div>
-            <div className="footer-contact-item">
-              <div className="card-icon card-icon-footer">
-                <IconMark name="phone" />
-              </div>
-              <div>
-                <span>Mobile</span>
-                <p>{footerInfo.phone}</p>
-              </div>
-            </div>
-            <div className="footer-contact-item">
-              <div className="card-icon card-icon-footer">
-                <IconMark name="mapPin" />
-              </div>
-              <div>
-                <span>Address</span>
-                <p>{footerInfo.address}</p>
-              </div>
-            </div>
-          </div>
         </div>
         <div className="footer-grid">
           {footerSections.map((section) => (
@@ -71,6 +42,26 @@ export function Footer() {
           <div className="footer-column footer-column-accent">
             <h3>Developed by</h3>
             <p>NYK Advance Ltd.</p>
+            <div className="footer-contact-stack footer-contact-stack-compact">
+              <div className="footer-contact-item">
+                <div className="card-icon card-icon-footer">
+                  <IconMark name="user" />
+                </div>
+                <p>Md Ashraf Siddiquee</p>
+              </div>
+              <div className="footer-contact-item">
+                <div className="card-icon card-icon-footer">
+                  <IconMark name="phone" />
+                </div>
+                <p>{footerInfo.phone}</p>
+              </div>
+              <div className="footer-contact-item">
+                <div className="card-icon card-icon-footer">
+                  <IconMark name="mapPin" />
+                </div>
+                <p>{footerInfo.address}</p>
+              </div>
+            </div>
             <a href={`https://${footerInfo.website}`} target="_blank" rel="noreferrer">
               {footerInfo.website}
             </a>

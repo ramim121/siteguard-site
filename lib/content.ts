@@ -164,6 +164,7 @@ export const solutionCategories = [
     eyebrow: "Safety and PPE",
     name: "Worker protection and compliance",
     icon: "hardHat" as IconName,
+    image: "/hero/solution-safety.svg",
     description:
       "Deploy continuous PPE and environment monitoring without relying on periodic inspections.",
     items: ["Helmet compliance", "Safety vest detection", "Mask compliance", "Fire and flame detection"],
@@ -172,6 +173,7 @@ export const solutionCategories = [
     eyebrow: "Security and perimeter",
     name: "Restricted access and incident control",
     icon: "shield" as IconName,
+    image: "/hero/solution-security.svg",
     description:
       "Turn passive CCTV into a perimeter-aware supervision system with evidence-backed escalation.",
     items: ["Intrusion detection", "Face recognition", "Altercation detection", "Abandoned object tracking"],
@@ -180,6 +182,7 @@ export const solutionCategories = [
     eyebrow: "Behavior and activity",
     name: "Operational behavior awareness",
     icon: "activity" as IconName,
+    image: "/hero/solution-behavior.svg",
     description:
       "Catch risky or non-compliant behavior that tends to happen between human supervision rounds.",
     items: ["Sleep on duty", "Smoking detection", "Using phone detection", "Motion-based trigger logic"],
@@ -188,6 +191,7 @@ export const solutionCategories = [
     eyebrow: "People and movement",
     name: "Density, occupancy, and zone intelligence",
     icon: "users" as IconName,
+    image: "/hero/solution-people.svg",
     description:
       "Understand who is where, when occupancy risks build, and how traffic behaves across a site.",
     items: ["Human counting", "Occupancy limits", "Heat-map potential", "Combined identity and movement tracking"],
@@ -196,9 +200,50 @@ export const solutionCategories = [
     eyebrow: "Traffic and access",
     name: "Vehicle and zone discipline",
     icon: "warehouse" as IconName,
+    image: "/hero/solution-traffic.svg",
     description:
       "Keep loading zones, emergency access routes, and sensitive site areas operationally clear.",
     items: ["No-parking enforcement", "Vehicle dwell-time rules", "Zone-based escalation", "Central review trail"],
+  },
+];
+
+export const algorithmDetections = [
+  {
+    title: "Helmet compliance",
+    tag: "PPE",
+    image: "/hero/solution-safety.svg",
+    description: "Detects missing safety helmets and PPE gaps in active work zones.",
+  },
+  {
+    title: "Intrusion detection",
+    tag: "Security",
+    image: "/hero/solution-security.svg",
+    description: "Flags movement inside restricted areas, perimeter zones, or closed spaces.",
+  },
+  {
+    title: "Fire and flame",
+    tag: "Life safety",
+    image: "/siteguard/alerts.png",
+    description: "Escalates fire, smoke, and flame indicators with evidence context.",
+    objectPosition: "left top",
+  },
+  {
+    title: "Face recognition",
+    tag: "Identity",
+    image: "/hero/solution-behavior.svg",
+    description: "Supports identity-aware supervision for controlled environments.",
+  },
+  {
+    title: "Abandoned object",
+    tag: "Risk",
+    image: "/hero/solution-security.svg",
+    description: "Identifies unattended objects and keeps a timestamped review trail.",
+  },
+  {
+    title: "People counting",
+    tag: "Occupancy",
+    image: "/hero/solution-people.svg",
+    description: "Measures movement, crowding, and zone occupancy for operational insight.",
   },
 ];
 

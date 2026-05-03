@@ -34,12 +34,12 @@ export default function ContactPage() {
           <div className="contact-copy reveal rise">
             <SectionHeading
               eyebrow="Let's talk"
-              title="Direct contact for demos and deployment discussions."
-              description="Best for existing IP CCTV environments."
+              title="Contact details"
+              description="Fast handoff for demos and deployment discussions."
             />
-            <div className="contact-points">
+            <div className="contact-points contact-points-compact">
               {contactDetails.map((detail) => (
-                <article className="contact-point-card" key={detail.label}>
+                <article className="contact-point-card contact-point-card-compact" key={detail.label}>
                   <div className="card-icon">
                     <IconMark name={detail.icon} />
                   </div>

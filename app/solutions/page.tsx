@@ -3,6 +3,7 @@ import { HeroVisual } from "@/components/hero-visual";
 import { IconMark } from "@/components/icon-mark";
 import { SectionHeading } from "@/components/section-heading";
 import {
+  algorithmDetections,
   solutionArchitecture,
   solutionCategories,
   solutionStats,
@@ -63,6 +64,14 @@ export default function SolutionsPage() {
           <div className="solution-grid solution-grid-modern">
             {solutionCategories.map((category) => (
               <article className="solution-card reveal rise" key={category.name}>
+                <div className="solution-card-media">
+                  <Image
+                    src={category.image}
+                    alt={`${category.eyebrow} visual`}
+                    width={620}
+                    height={340}
+                  />
+                </div>
                 <div className="solution-card-top">
                   <div className="card-icon card-icon-small-accent">
                     <IconMark name={category.icon} />
@@ -78,6 +87,39 @@ export default function SolutionsPage() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-tinted">
+        <div className="section-inner">
+          <SectionHeading
+            eyebrow="Algorithm proof"
+            title="Selected detection algorithms"
+            description="A compact view of the detection systems SiteGuard can activate across safety, security, behavior, identity, and occupancy monitoring."
+          />
+          <div className="algorithm-grid">
+            {algorithmDetections.map((detection) => (
+              <article className="algorithm-card reveal rise" key={detection.title}>
+                <div className="algorithm-media">
+                  <Image
+                    src={detection.image}
+                    alt={`${detection.title} detection visual`}
+                    fill
+                    sizes="(max-width: 720px) 100vw, 33vw"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: detection.objectPosition ?? "center",
+                    }}
+                  />
+                </div>
+                <div className="algorithm-card-body">
+                  <span>{detection.tag}</span>
+                  <h3>{detection.title}</h3>
+                  <p>{detection.description}</p>
+                </div>
               </article>
             ))}
           </div>

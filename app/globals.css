@@ -327,7 +327,8 @@ img {
 .platform-stat-card,
 .solution-pill-card,
 .contact-point-card,
-.solution-stat-card {
+.solution-stat-card,
+.algorithm-card {
   background: var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: var(--shadow);
@@ -482,7 +483,8 @@ img {
 .platform-stat-card,
 .solution-pill-card,
 .contact-point-card,
-.solution-stat-card {
+.solution-stat-card,
+.algorithm-card {
   border-radius: var(--radius-md);
   padding: 1.35rem;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
@@ -496,7 +498,8 @@ img {
 .solution-pill-card:hover,
 .platform-stat-card:hover,
 .contact-point-card:hover,
-.solution-stat-card:hover {
+.solution-stat-card:hover,
+.algorithm-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 28px 70px rgba(31, 43, 77, 0.14);
   border-color: rgba(246, 139, 31, 0.26);
@@ -555,7 +558,8 @@ img {
 .feature-bullets h3,
 .contact-points h3,
 .platform-stat-card h3,
-.solution-pill-card h3 {
+.solution-pill-card h3,
+.algorithm-card h3 {
   margin: 0;
   font-size: 1.08rem;
 }
@@ -677,6 +681,33 @@ img {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.solution-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-card-media {
+  position: relative;
+  height: 11rem;
+  margin: -0.45rem -0.45rem 1.15rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius-md) - 0.25rem);
+  background: rgba(245, 239, 231, 0.8);
+}
+
+.solution-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(255, 252, 247, 0.42));
+}
+
+.solution-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .solution-intro-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-bottom: 1.2rem;
@@ -706,6 +737,43 @@ img {
   margin: 0.55rem 0 0;
   color: var(--muted);
   line-height: 1.66;
+}
+
+.algorithm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.algorithm-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.algorithm-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(245, 239, 231, 0.72);
+}
+
+.algorithm-card-body {
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.algorithm-card-body span {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  color: var(--amber);
+}
+
+.algorithm-card-body p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.62;
 }
 
 .solution-pill-card {
@@ -1093,10 +1161,38 @@ img {
   gap: 1rem;
 }
 
+.contact-points-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
 .contact-point-card {
   display: flex;
   align-items: flex-start;
   gap: 0.95rem;
+}
+
+.contact-point-card-compact {
+  align-items: center;
+  padding: 0.9rem;
+}
+
+.contact-point-card-compact .card-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.contact-point-card-compact h3 {
+  font-size: 0.82rem;
+  color: var(--amber);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.contact-point-card-compact p {
+  margin: 0.15rem 0 0;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .contact-point-card .card-icon {
@@ -1161,33 +1257,27 @@ img {
 
 .footer-contact-stack {
   display: grid;
-  gap: 0.8rem;
-  margin-top: 1.1rem;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
 }
 
 .footer-contact-item {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.75rem;
-  align-items: start;
-}
-
-.footer-contact-item span {
-  display: block;
-  margin-bottom: 0.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.64rem;
-  color: var(--amber);
+  gap: 0.55rem;
+  align-items: center;
 }
 
 .footer-contact-item p {
   margin: 0;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .card-icon-footer {
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 1.6rem;
+  height: 1.6rem;
   margin-bottom: 0;
   background: rgba(246, 139, 31, 0.08);
 }
@@ -1220,10 +1310,14 @@ img {
 }
 
 .footer-column-accent {
-  padding: 1rem 1.1rem;
+  padding: 1rem 1.05rem;
   border-radius: var(--radius-md);
   background: rgba(255, 250, 244, 0.9);
   border: 1px solid rgba(246, 139, 31, 0.14);
+}
+
+.footer-column-accent > p {
+  color: var(--muted);
 }
 
 .reveal {
@@ -1298,10 +1392,11 @@ img {
   .timeline-grid,
   .industry-grid,
   .moment-grid,
-  .solution-grid-modern,
-  .industry-overview-grid,
-  .platform-stat-row,
-  .solution-stat-grid,
+    .solution-grid-modern,
+    .algorithm-grid,
+    .industry-overview-grid,
+    .platform-stat-row,
+    .solution-stat-grid,
   .timeline-grid-architecture {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1337,7 +1432,8 @@ img {
   }
 
   .footer-inner,
-  .footer-grid {
+  .footer-grid,
+  .contact-points-compact {
     grid-template-columns: 1fr;
   }
 
@@ -1369,8 +1465,9 @@ img {
   .timeline-grid,
   .industry-grid,
   .moment-grid,
-  .solution-grid-modern,
-  .solution-intro-grid,
+    .solution-grid-modern,
+    .algorithm-grid,
+    .solution-intro-grid,
   .industry-overview-grid,
   .platform-stat-row,
   .solution-stat-grid,
