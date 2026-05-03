@@ -16,7 +16,7 @@ export default function IndustriesPage() {
         compact
         visual={
           <HeroVisual
-            src="/hero/industries-hero.png"
+            src="/hero/industries-hero-icons.png"
             alt="Generated SiteGuard industries hero showing construction, manufacturing, and banking supervision environments."
             label="Industry-ready deployment"
             accent="orb-amber"
