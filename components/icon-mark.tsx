@@ -9,9 +9,11 @@ import {
   Landmark,
   LayoutDashboard,
   Mail,
+  MapPinned,
   Phone,
   Radar,
   ShieldCheck,
+  UserRound,
   Users,
   Warehouse,
 } from "lucide-react";
@@ -27,9 +29,11 @@ const icons = {
   landmark: Landmark,
   dashboard: LayoutDashboard,
   mail: Mail,
+  mapPin: MapPinned,
   phone: Phone,
   radar: Radar,
   shield: ShieldCheck,
+  user: UserRound,
   users: Users,
   warehouse: Warehouse,
 };

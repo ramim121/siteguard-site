@@ -164,7 +164,6 @@ export const solutionCategories = [
     eyebrow: "Safety and PPE",
     name: "Worker protection and compliance",
     icon: "hardHat" as IconName,
-    image: "/hero/solution-safety.svg",
     description:
       "Deploy continuous PPE and environment monitoring without relying on periodic inspections.",
     items: ["Helmet compliance", "Safety vest detection", "Mask compliance", "Fire and flame detection"],
@@ -173,7 +172,6 @@ export const solutionCategories = [
     eyebrow: "Security and perimeter",
     name: "Restricted access and incident control",
     icon: "shield" as IconName,
-    image: "/hero/solution-security.svg",
     description:
       "Turn passive CCTV into a perimeter-aware supervision system with evidence-backed escalation.",
     items: ["Intrusion detection", "Face recognition", "Altercation detection", "Abandoned object tracking"],
@@ -182,7 +180,6 @@ export const solutionCategories = [
     eyebrow: "Behavior and activity",
     name: "Operational behavior awareness",
     icon: "activity" as IconName,
-    image: "/hero/solution-behavior.svg",
     description:
       "Catch risky or non-compliant behavior that tends to happen between human supervision rounds.",
     items: ["Sleep on duty", "Smoking detection", "Using phone detection", "Motion-based trigger logic"],
@@ -191,7 +188,6 @@ export const solutionCategories = [
     eyebrow: "People and movement",
     name: "Density, occupancy, and zone intelligence",
     icon: "users" as IconName,
-    image: "/hero/solution-people.svg",
     description:
       "Understand who is where, when occupancy risks build, and how traffic behaves across a site.",
     items: ["Human counting", "Occupancy limits", "Heat-map potential", "Combined identity and movement tracking"],
@@ -200,7 +196,6 @@ export const solutionCategories = [
     eyebrow: "Traffic and access",
     name: "Vehicle and zone discipline",
     icon: "warehouse" as IconName,
-    image: "/hero/solution-traffic.svg",
     description:
       "Keep loading zones, emergency access routes, and sensitive site areas operationally clear.",
     items: ["No-parking enforcement", "Vehicle dwell-time rules", "Zone-based escalation", "Central review trail"],
@@ -212,7 +207,6 @@ export const industryDetails = [
     name: "Construction",
     tag: "Complex field supervision",
     icon: "hardHat" as IconName,
-    image: "/industries/construction.svg",
     summary:
       "Fast-changing environments, contractor turnover, heavy equipment, and uneven visibility make manual supervision fragile.",
     challenges: [
@@ -232,7 +226,6 @@ export const industryDetails = [
     name: "Manufacturing",
     tag: "24/7 production environments",
     icon: "factory" as IconName,
-    image: "/industries/manufacturing.svg",
     summary:
       "Machine density, mixed workforces, and line-level safety obligations demand a more scalable layer of visual supervision.",
     challenges: [
@@ -252,7 +245,6 @@ export const industryDetails = [
     name: "Banking",
     tag: "Public-facing controlled spaces",
     icon: "landmark" as IconName,
-    image: "/industries/banking.svg",
     summary:
       "Service quality, customer safety, compliance, and restricted-zone security all need to work together in real time.",
     challenges: [
@@ -355,7 +347,7 @@ export const contactDetails = [
   {
     label: "Contact person",
     value: "Md Ashraf Siddiquee",
-    icon: "users" as IconName,
+    icon: "user" as IconName,
   },
   {
     label: "Email",
@@ -366,6 +358,11 @@ export const contactDetails = [
     label: "Phone",
     value: "01730589252",
     icon: "phone" as IconName,
+  },
+  {
+    label: "Address",
+    value: "House B186, Road 20, Mohakhali DOHS, Dhaka 1206, Bangladesh",
+    icon: "mapPin" as IconName,
   },
   {
     label: "Website",
