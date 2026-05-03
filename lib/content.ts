@@ -328,6 +328,29 @@ export const solutionTechnicalAspects = [
   "Web, admin, and mobile access for multi-role operations teams",
 ];
 
+export const solutionStats = [
+  {
+    value: "15+",
+    label: "Detection systems",
+    description: "Safety, security, behavior, and access intelligence in one platform.",
+  },
+  {
+    value: "0",
+    label: "New cameras required",
+    description: "Deploy on top of the existing CCTV estate without replacing hardware.",
+  },
+  {
+    value: "24/7",
+    label: "Continuous monitoring",
+    description: "Always-on event awareness with evidence-backed alerting.",
+  },
+  {
+    value: "30 days",
+    label: "Visible ROI",
+    description: "Rapid operational value through automation, response time, and compliance.",
+  },
+];
+
 export const contactDetails = [
   {
     label: "Contact person",
@@ -358,3 +381,22 @@ export const footerInfo = {
   phone: "01730589252",
   website: "site-guard.ai",
 };
+
+export const footerSections = [
+  {
+    title: "Platform",
+    links: [
+      { href: "/product", label: "Platform overview" },
+      { href: "/solutions", label: "Detection systems" },
+      { href: "/industries", label: "Industry use cases" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/contact", label: "Contact" },
+      { href: `https://${footerInfo.website}`, label: "Website" },
+      { href: `mailto:${footerInfo.email}`, label: "Email NYK Advance" },
+    ],
+  },
+];

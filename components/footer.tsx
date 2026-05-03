@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footerInfo } from "@/lib/content";
+import { footerInfo, footerSections } from "@/lib/content";
 
 export function Footer() {
   return (
@@ -12,18 +12,40 @@ export function Footer() {
             AI-powered visual intelligence for real-time safety, compliance,
             and operational supervision.
           </p>
-          <p>{footerInfo.address}</p>
-        </div>
-        <div className="footer-meta">
-          <div className="footer-links">
-            <Link href="/product">Platform</Link>
-            <Link href="/solutions">Solutions</Link>
-            <Link href="/industries">Industries</Link>
-            <Link href="/contact">Contact</Link>
+          <div className="footer-address-block">
+            <p>{footerInfo.address}</p>
+            <p>{footerInfo.phone}</p>
+            <p>{footerInfo.email}</p>
           </div>
-          <div className="footer-contact">
-            <a href={`mailto:${footerInfo.email}`}>{footerInfo.email}</a>
-            <a href={`tel:${footerInfo.phone}`}>{footerInfo.phone}</a>
+        </div>
+        <div className="footer-grid">
+          {footerSections.map((section) => (
+            <div className="footer-column" key={section.title}>
+              <h3>{section.title}</h3>
+              <div className="footer-links">
+                {section.links.map((link) => {
+                  const external = link.href.startsWith("http") || link.href.startsWith("mailto:");
+                  return external ? (
+                    <a
+                      href={link.href}
+                      key={link.label}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} key={link.label}>
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+          <div className="footer-column footer-column-accent">
+            <h3>Developed by</h3>
+            <p>NYK Advance Ltd.</p>
             <a href={`https://${footerInfo.website}`} target="_blank" rel="noreferrer">
               {footerInfo.website}
             </a>

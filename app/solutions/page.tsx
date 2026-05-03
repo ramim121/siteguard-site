@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/section-heading";
 import {
   solutionArchitecture,
   solutionCategories,
+  solutionStats,
   solutionTechnicalAspects,
 } from "@/lib/content";
 import Image from "next/image";
@@ -37,6 +38,15 @@ export default function SolutionsPage() {
             title="Various detection systems"
             description="The platform monitors more than 15 event types while keeping the operational story easy to understand."
           />
+          <div className="solution-stat-grid">
+            {solutionStats.map((stat) => (
+              <article className="solution-stat-card reveal rise" key={stat.label}>
+                <span>{stat.value}</span>
+                <h3>{stat.label}</h3>
+                <p>{stat.description}</p>
+              </article>
+            ))}
+          </div>
           <div className="solution-intro-grid">
             {solutionCategories.map((category) => (
               <article className="solution-pill-card reveal rise" key={category.name}>
