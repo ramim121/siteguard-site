@@ -447,7 +447,7 @@ img {
 
 .section-compact {
   padding-top: 0.8rem;
-  padding-bottom: 5.5rem;
+  padding-bottom: 3.4rem;
 }
 
 .section-tinted {
@@ -1085,13 +1085,13 @@ img {
 }
 
 .cta-panel {
-  border-radius: calc(var(--radius-lg) + 0.2rem);
-  padding: 2.4rem 2.6rem;
+  border-radius: var(--radius-lg);
+  padding: 1.55rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  min-height: 18rem;
+  gap: 1.4rem;
+  min-height: 0;
   background:
     radial-gradient(circle at 16% 18%, rgba(246, 139, 31, 0.08), transparent 24%),
     radial-gradient(circle at 88% 50%, rgba(31, 43, 77, 0.06), transparent 26%),
@@ -1099,33 +1099,34 @@ img {
 }
 
 .cta-panel h2 {
-  max-width: 10ch;
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
+  max-width: 20ch;
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
 }
 
 .cta-copy {
-  max-width: 38rem;
+  max-width: 48rem;
 }
 
 .cta-copy .eyebrow {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .cta-copy p {
-  margin: 1.15rem 0 0;
-  max-width: 30rem;
+  margin: 0.75rem 0 0;
+  max-width: 36rem;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.78;
+  font-size: 0.96rem;
+  line-height: 1.62;
 }
 
 .cta-actions {
   align-items: center;
   justify-content: flex-end;
   margin-top: 0;
-  min-width: 23rem;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .solution-architecture-layout {
@@ -1452,6 +1453,7 @@ img {
 
   .cta-actions {
     justify-content: flex-start;
+    width: 100%;
     min-width: 0;
   }
 
@@ -1517,12 +1519,12 @@ img {
 
   .cta-panel {
     min-height: auto;
-    padding: 1.6rem;
+    padding: 1.25rem;
   }
 
   .cta-panel h2 {
-    font-size: clamp(2.35rem, 10vw, 3.5rem);
-    max-width: 12ch;
+    font-size: clamp(1.8rem, 8vw, 2.45rem);
+    max-width: 14ch;
   }
 
   .section {
