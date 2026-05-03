@@ -40,33 +40,34 @@ export function Footer() {
             </div>
           ))}
           <div className="footer-column footer-column-accent">
-            <h3>Developed by</h3>
-            <p>NYK Advance Ltd.</p>
+            <h3>Contact</h3>
             <div className="footer-contact-stack footer-contact-stack-compact">
-              <div className="footer-contact-item">
-                <div className="card-icon card-icon-footer">
-                  <IconMark name="user" />
+              <div className="footer-contact-row">
+                <div className="footer-contact-item">
+                  <div className="card-icon card-icon-footer">
+                    <IconMark name="user" />
+                  </div>
+                  <p>Md Ashraf Siddiquee</p>
                 </div>
-                <p>Md Ashraf Siddiquee</p>
-              </div>
-              <div className="footer-contact-item">
-                <div className="card-icon card-icon-footer">
-                  <IconMark name="phone" />
+                <div className="footer-contact-item">
+                  <div className="card-icon card-icon-footer">
+                    <IconMark name="phone" />
+                  </div>
+                  <p>{footerInfo.phone}</p>
                 </div>
-                <p>{footerInfo.phone}</p>
               </div>
-              <div className="footer-contact-item">
+              <div className="footer-contact-item footer-contact-address">
                 <div className="card-icon card-icon-footer">
                   <IconMark name="mapPin" />
                 </div>
                 <p>{footerInfo.address}</p>
               </div>
             </div>
-            <a href={`https://${footerInfo.website}`} target="_blank" rel="noreferrer">
-              {footerInfo.website}
-            </a>
           </div>
         </div>
+      </div>
+      <div className="section-inner footer-bottom">
+        <p>© 2025 NYK Advance Limited. All rights reserved.</p>
       </div>
     </footer>
   );
