@@ -63,16 +63,8 @@ export default function SolutionsPage() {
           <div className="solution-grid solution-grid-modern">
             {solutionCategories.map((category) => (
               <article className="solution-card reveal rise" key={category.name}>
-                <div className="solution-visual">
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    width={720}
-                    height={520}
-                  />
-                </div>
                 <div className="solution-card-top">
-                  <div className="card-icon">
+                  <div className="card-icon card-icon-small-accent">
                     <IconMark name={category.icon} />
                   </div>
                   <div>

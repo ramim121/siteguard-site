@@ -3,7 +3,6 @@ import { HeroVisual } from "@/components/hero-visual";
 import { IconMark } from "@/components/icon-mark";
 import { SectionHeading } from "@/components/section-heading";
 import { industryDetails } from "@/lib/content";
-import Image from "next/image";
 
 export default function IndustriesPage() {
   return (
@@ -33,18 +32,36 @@ export default function IndustriesPage() {
             title="Designed for the operational language of each environment."
             description="Each sector brings a different supervision burden, compliance posture, and response model."
           />
-          <div className="industry-detail-grid">
+          <div className="industry-overview-grid">
             {industryDetails.map((industry) => (
-              <article className="industry-detail-card reveal rise" key={industry.name}>
-                <div className="industry-detail-media">
-                  <Image
-                    src={industry.image}
-                    alt={industry.name}
-                    width={960}
-                    height={640}
-                  />
+              <article className="industry-overview-card reveal rise" key={industry.name}>
+                <div className="industry-overview-head">
+                  <div className="card-icon card-icon-small-accent">
+                    <IconMark name={industry.icon} />
+                  </div>
+                  <div>
+                    <span>{industry.tag}</span>
+                    <h3>{industry.name}</h3>
+                  </div>
                 </div>
-                <div className="industry-detail-head industry-detail-head-visual">
+                <p>{industry.summary}</p>
+                <ul>
+                  {industry.focusAreas.slice(0, 3).map((focus) => (
+                    <li key={focus}>{focus}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-tinted">
+        <div className="section-inner">
+          <div className="industry-detail-grid industry-detail-grid-redesigned">
+            {industryDetails.map((industry) => (
+              <article className="industry-detail-card reveal rise" key={`${industry.name}-detail`}>
+                <div className="industry-detail-head industry-detail-head-redesigned">
                   <div className="industry-heading-row">
                     <div className="card-icon card-icon-title">
                       <IconMark name={industry.icon} />
@@ -58,7 +75,7 @@ export default function IndustriesPage() {
                 </div>
                 <div className="industry-columns">
                   <div>
-                    <h4>Site challenges</h4>
+                    <h4>Core site challenges</h4>
                     <ul>
                       {industry.challenges.map((challenge) => (
                         <li key={challenge}>{challenge}</li>
