@@ -4,13 +4,12 @@ import {
   homeMetrics,
   industryHighlights,
   operationalPillars,
-  screenshotGallery,
-  screenshotShowcase,
+  workflowCarouselSlides,
 } from "@/lib/content";
+import { AutoCarousel } from "@/components/auto-carousel";
 import { IconMark } from "@/components/icon-mark";
 import { PageHero } from "@/components/page-hero";
 import { HeroVisual } from "@/components/hero-visual";
-import { ScreenshotFrame } from "@/components/screenshot-frame";
 import { SectionHeading } from "@/components/section-heading";
 
 export default function HomePage() {
@@ -78,27 +77,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="showcase-stack reveal float">
-            <div className="home-showcase home-showcase-main">
-              <ScreenshotFrame
-                src={screenshotShowcase.dashboard.src}
-                alt={screenshotShowcase.dashboard.alt}
-                label="Central dashboard"
-                priority
-              />
-            </div>
-            <div className="home-showcase home-showcase-card home-showcase-card-one">
-              <ScreenshotFrame
-                src={screenshotGallery.reports.src}
-                alt={screenshotGallery.reports.alt}
-                label="Trend analytics"
-              />
-            </div>
-            <div className="home-showcase home-showcase-card home-showcase-card-two">
-              <ScreenshotFrame
-                src={screenshotGallery.live.src}
-                alt={screenshotGallery.live.alt}
-                label="Live monitoring"
-              />
+            <div className="home-showcase-carousel">
+              <AutoCarousel slides={workflowCarouselSlides} />
             </div>
             <div className="showcase-note">
               <span>Always-on overview</span>
