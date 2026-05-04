@@ -200,17 +200,24 @@ img {
 }
 
 .hero-compact {
-  padding: 3.6rem 0 2.2rem;
+  padding: 3.1rem 0 2rem;
+}
+
+.hero-compact .hero-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  gap: 2rem;
 }
 
 .hero-compact .hero-copy h1 {
-  font-size: clamp(2.35rem, 3.2vw, 3.6rem);
-  max-width: 12ch;
+  font-size: clamp(2.05rem, 2.7vw, 3.15rem);
+  max-width: 19ch;
+  line-height: 1.02;
 }
 
 .hero-compact .hero-copy p {
-  max-width: 34rem;
-  font-size: 0.98rem;
+  max-width: 42rem;
+  font-size: 0.96rem;
+  line-height: 1.62;
 }
 
 .hero-shell {
@@ -679,6 +686,227 @@ img {
 
 .solution-grid-modern {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.solution-tab-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.solution-tab-card {
+  font: inherit;
+  color: inherit;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  width: 100%;
+  padding: 1rem 1.05rem;
+  text-align: left;
+  border: 1px solid rgba(24, 36, 48, 0.08);
+  border-radius: 1.6rem;
+  background: rgba(255, 252, 247, 0.9);
+  box-shadow: 0 18px 34px rgba(31, 43, 77, 0.06);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.solution-tab-card:hover,
+.solution-tab-card-active {
+  transform: translateY(-3px);
+  border-color: rgba(246, 139, 31, 0.28);
+  box-shadow: 0 24px 48px rgba(31, 43, 77, 0.12);
+  background: rgba(255, 253, 249, 0.96);
+}
+
+.solution-tab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: rgba(70, 97, 127, 0.08);
+  color: var(--teal-deep);
+}
+
+.solution-tab-icon svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.solution-tab-copy span {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  color: var(--amber);
+}
+
+.solution-tab-copy h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.18;
+}
+
+.solution-tab-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  gap: 1.35rem;
+  margin-top: 1.3rem;
+  padding: 1.25rem;
+  border-radius: calc(var(--radius-lg) + 0.2rem);
+  background: rgba(255, 252, 247, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  box-shadow: var(--shadow);
+}
+
+.solution-tab-stage-copy {
+  padding: 0.4rem 0.2rem 0.2rem;
+}
+
+.solution-tab-stage-copy h3,
+.solution-experience-caption h4 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+  line-height: 1.02;
+}
+
+.solution-stage-meta h4 {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.solution-tab-stage-copy p {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.solution-stage-list {
+  margin: 1.1rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.solution-stage-media-shell,
+.solution-experience-viewer {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.solution-stage-media-frame,
+.solution-experience-frame {
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) + 0.2rem);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  background: rgba(17, 27, 35, 0.94);
+  box-shadow: 0 24px 70px rgba(17, 27, 35, 0.16);
+}
+
+.solution-stage-media,
+.solution-experience-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.solution-stage-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.solution-stage-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+.solution-stage-meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.solution-stage-meta p,
+.solution-experience-caption p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.64;
+}
+
+.solution-stage-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.solution-experience-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  gap: 1.35rem;
+}
+
+.solution-experience-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.solution-experience-option {
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  padding: 1rem 1.05rem;
+  text-align: left;
+  border: 1px solid rgba(24, 36, 48, 0.08);
+  border-radius: 1.35rem;
+  background: rgba(255, 252, 247, 0.88);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.solution-experience-option:hover,
+.solution-experience-option-active {
+  transform: translateY(-2px);
+  border-color: rgba(246, 139, 31, 0.28);
+  box-shadow: 0 18px 36px rgba(31, 43, 77, 0.1);
+  background: rgba(255, 253, 249, 0.96);
+}
+
+.solution-experience-option span,
+.solution-experience-caption span {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  color: var(--amber);
+}
+
+.solution-experience-option h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.solution-experience-option p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.56;
+  font-size: 0.92rem;
 }
 
 .solution-card {
@@ -1413,6 +1641,15 @@ img {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .solution-tab-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .solution-tab-stage,
+  .solution-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
   .metric-grid,
   .timeline-grid,
   .industry-grid,
@@ -1495,6 +1732,8 @@ img {
     .solution-grid-modern,
     .algorithm-grid,
     .solution-intro-grid,
+    .solution-tab-row,
+    .solution-experience-controls,
   .industry-overview-grid,
   .platform-stat-row,
   .solution-stat-grid,
@@ -1513,8 +1752,15 @@ img {
   .platform-stat-card,
   .solution-pill-card,
   .contact-point-card,
-  .solution-stat-card {
+  .solution-stat-card,
+  .solution-tab-stage,
+  .solution-experience-option {
     padding: 1.2rem;
+  }
+
+  .solution-stage-meta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .cta-panel {

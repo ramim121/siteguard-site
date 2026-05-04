@@ -161,6 +161,7 @@ export const workflowCarouselSlides = [
 
 export const solutionCategories = [
   {
+    id: "safety",
     eyebrow: "Safety and PPE",
     name: "Worker protection and compliance",
     icon: "hardHat" as IconName,
@@ -170,6 +171,7 @@ export const solutionCategories = [
     items: ["Helmet compliance", "Safety vest detection", "Mask compliance", "Fire and flame detection"],
   },
   {
+    id: "security",
     eyebrow: "Security and perimeter",
     name: "Restricted access and incident control",
     icon: "shield" as IconName,
@@ -179,6 +181,7 @@ export const solutionCategories = [
     items: ["Intrusion detection", "Face recognition", "Altercation detection", "Abandoned object tracking"],
   },
   {
+    id: "behavior",
     eyebrow: "Behavior and activity",
     name: "Operational behavior awareness",
     icon: "activity" as IconName,
@@ -188,6 +191,7 @@ export const solutionCategories = [
     items: ["Sleep on duty", "Smoking detection", "Using phone detection", "Motion-based trigger logic"],
   },
   {
+    id: "people",
     eyebrow: "People and movement",
     name: "Density, occupancy, and zone intelligence",
     icon: "users" as IconName,
@@ -197,6 +201,7 @@ export const solutionCategories = [
     items: ["Human counting", "Occupancy limits", "Heat-map potential", "Combined identity and movement tracking"],
   },
   {
+    id: "traffic",
     eyebrow: "Traffic and access",
     name: "Vehicle and zone discipline",
     icon: "warehouse" as IconName,
@@ -207,43 +212,273 @@ export const solutionCategories = [
   },
 ];
 
-export const algorithmDetections = [
+export const solutionCategoryTabs = [
   {
+    id: "safety",
+    eyebrow: "Safety and PPE",
+    title: "Worker protection and compliance",
+    icon: "hardHat" as IconName,
+    description:
+      "Deploy continuous visual checks for PPE, life-safety, and hazardous-zone compliance without relying on manual rounds.",
+    bullets: [
+      "Ideal for construction, manufacturing, and contractor-heavy sites",
+      "Flags missing helmet, vest, or mask events in seconds",
+      "Keeps a timestamped evidence trail for response and reporting",
+    ],
+    slides: [
+      {
+        title: "Helmet compliance",
+        description: "Live monitoring highlights missing helmets in active work zones.",
+        image: "/solutions/detections/no-helmet.png",
+        objectPosition: "left center",
+      },
+      {
+        title: "Safety vest detection",
+        description: "Visual rules help verify high-visibility gear in shared operational areas.",
+        image: "/solutions/detections/safety-vest.png",
+        objectPosition: "center top",
+      },
+      {
+        title: "Fire and flame alerting",
+        description: "Immediate escalation path for smoke and flame indicators with evidence context.",
+        image: "/solutions/detections/fire-alert.png",
+        objectPosition: "left top",
+      },
+    ],
+  },
+  {
+    id: "security",
+    eyebrow: "Security and perimeter",
+    title: "Restricted access and incident control",
+    icon: "shield" as IconName,
+    description:
+      "Convert passive CCTV into a perimeter-aware supervision layer that detects unauthorized entry, identity events, and unattended objects.",
+    bullets: [
+      "Supports after-hours monitoring and sensitive-zone supervision",
+      "Pairs movement, identity, and object rules in one alert flow",
+      "Works well for branches, gates, storage zones, and corridors",
+    ],
+    slides: [
+      {
+        title: "Intrusion detection",
+        description: "Restricted zones trigger attention as soon as motion breaks the rule boundary.",
+        image: "/solutions/detections/intrusion.png",
+        objectPosition: "center center",
+      },
+      {
+        title: "Face recognition",
+        description: "Identity-aware workflows help validate who entered and when.",
+        image: "/solutions/detections/face-recognition.png",
+        objectPosition: "right center",
+      },
+      {
+        title: "Abandoned object alert",
+        description: "Unattended items are escalated with a clean review trail.",
+        image: "/solutions/detections/abandoned-object.png",
+        objectPosition: "left top",
+      },
+    ],
+  },
+  {
+    id: "behavior",
+    eyebrow: "Behavior and activity",
+    title: "Operational behavior awareness",
+    icon: "activity" as IconName,
+    description:
+      "Monitor risky human behavior that usually happens between supervision rounds, from fatigue to distraction to smoking.",
+    bullets: [
+      "Built for floors, branches, control rooms, and gate operations",
+      "Brings together posture, movement, and behavior-based triggers",
+      "Useful for both safety culture and service-quality oversight",
+    ],
+    slides: [
+      {
+        title: "Sleep on duty",
+        description: "Fatigue patterns can be surfaced before they become operational failures.",
+        image: "/solutions/detections/sleep-on-duty.png",
+        objectPosition: "center center",
+      },
+      {
+        title: "Phone-use detection",
+        description: "Detects distracted behavior in restricted or high-focus environments.",
+        image: "/solutions/detections/phone-use.png",
+        objectPosition: "right center",
+      },
+      {
+        title: "Smoking detection",
+        description: "Combines visual behavior checks with zone-specific compliance rules.",
+        image: "/solutions/detections/smoking.png",
+        objectPosition: "left top",
+      },
+    ],
+  },
+  {
+    id: "people",
+    eyebrow: "People and movement",
+    title: "Density, occupancy, and zone intelligence",
+    icon: "users" as IconName,
+    description:
+      "Measure movement, occupancy pressure, and crowding trends so teams can understand how people are actually using a site.",
+    bullets: [
+      "Supports occupancy thresholds and high-footfall areas",
+      "Useful for branch floors, lobbies, production lines, and access points",
+      "Turns people flow into a reviewable operational signal",
+    ],
+    slides: [
+      {
+        title: "People counting",
+        description: "Counts footfall and detects crowd build-up in monitored zones.",
+        image: "/solutions/detections/human-count.png",
+        objectPosition: "center center",
+      },
+      {
+        title: "Occupancy monitoring",
+        description: "Helps track density thresholds and queue conditions in real time.",
+        image: "/solutions/detections/human-count.png",
+        objectPosition: "center top",
+      },
+      {
+        title: "Zone movement review",
+        description: "Shows how traffic moves through sensitive or high-throughput spaces.",
+        image: "/solutions/detections/human-count.png",
+        objectPosition: "left center",
+      },
+    ],
+  },
+  {
+    id: "traffic",
+    eyebrow: "Traffic and access",
+    title: "Vehicle and zone discipline",
+    icon: "warehouse" as IconName,
+    description:
+      "Protect loading bays, emergency paths, parking rules, and access routes with clear visual enforcement and evidence capture.",
+    bullets: [
+      "Helps keep operations clear around service roads and restricted entry zones",
+      "Useful for logistics movements, no-parking rules, and zone breaches",
+      "Preserves image evidence for supervisors and management review",
+    ],
+    slides: [
+      {
+        title: "No-parking enforcement",
+        description: "Flags vehicles blocking emergency, service, or restricted access areas.",
+        image: "/solutions/detections/no-parking.png",
+        objectPosition: "left top",
+      },
+      {
+        title: "Vehicle dwell-time review",
+        description: "Measures how long vehicles remain in monitored bays or gate positions.",
+        image: "/solutions/detections/no-parking.png",
+        objectPosition: "center center",
+      },
+      {
+        title: "Zone-based escalation",
+        description: "Combines traffic visibility with event priorities for rapid response.",
+        image: "/solutions/detections/intrusion.png",
+        objectPosition: "right top",
+      },
+    ],
+  },
+];
+
+export const solutionExperienceDetections = [
+  {
+    id: "helmet-compliance",
     title: "Helmet compliance",
     tag: "PPE",
-    image: "/hero/solution-safety.svg",
+    categoryId: "safety",
+    image: "/solutions/detections/no-helmet.png",
+    objectPosition: "left center",
     description: "Detects missing safety helmets and PPE gaps in active work zones.",
   },
   {
+    id: "safety-vest",
+    title: "Safety vest detection",
+    tag: "PPE",
+    categoryId: "safety",
+    image: "/solutions/detections/safety-vest.png",
+    objectPosition: "center center",
+    description: "Verifies high-visibility vest compliance across shared operational zones.",
+  },
+  {
+    id: "intrusion-detection",
     title: "Intrusion detection",
     tag: "Security",
-    image: "/hero/solution-security.svg",
+    categoryId: "security",
+    image: "/solutions/detections/intrusion.png",
+    objectPosition: "center center",
     description: "Flags movement inside restricted areas, perimeter zones, or closed spaces.",
   },
   {
+    id: "fire-flame",
     title: "Fire and flame",
     tag: "Life safety",
-    image: "/siteguard/alerts.png",
+    categoryId: "safety",
+    image: "/solutions/detections/fire-alert.png",
     description: "Escalates fire, smoke, and flame indicators with evidence context.",
     objectPosition: "left top",
   },
   {
+    id: "face-recognition",
     title: "Face recognition",
     tag: "Identity",
-    image: "/hero/solution-behavior.svg",
+    categoryId: "security",
+    image: "/solutions/detections/face-recognition.png",
+    objectPosition: "right top",
     description: "Supports identity-aware supervision for controlled environments.",
   },
   {
+    id: "abandoned-object",
     title: "Abandoned object",
     tag: "Risk",
-    image: "/hero/solution-security.svg",
+    categoryId: "security",
+    image: "/solutions/detections/abandoned-object.png",
+    objectPosition: "left top",
     description: "Identifies unattended objects and keeps a timestamped review trail.",
   },
   {
+    id: "people-counting",
     title: "People counting",
     tag: "Occupancy",
-    image: "/hero/solution-people.svg",
+    categoryId: "people",
+    image: "/solutions/detections/human-count.png",
+    objectPosition: "center center",
     description: "Measures movement, crowding, and zone occupancy for operational insight.",
+  },
+  {
+    id: "sleep-on-duty",
+    title: "Sleep on duty",
+    tag: "Behavior",
+    categoryId: "behavior",
+    image: "/solutions/detections/sleep-on-duty.png",
+    objectPosition: "center center",
+    description: "Surfaces fatigue-related posture patterns in control rooms, guard posts, and service areas.",
+  },
+  {
+    id: "phone-use",
+    title: "Phone-use detection",
+    tag: "Behavior",
+    categoryId: "behavior",
+    image: "/solutions/detections/phone-use.png",
+    objectPosition: "right center",
+    description: "Detects distracted behavior in monitored areas where attention discipline matters.",
+  },
+  {
+    id: "smoking",
+    title: "Smoking detection",
+    tag: "Behavior",
+    categoryId: "behavior",
+    image: "/solutions/detections/smoking.png",
+    objectPosition: "center center",
+    description: "Highlights smoking events in restricted or safety-sensitive areas.",
+  },
+  {
+    id: "no-parking",
+    title: "No-parking enforcement",
+    tag: "Traffic",
+    categoryId: "traffic",
+    image: "/solutions/detections/no-parking.png",
+    objectPosition: "left top",
+    description: "Tracks parked vehicles blocking controlled lanes, service points, or emergency access routes.",
   },
 ];
 
