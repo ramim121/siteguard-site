@@ -6,9 +6,6 @@ import { IconMark } from "@/components/icon-mark";
 import { SectionHeading } from "@/components/section-heading";
 import { solutionCategoryTabs, solutionExperienceDetections } from "@/lib/content";
 
-type Category = (typeof solutionCategoryTabs)[number];
-type Detection = (typeof solutionExperienceDetections)[number];
-
 export function SolutionsInteractive() {
   const [activeCategoryId, setActiveCategoryId] = useState(solutionCategoryTabs[0]?.id);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -23,14 +20,6 @@ export function SolutionsInteractive() {
     [activeCategoryId],
   );
 
-  const experienceDetections = useMemo(
-    () =>
-      solutionExperienceDetections.filter(
-        (detection) => detection.categoryId === activeCategory.id,
-      ),
-    [activeCategory.id],
-  );
-
   const activeDetection = useMemo(
     () =>
       solutionExperienceDetections.find(
@@ -41,8 +30,7 @@ export function SolutionsInteractive() {
 
   useEffect(() => {
     setActiveSlideIndex(0);
-    setActiveDetectionId(experienceDetections[0]?.id ?? solutionExperienceDetections[0]?.id);
-  }, [activeCategory.id, experienceDetections]);
+  }, [activeCategory.id]);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -161,28 +149,42 @@ export function SolutionsInteractive() {
           <SectionHeading
             eyebrow="Experience"
             title="Choose a detection method"
-            description="Switch between individual detection methods and see the demonstration surface update immediately."
+            description="Browse the full detection library independently, then open each method as a live visual demonstration."
           />
           <div className="solution-experience-grid">
             <div className="solution-experience-controls">
-              {experienceDetections.map((detection) => {
-                const active = detection.id === activeDetection.id;
+              {solutionCategoryTabs.map((category) => {
+                const detections = solutionExperienceDetections.filter(
+                  (detection) => detection.categoryId === category.id,
+                );
 
                 return (
-                  <button
-                    type="button"
-                    key={detection.id}
-                    className={
-                      active
-                        ? "solution-experience-option solution-experience-option-active"
-                        : "solution-experience-option"
-                    }
-                    onClick={() => setActiveDetectionId(detection.id)}
-                  >
-                    <span>{detection.tag}</span>
-                    <h3>{detection.title}</h3>
-                    <p>{detection.description}</p>
-                  </button>
+                  <div className="solution-experience-category" key={category.id}>
+                    <div className="solution-experience-category-head">
+                      <IconMark name={category.icon} />
+                      <span>{category.eyebrow}</span>
+                    </div>
+                    <div className="solution-experience-boxes">
+                      {detections.map((detection) => {
+                        const active = detection.id === activeDetection.id;
+
+                        return (
+                          <button
+                            type="button"
+                            key={detection.id}
+                            className={
+                              active
+                                ? "solution-experience-option solution-experience-option-active"
+                                : "solution-experience-option"
+                            }
+                            onClick={() => setActiveDetectionId(detection.id)}
+                          >
+                            {detection.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
                 );
               })}
             </div>

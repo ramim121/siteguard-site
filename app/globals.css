@@ -854,27 +854,84 @@ img {
 
 .solution-experience-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
-  gap: 1.35rem;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(460px, 1.28fr);
+  gap: 1.45rem;
+  align-items: start;
 }
 
 .solution-experience-controls {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
+  gap: 0.85rem;
   align-content: start;
+  max-height: 38rem;
+  overflow-y: auto;
+  padding: 0.95rem;
+  border: 1px solid rgba(24, 36, 48, 0.08);
+  border-radius: calc(var(--radius-lg) + 0.15rem);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.94), rgba(248, 242, 232, 0.78)),
+    radial-gradient(circle at 0 0, rgba(70, 97, 127, 0.08), transparent 38%);
+  box-shadow: 0 22px 54px rgba(31, 43, 77, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(70, 97, 127, 0.34) transparent;
+}
+
+.solution-experience-controls::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+.solution-experience-controls::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(70, 97, 127, 0.3);
+}
+
+.solution-experience-category {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.solution-experience-category + .solution-experience-category {
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(24, 36, 48, 0.08);
+}
+
+.solution-experience-category-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.solution-experience-category-head svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--amber);
+}
+
+.solution-experience-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
 }
 
 .solution-experience-option {
   font: inherit;
   color: inherit;
   width: 100%;
-  padding: 1rem 1.05rem;
-  text-align: left;
+  min-height: 3.2rem;
+  padding: 0.72rem 0.82rem;
+  text-align: center;
   border: 1px solid rgba(24, 36, 48, 0.08);
-  border-radius: 1.35rem;
+  border-radius: 1rem;
   background: rgba(255, 252, 247, 0.88);
   cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.18;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
@@ -883,10 +940,10 @@ img {
   transform: translateY(-2px);
   border-color: rgba(246, 139, 31, 0.28);
   box-shadow: 0 18px 36px rgba(31, 43, 77, 0.1);
-  background: rgba(255, 253, 249, 0.96);
+  background: linear-gradient(135deg, rgba(31, 43, 77, 0.96), rgba(54, 95, 91, 0.94));
+  color: #fffaf2;
 }
 
-.solution-experience-option span,
 .solution-experience-caption span {
   display: inline-block;
   margin-bottom: 0.45rem;
@@ -894,19 +951,6 @@ img {
   letter-spacing: 0.15em;
   font-size: 0.68rem;
   color: var(--amber);
-}
-
-.solution-experience-option h3 {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.2;
-}
-
-.solution-experience-option p {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  line-height: 1.56;
-  font-size: 0.92rem;
 }
 
 .solution-card {
@@ -1734,6 +1778,7 @@ img {
     .solution-intro-grid,
     .solution-tab-row,
     .solution-experience-controls,
+    .solution-experience-boxes,
   .industry-overview-grid,
   .platform-stat-row,
   .solution-stat-grid,
@@ -1753,9 +1798,13 @@ img {
   .solution-pill-card,
   .contact-point-card,
   .solution-stat-card,
-  .solution-tab-stage,
-  .solution-experience-option {
+  .solution-tab-stage {
     padding: 1.2rem;
+  }
+
+  .solution-experience-option {
+    min-height: 2.85rem;
+    padding: 0.68rem 0.75rem;
   }
 
   .solution-stage-meta {
