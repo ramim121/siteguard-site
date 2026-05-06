@@ -1,4 +1,5 @@
 import { AutoCarousel } from "@/components/auto-carousel";
+import { ImageCarousel } from "@/components/image-carousel";
 import { PageHero } from "@/components/page-hero";
 import { HeroVisual } from "@/components/hero-visual";
 import { IconMark } from "@/components/icon-mark";
@@ -6,6 +7,7 @@ import { ScreenshotFrame } from "@/components/screenshot-frame";
 import { SectionHeading } from "@/components/section-heading";
 import {
   architectureSteps,
+  mobileAppSlides,
   platformMoments,
   workflowCarouselSlides,
   screenshotGallery,
@@ -71,6 +73,25 @@ export default function ProductPage() {
       </section>
 
       <section className="section section-tinted">
+        <div className="section-inner media-layout product-mobile-showcase">
+          <div className="media-copy reveal rise">
+            <SectionHeading
+              eyebrow="Mobile app"
+              title="Take live supervision into the field with a mobile command surface."
+              description="The SiteGuard AI mobile experience brings dashboard visibility, live review, alert history, and reports into a compact phone workflow."
+            />
+            <p>
+              Supervisors can review active zones, inspect incidents, and track
+              shifts without needing to stay at the central console.
+            </p>
+          </div>
+          <div className="media-column reveal rise">
+            <ImageCarousel slides={mobileAppSlides} variant="phone" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="section-inner media-layout">
           <div className="media-column reveal rise">
             <ScreenshotFrame

@@ -2,11 +2,12 @@ import Link from "next/link";
 import {
   architectureSteps,
   homeMetrics,
+  homeHeroSignals,
   industryHighlights,
   operationalPillars,
   workflowCarouselSlides,
 } from "@/lib/content";
-import { AutoCarousel } from "@/components/auto-carousel";
+import { ImageCarousel } from "@/components/image-carousel";
 import { IconMark } from "@/components/icon-mark";
 import { PageHero } from "@/components/page-hero";
 import { HeroVisual } from "@/components/hero-visual";
@@ -21,11 +22,7 @@ export default function HomePage() {
         description="SiteGuard AI transforms existing CCTV into a live layer of operational awareness for safety, compliance, and response across construction, manufacturing, banking, and multi-site operations."
         primaryCta={{ href: "/contact", label: "Book a private demo" }}
         secondaryCta={{ href: "/product", label: "Explore the platform" }}
-        panelPoints={[
-          "Existing CCTV. No new camera estate required.",
-          "15+ AI models for safety, security, and behavior.",
-          "Evidence-backed alerts with management-ready reporting.",
-        ]}
+        panelPoints={[]}
         visual={
           <HeroVisual
             src="/hero/home-dashboard-reference.png"
@@ -34,6 +31,19 @@ export default function HomePage() {
           />
         }
       />
+
+      <section className="section section-tight hero-signal-band">
+        <div className="section-inner">
+          <div className="hero-signal-grid">
+            {homeHeroSignals.map((signal) => (
+              <article className="hero-signal-card reveal rise" key={signal.title}>
+                <span>{signal.title}</span>
+                <p>{signal.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section metrics-band">
         <div className="section-inner">
@@ -75,15 +85,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="showcase-stack">
-            <div className="home-showcase-carousel">
-              <AutoCarousel slides={workflowCarouselSlides} />
-            </div>
-            <div className="showcase-note">
-              <span>Always-on overview</span>
-              <p>
-                Live camera health, alert severity, and operational activity in
-                one elegant command surface.
-              </p>
+            <div className="home-showcase-carousel home-showcase-carousel-clean">
+              <ImageCarousel slides={workflowCarouselSlides} />
             </div>
           </div>
         </div>

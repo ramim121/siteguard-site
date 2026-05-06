@@ -159,6 +159,48 @@ export const workflowCarouselSlides = [
   },
 ];
 
+export const homeHeroSignals = [
+  {
+    title: "Existing CCTV",
+    description: "Deploy on the camera estate you already have, without a disruptive hardware reset.",
+  },
+  {
+    title: "15+ AI models",
+    description: "Cover safety, security, behavior, and operational events through one coordinated layer.",
+  },
+  {
+    title: "Evidence-led reporting",
+    description: "Move from raw footage to timestamped incidents and management-ready operational review.",
+  },
+];
+
+export const mobileAppSlides = [
+  {
+    src: "/mobile/dashboard.png",
+    alt: "SiteGuard AI mobile dashboard screen.",
+    label: "Mobile dashboard",
+    description: "A compact command view for camera health, alerts, and daily activity.",
+  },
+  {
+    src: "/mobile/live.png",
+    alt: "SiteGuard AI mobile live monitoring screen.",
+    label: "Live monitoring",
+    description: "Review active camera zones and visual detections in a handheld format.",
+  },
+  {
+    src: "/mobile/alerts.png",
+    alt: "SiteGuard AI mobile alert history screen.",
+    label: "Alert history",
+    description: "Scroll incident timelines, severity, and status updates from the field.",
+  },
+  {
+    src: "/mobile/reports.png",
+    alt: "SiteGuard AI mobile reports screen.",
+    label: "Reports",
+    description: "Track trends and distributions without needing the full desktop dashboard.",
+  },
+];
+
 export const solutionCategories = [
   {
     id: "safety",

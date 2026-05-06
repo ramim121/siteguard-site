@@ -53,7 +53,7 @@ export function PageHero({
           </div>
         </div>
         <div className="hero-aside">
-          {!compact ? (
+          {!compact && panelPoints.length > 0 ? (
             <div className="glass-panel">
               <span className="eyebrow">{panelTitle}</span>
               <ul className="hero-list">
