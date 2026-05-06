@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   architectureSteps,
   homeMetrics,
-  homeHeroSignals,
   industryHighlights,
   operationalPillars,
   workflowCarouselSlides,
@@ -31,19 +30,6 @@ export default function HomePage() {
           />
         }
       />
-
-      <section className="section section-tight hero-signal-band">
-        <div className="section-inner">
-          <div className="hero-signal-grid">
-            {homeHeroSignals.map((signal) => (
-              <article className="hero-signal-card reveal rise" key={signal.title}>
-                <span>{signal.title}</span>
-                <p>{signal.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="section metrics-band">
         <div className="section-inner">

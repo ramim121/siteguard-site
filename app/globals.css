@@ -105,8 +105,9 @@ img {
   top: 0;
   z-index: 30;
   backdrop-filter: blur(18px);
-  background: rgba(248, 245, 239, 0.76);
-  border-bottom: 1px solid rgba(24, 36, 48, 0.08);
+  background: linear-gradient(180deg, rgba(15, 21, 30, 0.94), rgba(18, 26, 36, 0.88));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 36px rgba(7, 10, 15, 0.18);
 }
 
 .header-inner {
@@ -133,15 +134,15 @@ img {
 
 .brandmark-site,
 .brandmark-ai {
-  color: var(--teal-deep);
+  color: rgba(246, 241, 233, 0.94);
 }
 
 .brandmark-guard {
-  color: var(--amber);
+  color: #f8a649;
 }
 
 .brandmark-caption {
-  color: var(--muted);
+  color: rgba(214, 222, 231, 0.68);
   font-size: 0.92rem;
 }
 
@@ -150,22 +151,25 @@ img {
   align-items: center;
   gap: 0.45rem;
   padding: 0.35rem;
-  border: 1px solid rgba(24, 36, 48, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  background: rgba(255, 253, 249, 0.74);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .nav-link {
   padding: 0.8rem 1rem;
   border-radius: 999px;
-  color: var(--muted);
+  color: rgba(222, 229, 236, 0.76);
+  font-weight: 500;
   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
 .nav-link:hover,
 .nav-link-active {
-  color: var(--text);
-  background: rgba(92, 139, 135, 0.12);
+  color: #fff9f1;
+  background: linear-gradient(135deg, rgba(246, 139, 31, 0.2), rgba(70, 97, 127, 0.28));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .button {
@@ -457,11 +461,6 @@ img {
   padding-bottom: 3.4rem;
 }
 
-.section-tight {
-  padding-top: 0.35rem;
-  padding-bottom: 1.4rem;
-}
-
 .section-tinted {
   background: linear-gradient(180deg, rgba(255, 251, 245, 0.55), rgba(244, 238, 228, 0.7));
 }
@@ -659,17 +658,6 @@ img {
   color: rgba(247, 244, 238, 0.8);
 }
 
-.hero-signal-band {
-  overflow: visible;
-}
-
-.hero-signal-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.hero-signal-card,
 .image-carousel-surface .image-carousel-stage,
 .image-carousel-phone .image-carousel-stage {
   background: rgba(255, 252, 247, 0.84);
@@ -678,21 +666,6 @@ img {
   backdrop-filter: blur(16px);
 }
 
-.hero-signal-card {
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius-md);
-}
-
-.hero-signal-card span {
-  display: inline-block;
-  margin-bottom: 0.55rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.72rem;
-  color: var(--amber);
-}
-
-.hero-signal-card p,
 .image-carousel-meta p {
   margin: 0;
   color: var(--muted);
@@ -1813,10 +1786,6 @@ img {
 
   .solution-intro-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .hero-signal-grid {
-    grid-template-columns: 1fr;
   }
 
   .solution-tab-row {
