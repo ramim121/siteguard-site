@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   architectureSteps,
+  homeHeroSignals,
   homeMetrics,
   industryHighlights,
   operationalPillars,
@@ -8,28 +10,101 @@ import {
 } from "@/lib/content";
 import { ImageCarousel } from "@/components/image-carousel";
 import { IconMark } from "@/components/icon-mark";
-import { PageHero } from "@/components/page-hero";
-import { HeroVisual } from "@/components/hero-visual";
 import { SectionHeading } from "@/components/section-heading";
 
 export default function HomePage() {
+  const heroSignals = [
+    { ...homeHeroSignals[0], icon: "camera" as const },
+    { ...homeHeroSignals[1], icon: "radar" as const },
+    { ...homeHeroSignals[2], icon: "bell" as const },
+  ];
+
   return (
     <>
-      <PageHero
-        eyebrow="AI-powered visual intelligence"
-        title="Elegant operational awareness for modern sites."
-        description="SiteGuard AI transforms existing CCTV into a live layer of operational awareness for safety, compliance, and response across construction, manufacturing, banking, and multi-site operations."
-        primaryCta={{ href: "/contact", label: "Book a private demo" }}
-        secondaryCta={{ href: "/product", label: "Explore the platform" }}
-        panelPoints={[]}
-        visual={
-          <HeroVisual
-            src="/hero/home-dashboard-reference.png"
-            alt="SiteGuard AI dashboard reference showing automated site supervision, alert counts, charts, and recent alerts."
-            label="SiteGuard AI dashboard"
-          />
-        }
-      />
+      <section className="surveillance-hero">
+        <div className="section-inner surveillance-hero-inner">
+          <div className="surveillance-hero-copy reveal rise">
+            <span className="surveillance-kicker">CCTV surveillance AI system</span>
+            <h1>SiteGuard AI</h1>
+            <p>
+              Convert existing CCTV cameras into an always-on AI supervision
+              layer that detects PPE violations, intrusion, fire, unsafe
+              behavior, and operational incidents in real time.
+            </p>
+            <div className="surveillance-actions">
+              <Link className="button button-primary" href="/contact">
+                Book a private demo
+              </Link>
+              <Link className="button button-ghost-light" href="/product">
+                Explore the platform
+              </Link>
+            </div>
+          </div>
+
+          <div className="surveillance-command reveal rise" aria-label="AI CCTV surveillance preview">
+            <div className="command-topline">
+              <div>
+                <span>Live CCTV wall</span>
+                <strong>12 cameras monitored</strong>
+              </div>
+              <p>AI active</p>
+            </div>
+            <div className="camera-wall">
+              <article className="camera-tile camera-tile-large">
+                <Image
+                  src="/solutions/detections/face-recognition.png"
+                  alt="Live face recognition detection monitored by SiteGuard AI."
+                  fill
+                  priority
+                  sizes="(max-width: 980px) 100vw, 42vw"
+                />
+                <span className="feed-label">Zone A - Entry checkpoint</span>
+                <span className="detection-box detection-box-helmet">Face match</span>
+                <span className="detection-box detection-box-person">Identity verified</span>
+              </article>
+              <article className="camera-tile">
+                <Image
+                  src="/solutions/detections/fire-alert.png"
+                  alt="Fire and flame detection evidence in SiteGuard AI."
+                  fill
+                  sizes="(max-width: 980px) 50vw, 18vw"
+                />
+                <span className="feed-label">Fire detection</span>
+              </article>
+              <article className="camera-tile">
+                <Image
+                  src="/solutions/detections/intrusion.png"
+                  alt="Intrusion detection example in CCTV footage."
+                  fill
+                  sizes="(max-width: 980px) 50vw, 18vw"
+                />
+                <span className="feed-label">Restricted zone</span>
+              </article>
+            </div>
+            <div className="alert-console">
+              <div>
+                <span>Latest detection</span>
+                <strong>Fire alert with evidence clip</strong>
+              </div>
+              <p>00:12 ago</p>
+            </div>
+          </div>
+
+          <div className="surveillance-signal-row">
+            {heroSignals.map((signal) => (
+              <article key={signal.title} className="surveillance-signal-card reveal rise">
+                <div className="signal-icon">
+                  <IconMark name={signal.icon} />
+                </div>
+                <div>
+                  <h2>{signal.title}</h2>
+                  <p>{signal.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section metrics-band">
         <div className="section-inner">

@@ -136,9 +136,10 @@ export const platformMoments = [
 
 export const workflowCarouselSlides = [
   {
-    src: "/siteguard/live-feed.png",
-    alt: "Live feed view showing multiple camera zones in SiteGuard AI.",
+    src: "/siteguard/live-feed-six.png",
+    alt: "Generated SiteGuard AI live feed view showing six camera zones with active detections.",
     label: "Live feed monitoring",
+    description: "A six-camera surveillance wall with live AI labels for identity, fire, PPE, intrusion, occupancy, and parking.",
   },
   {
     src: "/siteguard/reports.png",
@@ -269,10 +270,10 @@ export const solutionCategoryTabs = [
     ],
     slides: [
       {
-        title: "Helmet compliance",
-        description: "Live monitoring highlights missing helmets in active work zones.",
-        image: "/solutions/detections/no-helmet.png",
-        objectPosition: "left center",
+        title: "PPE compliance",
+        description: "Live monitoring verifies helmets, vests, and worker safety compliance in active work zones.",
+        image: "/solutions/detections/ppe-detection-clean.png",
+        objectPosition: "center center",
       },
       {
         title: "Safety vest detection",
@@ -370,19 +371,19 @@ export const solutionCategoryTabs = [
       {
         title: "People counting",
         description: "Counts footfall and detects crowd build-up in monitored zones.",
-        image: "/solutions/detections/human-count.png",
+        image: "/solutions/detections/total-number-count-clean.png",
         objectPosition: "center center",
       },
       {
         title: "Occupancy monitoring",
         description: "Helps track density thresholds and queue conditions in real time.",
-        image: "/solutions/detections/human-count.png",
+        image: "/solutions/detections/total-number-count-clean.png",
         objectPosition: "center top",
       },
       {
         title: "Zone movement review",
         description: "Shows how traffic moves through sensitive or high-throughput spaces.",
-        image: "/solutions/detections/human-count.png",
+        image: "/solutions/detections/total-number-count-clean.png",
         objectPosition: "left center",
       },
     ],
@@ -425,12 +426,21 @@ export const solutionCategoryTabs = [
 export const solutionExperienceDetections = [
   {
     id: "helmet-compliance",
-    title: "Helmet compliance",
+    title: "PPE compliance",
+    tag: "PPE",
+    categoryId: "safety",
+    image: "/solutions/detections/ppe-detection-clean.png",
+    objectPosition: "center center",
+    description: "Detects helmet, vest, and worker PPE compliance from live CCTV footage.",
+  },
+  {
+    id: "helmet-violation",
+    title: "Helmet violation",
     tag: "PPE",
     categoryId: "safety",
     image: "/solutions/detections/no-helmet.png",
     objectPosition: "left center",
-    description: "Detects missing safety helmets and PPE gaps in active work zones.",
+    description: "Escalates missing helmet events with evidence-ready visual context.",
   },
   {
     id: "safety-vest",
@@ -460,6 +470,15 @@ export const solutionExperienceDetections = [
     objectPosition: "left top",
   },
   {
+    id: "mask-compliance",
+    title: "Mask compliance",
+    tag: "PPE",
+    categoryId: "safety",
+    image: "/solutions/detections/ppe-detection-clean.png",
+    objectPosition: "center center",
+    description: "Supports visual checks for mask and worker protection rules in controlled areas.",
+  },
+  {
     id: "face-recognition",
     title: "Face recognition",
     tag: "Identity",
@@ -478,13 +497,40 @@ export const solutionExperienceDetections = [
     description: "Identifies unattended objects and keeps a timestamped review trail.",
   },
   {
+    id: "after-hours-entry",
+    title: "After-hours entry",
+    tag: "Security",
+    categoryId: "security",
+    image: "/solutions/detections/intrusion.png",
+    objectPosition: "center center",
+    description: "Flags unauthorized presence in restricted areas outside approved schedules.",
+  },
+  {
     id: "people-counting",
-    title: "People counting",
+    title: "Human count",
     tag: "Occupancy",
     categoryId: "people",
-    image: "/solutions/detections/human-count.png",
+    image: "/solutions/detections/total-number-count-clean.png",
     objectPosition: "center center",
     description: "Measures movement, crowding, and zone occupancy for operational insight.",
+  },
+  {
+    id: "crowd-density",
+    title: "Crowd density",
+    tag: "Occupancy",
+    categoryId: "people",
+    image: "/solutions/detections/total-number-count-clean.png",
+    objectPosition: "center center",
+    description: "Highlights density build-up in lobbies, queues, work floors, and access points.",
+  },
+  {
+    id: "queue-monitoring",
+    title: "Queue monitoring",
+    tag: "People flow",
+    categoryId: "people",
+    image: "/solutions/detections/total-number-count-clean.png",
+    objectPosition: "center center",
+    description: "Tracks waiting-line pressure and service-area congestion through camera views.",
   },
   {
     id: "sleep-on-duty",
@@ -514,6 +560,15 @@ export const solutionExperienceDetections = [
     description: "Highlights smoking events in restricted or safety-sensitive areas.",
   },
   {
+    id: "altercation-risk",
+    title: "Altercation risk",
+    tag: "Behavior",
+    categoryId: "behavior",
+    image: "/solutions/detections/face-recognition.png",
+    objectPosition: "right center",
+    description: "Supports visual review of aggressive or unusual behavior in public-facing zones.",
+  },
+  {
     id: "no-parking",
     title: "No-parking enforcement",
     tag: "Traffic",
@@ -521,6 +576,24 @@ export const solutionExperienceDetections = [
     image: "/solutions/detections/no-parking.png",
     objectPosition: "left top",
     description: "Tracks parked vehicles blocking controlled lanes, service points, or emergency access routes.",
+  },
+  {
+    id: "vehicle-dwell",
+    title: "Vehicle dwell-time",
+    tag: "Traffic",
+    categoryId: "traffic",
+    image: "/solutions/detections/no-parking.png",
+    objectPosition: "left top",
+    description: "Tracks how long vehicles remain in loading, gate, or emergency access positions.",
+  },
+  {
+    id: "restricted-zone",
+    title: "Restricted zone breach",
+    tag: "Traffic",
+    categoryId: "traffic",
+    image: "/solutions/detections/intrusion.png",
+    objectPosition: "right top",
+    description: "Escalates zone violations for pedestrians, vehicles, and controlled access routes.",
   },
 ];
 

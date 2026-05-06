@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "@/app/globals.css";
 import { Footer } from "@/components/footer";
 import { SiteHeader } from "@/components/site-header";
-
-const display = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
-});
 
 const body = Instrument_Sans({
   subsets: ["latin"],
@@ -29,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable}`}>
+      <body className={body.variable}>
         <div className="site-shell">
           <div className="ambient ambient-one" />
           <div className="ambient ambient-two" />
