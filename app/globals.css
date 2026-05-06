@@ -224,6 +224,12 @@ img {
   line-height: 1.62;
 }
 
+.hero-compact .hero-copy,
+.hero-compact .hero-aside,
+.hero-compact .hero-visual {
+  min-width: 0;
+}
+
 .hero-shell {
   position: absolute;
   inset: 0;
@@ -1905,12 +1911,46 @@ img {
     max-width: 100%;
   }
 
+  .hero-compact .hero-inner {
+    gap: 1rem;
+  }
+
+  .hero-compact .hero-aside {
+    max-width: min(100%, 34rem);
+    margin: 0 auto;
+  }
+
+  .hero-compact .hero-chip-group {
+    position: static;
+    left: auto;
+    bottom: auto;
+    max-width: 100%;
+    margin-top: 0.85rem;
+  }
+
+  .hero-compact .hero-chip {
+    width: auto;
+    max-width: 100%;
+    font-size: 0.76rem;
+    padding: 0.6rem 0.78rem;
+  }
+
   .hero-copy h1 {
     max-width: 13ch;
   }
 
   .hero-compact .hero-copy h1 {
     max-width: 15ch;
+  }
+
+  .hero-compact .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-compact .hero-visual-frame img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
   }
 
   .hero-actions .button,
@@ -1955,6 +1995,12 @@ img {
     max-width: 13ch;
   }
 
+  .hero-compact .eyebrow {
+    margin-bottom: 0.8rem;
+    font-size: 0.71rem;
+    letter-spacing: 0.16em;
+  }
+
   .hero-copy p,
   .hero-compact .hero-copy p {
     font-size: 0.94rem;
@@ -1964,6 +2010,10 @@ img {
   .hero-inner,
   .hero-compact .hero-inner {
     gap: 1.15rem;
+  }
+
+  .hero-compact .hero-aside {
+    max-width: 100%;
   }
 
   .hero-visual-frame,
@@ -1996,7 +2046,6 @@ img {
   }
 
   .hero-chip {
-    width: 100%;
     font-size: 0.78rem;
     padding: 0.64rem 0.8rem;
   }
@@ -2170,6 +2219,10 @@ img {
 
   .hero-compact .hero-copy h1 {
     font-size: clamp(1.75rem, 9vw, 2.2rem);
+  }
+
+  .hero-compact .hero-copy p {
+    font-size: 0.9rem;
   }
 
   .hero-actions {
