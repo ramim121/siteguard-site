@@ -1,5 +1,14 @@
 import type { IconName } from "@/components/icon-mark";
 
+/* ------------------------------------------------------------------ Brand */
+export const brand = {
+  name: "SiteGuard",
+  masterTagline: "Turn your cameras into a 24/7 safety system.",
+  mission: "Make every camera intelligent, so no critical moment goes unseen.",
+  email: "info@site-guard.ai",
+  website: "site-guard.ai",
+};
+
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/product", label: "Platform" },
@@ -8,787 +17,1187 @@ export const navigation = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const homeMetrics = [
+export const campaignLines = [
+  "Every camera, now intelligent.",
+  "Spotted in seconds, not hindsight.",
+  "See everything. Miss nothing.",
+  "Any camera. Total awareness.",
+  "From footage to foresight.",
+];
+
+/* ------------------------------------------------------------ Brand pillars */
+export const brandPillars: { title: string; description: string; icon: IconName }[] = [
   {
-    value: "15+",
-    label: "AI detections",
-    icon: "radar" as IconName,
-    description: "Safety, security, behavior, and operational event types running in real time.",
+    title: "Proactive",
+    description: "We prevent and warn — we don't just record the past.",
+    icon: "radar",
+  },
+  {
+    title: "Real-time",
+    description: "Event to alert in 0–3 seconds, every single time.",
+    icon: "zap",
+  },
+  {
+    title: "Any camera",
+    description: "Works with the CCTV and network you already run.",
+    icon: "camera",
+  },
+  {
+    title: "Trustworthy",
+    description: "Consent-based, configurable, privacy-aware by design.",
+    icon: "shield",
+  },
+  {
+    title: "Always on",
+    description: "24/7 coverage with zero fatigue and zero blind spots.",
+    icon: "clock",
+  },
+];
+
+/* --------------------------------------------------------------- Home metrics */
+export const homeMetrics: { value: string; label: string; description: string }[] = [
+  {
+    value: "90+",
+    label: "Detection models",
+    description: "Across threat, fire, PPE, behaviour, people, vehicles and environment.",
+  },
+  {
+    value: "0–3s",
+    label: "Event to alert",
+    description: "From the moment a detection fires to the right person being notified.",
   },
   {
     value: "0",
-    label: "New cameras required",
-    icon: "camera" as IconName,
-    description: "SiteGuard connects to existing CCTV infrastructure through the current video environment.",
+    label: "New cameras needed",
+    description: "Runs on the existing CCTV and network estate you already operate.",
   },
   {
     value: "24/7",
-    label: "Zero-fatigue monitoring",
-    icon: "shield" as IconName,
-    description: "Continuous event awareness without relying on manual viewing or inspection rounds.",
-  },
-  {
-    value: "30 days",
-    label: "Fast ROI horizon",
-    icon: "activity" as IconName,
-    description: "Deployment value becomes visible quickly through labor savings, compliance, and response time.",
+    label: "Zero-fatigue coverage",
+    description: "Every feed analysed at once, continuously, with no blind spots.",
   },
 ];
 
-export const operationalPillars = [
+/* ------------------------------------------------------- Operational pillars */
+export const operationalPillars: { title: string; description: string; icon: IconName }[] = [
   {
-    title: "Detect what manual supervision misses",
-    icon: "alert" as IconName,
+    title: "Detect what supervision misses",
+    icon: "scan",
     description:
-      "PPE breaches, fire, intrusion, behavior risk, and unattended objects are surfaced as soon as they occur.",
+      "Weapons, fire, intrusion, PPE breaches and unsafe behaviour are surfaced the instant they happen.",
   },
   {
-    title: "Alert the right people instantly",
-    icon: "bell" as IconName,
+    title: "Alert the right person instantly",
+    icon: "bell",
     description:
-      "Teams can route events to supervisors, managers, or security personnel with evidence and timestamps attached.",
+      "Push, SMS or email routes each event to the right staff with the exact camera and an evidence clip.",
   },
   {
-    title: "Turn daily incidents into management insight",
-    icon: "dashboard" as IconName,
+    title: "Turn incidents into insight",
+    icon: "dashboard",
     description:
-      "Dashboard views and reports reveal patterns across shifts, zones, and sites instead of isolated alerts.",
+      "One dashboard for live feeds, event logs and exportable reports across every shift, zone and site.",
   },
 ];
 
-export const architectureSteps = [
+/* --------------------------------------------------------------- How it works */
+export const howItWorks: { step: string; title: string; description: string; icon: IconName }[] = [
   {
     step: "01",
-    title: "Ingest",
+    title: "Connect",
+    icon: "plug",
     description:
-      "Existing IP cameras stream video into the SiteGuard edge layer through standard CCTV protocols.",
+      "Plugs into existing IP cameras and NVRs over RTSP / ONVIF — no rewiring, no new hardware in most cases.",
   },
   {
     step: "02",
-    title: "Analyze",
+    title: "Detect",
+    icon: "cpu",
     description:
-      "AI models monitor multiple event categories simultaneously and assess what needs attention in real time.",
+      "AI models run on the edge box, analysing every feed in real time, 24/7, across all event categories.",
   },
   {
     step: "03",
     title: "Alert",
+    icon: "bell",
     description:
-      "Incidents trigger immediate notifications with severity, source context, and supporting evidence clips.",
+      "Instant push, SMS or email to the right staff — with the exact camera, a clip and full context.",
   },
   {
     step: "04",
-    title: "Review",
+    title: "Analyze",
+    icon: "dashboard",
     description:
-      "Leadership accesses live feeds, alert history, and performance reporting through a central dashboard.",
+      "One dashboard for live feeds, event logs and exportable reports for review and compliance.",
   },
 ];
 
-export const industryHighlights = [
+/* --------------------------------------------------------- System architecture */
+export const systemArchitecture: { step: string; title: string; description: string }[] = [
   {
-    name: "Construction",
-    tag: "High-risk field operations",
-    icon: "hardHat" as IconName,
-    summary:
-      "Improve PPE enforcement, fire awareness, intrusion monitoring, and restricted-zone supervision across dynamic sites.",
-    focusAreas: ["Helmet & PPE compliance", "Fire and smoke detection", "No-parking and intrusion monitoring"],
+    step: "01",
+    title: "Front-end collecting",
+    description:
+      "Integrated, dome, semi-dome and handheld network cameras feed the existing CCTV environment.",
   },
   {
-    name: "Manufacturing",
-    tag: "Continuous production floors",
-    icon: "factory" as IconName,
-    summary:
-      "Reduce blind spots around machinery, detect unsafe behavior, and maintain floor-wide visibility without adding new hardware.",
-    focusAreas: ["Safety vest and mask compliance", "Phone-use detection", "Abandoned object monitoring"],
+    step: "02",
+    title: "Switches pooling",
+    description:
+      "Network switches and the NVR normalise and pool every stream for stable, resilient ingest.",
   },
   {
-    name: "Banking",
-    tag: "Service and security environments",
-    icon: "landmark" as IconName,
-    summary:
-      "Combine compliance, customer-floor visibility, and security intelligence in high-throughput public spaces.",
-    focusAreas: ["Face recognition", "Sleep-on-duty detection", "Altercation and intrusion alerts"],
+    step: "03",
+    title: "Edge data computing",
+    description:
+      "The SiteGuard AI Box runs detection beside a streaming-media server and local data storage.",
+  },
+  {
+    step: "04",
+    title: "Platform accessing",
+    description:
+      "Web platform, admin control and mobile app surface live status, evidence and controls instantly.",
   },
 ];
 
-export const platformMoments = [
+/* ----------------------------------------------------------- Detection families */
+export const detectionFamilies: {
+  id: string;
+  name: string;
+  count: string;
+  color: string;
+  icon: IconName;
+  description: string;
+  models: string[];
+}[] = [
+  {
+    id: "people",
+    name: "People & Access",
+    count: "12 models",
+    color: "#1c8c7a",
+    icon: "users",
+    description: "Identity, occupancy and movement across entries, perimeters and zones.",
+    models: [
+      "Face Recognition",
+      "People Counting",
+      "Enter / Leave Area",
+      "Cross-line",
+      "Tripwire",
+      "Overcrowding",
+      "Intrusion",
+      "License-Plate (LPC)",
+    ],
+  },
+  {
+    id: "threat",
+    name: "Threat & Fire",
+    count: "16 models",
+    color: "#c1473d",
+    icon: "flame",
+    description: "The highest-stakes, life-safety detections demanding instant action.",
+    models: [
+      "Knife / Stick",
+      "Fight",
+      "Fall",
+      "Fire",
+      "Smoke & Fume",
+      "Gas Leak",
+      "Oil Leak",
+      "Blocked Evacuation Route",
+      "No Fire Extinguisher",
+    ],
+  },
+  {
+    id: "ppe",
+    name: "PPE & Compliance",
+    count: "13 models",
+    color: "#c57a1c",
+    icon: "hardHat",
+    description: "Continuous checks for protective equipment and dress-code rules.",
+    models: [
+      "Helmet",
+      "Hi-Vis Vest",
+      "Face Mask",
+      "Gloves",
+      "Goggles",
+      "Safety Belt",
+      "Chef Hat / Uniform",
+      "Exposed Long Hair",
+      "Work Clothes",
+    ],
+  },
+  {
+    id: "behaviour",
+    name: "Behaviour & Activity",
+    count: "14 models",
+    color: "#5b6ccb",
+    icon: "activity",
+    description: "Risky or non-compliant behaviour that happens between rounds.",
+    models: [
+      "Smoking",
+      "Phone / Calling",
+      "Sleeping / Absence",
+      "Long Stay",
+      "People Gathering",
+      "Quick Moving",
+      "Inadequate Worker",
+    ],
+  },
+  {
+    id: "vehicle",
+    name: "Vehicle & Traffic",
+    count: "18 models",
+    color: "#3e7c8c",
+    icon: "car",
+    description: "Parking, speed, congestion and access discipline for vehicles.",
+    models: [
+      "Illegal Parking",
+      "Overspeed",
+      "Forklift",
+      "Congestion",
+      "Wrong-Way",
+      "Traffic Accident",
+      "Pedestrian Intrusion",
+      "Emergency Lane",
+    ],
+  },
+  {
+    id: "environment",
+    name: "Environment & Housekeeping",
+    count: "19 models",
+    color: "#5e8a4e",
+    icon: "leaf",
+    description: "Sanitation, hazards and site upkeep across community settings.",
+    models: [
+      "Trash Overflow",
+      "Debris Stacking",
+      "Exposed / Bagged Trash",
+      "Water Accumulation",
+      "Rat",
+      "Dog",
+      "Bare Soil",
+      "Dump-Truck Tarp",
+    ],
+  },
+];
+
+/* ------------------------------------------------------------- Scenario packs */
+export const scenarioPacks: { name: string; count: string; icon: IconName; focus: string }[] = [
+  { name: "Safe School", count: "16 models", icon: "school", focus: "Safeguarding, behaviour, access" },
+  { name: "Smart Hospital", count: "18 models", icon: "heart", focus: "Falls, wandering, ward safety" },
+  { name: "Construction Site", count: "12 models", icon: "hardHat", focus: "Helmet/vest, intrusion, falls" },
+  { name: "Bright Kitchen", count: "10 models", icon: "chefHat", focus: "Hygiene, uniform, fire" },
+  { name: "Safe Community", count: "19 models", icon: "building", focus: "Housekeeping, access, behaviour" },
+  { name: "Safe Production", count: "18 models", icon: "factory", focus: "PPE, leaks, restricted zones" },
+  { name: "Gas Station", count: "10 models", icon: "fuel", focus: "Fueling safety, fire, loitering" },
+  { name: "Highway", count: "15 models", icon: "route", focus: "Accidents, wrong-way, congestion" },
+  { name: "Expressway Service", count: "18 models", icon: "warehouse", focus: "Housekeeping, behaviour, vehicles" },
+  { name: "Rural Road", count: "12 models", icon: "truck", focus: "Dumping, vehicles, gatherings" },
+  { name: "Common", count: "20 models", icon: "radar", focus: "The cross-industry baseline pack" },
+];
+
+/* ------------------------------------------------------------- Severity model */
+export const severityLevels: {
+  key: string;
+  name: string;
+  code: string;
+  hex: string;
+  description: string;
+  examples: string;
+}[] = [
+  {
+    key: "critical",
+    name: "Critical",
+    code: "DANGER",
+    hex: "#D6453C",
+    description: "Immediate risk to life or security. Can trigger lockdown, PA or call-out.",
+    examples: "Weapon · Fire · Fall · Intrusion",
+  },
+  {
+    key: "warning",
+    name: "Warning",
+    code: "WARN",
+    hex: "#E2922E",
+    description: "Policy or safety breach needing review. Logged and routed to the right staff.",
+    examples: "Smoking · Missing PPE · Overspeed",
+  },
+  {
+    key: "info",
+    name: "Info",
+    code: "INFO",
+    hex: "#5B6CCB",
+    description: "Operational awareness and analytics. No action required — feeds counts and trends.",
+    examples: "People counting · Enter / Leave · Long stay",
+  },
+  {
+    key: "access",
+    name: "Resolved",
+    code: "OK",
+    hex: "#1C8C7A",
+    description: "Acknowledged, cleared or system-healthy. The calm, all-clear state.",
+    examples: "Acknowledged · Cameras online",
+  },
+];
+
+/* ----------------------------------------------------------------- Industries */
+export const industries: {
+  slug: string;
+  name: string;
+  tag: string;
+  icon: IconName;
+  pack: string;
+  summary: string;
+  focus: string[];
+  status: "live" | "soon";
+  href?: string;
+}[] = [
+  {
+    slug: "schools",
+    name: "Schools & Campuses",
+    tag: "Safeguarding · behaviour · access",
+    icon: "school",
+    pack: "Safe School pack",
+    summary:
+      "Turn corridors, gates and yards into a 24/7 safety system — weapons, fire, vaping, wandering and access, all detected in seconds.",
+    focus: ["Weapon & fire", "Vaping & phones", "Area entry / exit", "Face recognition"],
+    status: "live",
+    href: "/industries/schools",
+  },
+  {
+    slug: "manufacturing",
+    name: "Manufacturing & Warehousing",
+    tag: "PPE · hazards · restricted zones",
+    icon: "factory",
+    pack: "Safe Production pack",
+    summary:
+      "Floor-wide visual supervision for PPE compliance, machinery exclusion zones, leaks and unsafe behaviour without adding hardware.",
+    focus: ["Helmet & vest", "Gas / oil leak", "Forklift safety", "Restricted zones"],
+    status: "soon",
+  },
+  {
+    slug: "construction",
+    name: "Construction Sites",
+    tag: "Helmet/vest · intrusion · falls",
+    icon: "hardHat",
+    pack: "Construction Site pack",
+    summary:
+      "Fast-changing, multi-zone sites get continuous PPE enforcement, fall and intrusion alerts, and clear vehicle discipline.",
+    focus: ["Helmet & harness", "Fall detection", "Intrusion", "Dump-truck tarp"],
+    status: "live",
+    href: "/industries/construction",
+  },
+  {
+    slug: "healthcare",
+    name: "Healthcare & Aged Care",
+    tag: "Falls · wandering · ward safety",
+    icon: "heart",
+    pack: "Smart Hospital pack",
+    summary:
+      "Ward-safe supervision for falls, wandering, gatherings and restricted-area access — a quiet welfare check, not a public call-out.",
+    focus: ["Fall detection", "Long stay", "Area entry", "People gathering"],
+    status: "soon",
+  },
+  {
+    slug: "retail",
+    name: "Retail & Commercial",
+    tag: "Theft · crowding · queue analytics",
+    icon: "store",
+    pack: "Common pack",
+    summary:
+      "Service-floor visibility that pairs loss-prevention, crowd and queue analytics with perimeter and incident awareness.",
+    focus: ["Intrusion", "Crowd density", "Queue analytics", "Face recognition"],
+    status: "soon",
+  },
+  {
+    slug: "transport",
+    name: "Transport & Logistics",
+    tag: "Perimeter · vehicles · loading bays",
+    icon: "truck",
+    pack: "Highway / Expressway pack",
+    summary:
+      "Perimeter security, vehicle discipline and loading-bay supervision across yards, depots and access routes.",
+    focus: ["Perimeter", "Overspeed", "Wrong-way", "Loading bays"],
+    status: "soon",
+  },
+];
+
+/* --------------------------------------------------------------- Outcomes */
+export const outcomes: { title: string; description: string; icon: IconName }[] = [
+  {
+    title: "Faster response",
+    icon: "zap",
+    description: "Alerts in seconds to the right staff — not a review of footage after the fact.",
+  },
+  {
+    title: "Safer behaviour",
+    icon: "shield",
+    description: "People self-correct when they know risks are detected consistently.",
+  },
+  {
+    title: "Evidence on demand",
+    icon: "fileChart",
+    description: "Time-stamped clips for records, incident reviews and audits.",
+  },
+  {
+    title: "Lighter staff load",
+    icon: "users",
+    description: "No more watching a wall of monitors hoping to catch the one thing that matters.",
+  },
+  {
+    title: "No new hardware",
+    icon: "camera",
+    description: "Runs on the CCTV and network you already operate — most sites add nothing.",
+  },
+  {
+    title: "Multi-site view",
+    icon: "dashboard",
+    description: "Manage many sites from one dashboard, with consistent rules everywhere.",
+  },
+];
+
+/* --------------------------------------------------------- Detection frames */
+export type FrameData = {
+  category: "critical" | "hazard" | "behaviour" | "access";
+  cam: string;
+  zone: string;
+  timestamp: string;
+  objectTag: string;
+  model: string;
+  label: string;
+  confidence: string;
+  glyph: string;
+};
+
+export const heroFrames: FrameData[] = [
+  {
+    category: "critical",
+    cam: "CAM 01 · GATE A",
+    zone: "ZONE A",
+    timestamp: "29 JUN 2026 · 13:47:34",
+    objectTag: "OBJ-01 · KNIFE",
+    model: "KnifeStickDetection",
+    label: "Weapon detected",
+    confidence: "96",
+    glyph: "/brand/no-weapons.png",
+  },
+  {
+    category: "access",
+    cam: "CAM 16 · ENTRANCE",
+    zone: "ZONE A",
+    timestamp: "29 JUN 2026 · 13:48:02",
+    objectTag: "FACE · MATCH",
+    model: "FaceRecognition",
+    label: "Identity verified",
+    confidence: "99",
+    glyph: "/brand/face_recognition.png",
+  },
+];
+
+export const sectionFrames: FrameData[] = [
+  {
+    category: "critical",
+    cam: "CAM 09 · SCIENCE LAB 2",
+    zone: "ZONE C",
+    timestamp: "29 JUN 2026 · 09:14:51",
+    objectTag: "OBJ · FLAME",
+    model: "FireDetection",
+    label: "Fire detected",
+    confidence: "97",
+    glyph: "/brand/fire_flame.png",
+  },
+  {
+    category: "hazard",
+    cam: "CAM 15 · WASHROOM 3",
+    zone: "ZONE B",
+    timestamp: "29 JUN 2026 · 12:40:51",
+    objectTag: "OBJ · CIGARETTE",
+    model: "SmokingAlarm",
+    label: "Smoking detected",
+    confidence: "93",
+    glyph: "/brand/smoking.png",
+  },
+  {
+    category: "behaviour",
+    cam: "CAM 18 · EXAM HALL",
+    zone: "ZONE A",
+    timestamp: "29 JUN 2026 · 10:22:08",
+    objectTag: "OBJ · PHONE",
+    model: "PlayMobilePhoneDetection",
+    label: "Phone in use",
+    confidence: "95",
+    glyph: "/brand/using_phone.png",
+  },
+  {
+    category: "access",
+    cam: "CAM 06 · MAIN HALL",
+    zone: "ZONE A",
+    timestamp: "29 JUN 2026 · 08:31:12",
+    objectTag: "COUNT · 132",
+    model: "AreaPeopleCounting",
+    label: "Occupancy 132 / 150",
+    confidence: "—",
+    glyph: "/brand/human_counting.png",
+  },
+];
+
+/* ----------------------------------------------------------- Live ticker feed */
+export const tickerEvents: { name: string; loc: string; severity: string }[] = [
+  { name: "Knife / Stick", loc: "NYK OLD KI", severity: "critical" },
+  { name: "Smoking", loc: "NYK NEW FL", severity: "warning" },
+  { name: "Fire / Smoke", loc: "LAB 2", severity: "critical" },
+  { name: "People Gathering", loc: "NYK OLD KI", severity: "info" },
+  { name: "No Helmet", loc: "GATE A", severity: "warning" },
+  { name: "Fall Detected", loc: "WARD 4", severity: "critical" },
+  { name: "Enter Area", loc: "DOCK 3", severity: "info" },
+  { name: "Overspeed", loc: "LOT B", severity: "warning" },
+  { name: "Phone Use", loc: "ROOM 12", severity: "info" },
+  { name: "Face Match", loc: "RECEPTION", severity: "access" },
+  { name: "Mask Compliance", loc: "SICK BAY", severity: "warning" },
+  { name: "Sleeping", loc: "NYK OLD IM", severity: "warning" },
+];
+
+/* ----------------------------------------------------------- Platform screens */
+export const platformScreens = {
+  dashboard: {
+    src: "/app/dashboard.png",
+    alt: "SiteGuard command dashboard with camera health, severity counts and recent alerts.",
+    label: "Dashboard · Live Monitor",
+  },
+  live: {
+    src: "/app/live.png",
+    alt: "SiteGuard live multi-camera monitoring grid.",
+    label: "Live · Camera wall",
+  },
+  alerts: {
+    src: "/app/alerts.png",
+    alt: "SiteGuard alert history table with severity pills, cameras and evidence thumbnails.",
+    label: "Alerts · History",
+  },
+  alertDetail: {
+    src: "/app/alert-detail.png",
+    alt: "SiteGuard alert detail modal showing a detection frame with bounding box and actions.",
+    label: "Alerts · Detail",
+  },
+  faces: {
+    src: "/app/face-recognition.png",
+    alt: "SiteGuard facial recognition view matching a face against enrolled records.",
+    label: "Faces · Recognition",
+  },
+  reports: {
+    src: "/app/reports.png",
+    alt: "SiteGuard reports and analytics with alert trends, per-camera and distribution charts.",
+    label: "Reports · Analytics",
+  },
+  cameras: {
+    src: "/app/cameras.png",
+    alt: "SiteGuard camera management view.",
+    label: "Cameras · Management",
+  },
+};
+
+export const platformMoments: { eyebrow: string; title: string; description: string; icon: IconName }[] = [
   {
     eyebrow: "Live operations",
-    title: "A clean multi-camera live view.",
-    icon: "camera" as IconName,
+    title: "A clean multi-camera live wall.",
+    icon: "camera",
     description:
-      "Monitor several critical zones at once without sacrificing legibility or calm operational control.",
+      "Monitor critical zones at once without losing legibility or calm operational control.",
   },
   {
     eyebrow: "Alert intelligence",
-    title: "Every incident comes with immediate context.",
-    icon: "bell" as IconName,
+    title: "Every incident arrives with context.",
+    icon: "bell",
     description:
-      "Severity, camera source, location, and timeline appear together so teams can respond without delay.",
+      "Severity, model, camera, location, confidence and a clip appear together so teams act fast.",
   },
   {
     eyebrow: "Trend reporting",
-    title: "Analytics move the product beyond surveillance.",
-    icon: "dashboard" as IconName,
+    title: "From incidents to patterns.",
+    icon: "dashboard",
     description:
-      "Zone trends, event distribution, and repeated violations become visible to both operations and leadership.",
+      "Alert trends, per-camera severity and detection distribution for operations and leadership.",
   },
 ];
-
-export const workflowCarouselSlides = [
-  {
-    src: "/siteguard/live-feed-six.png",
-    alt: "Generated SiteGuard AI live feed view showing six camera zones with active detections.",
-    label: "Live feed monitoring",
-    description: "A six-camera surveillance wall with live AI labels for identity, fire, PPE, intrusion, occupancy, and parking.",
-  },
-  {
-    src: "/siteguard/reports.png",
-    alt: "Reporting and analytics dashboard in SiteGuard AI.",
-    label: "Reporting analytics",
-  },
-  {
-    src: "/siteguard/alerts.png",
-    alt: "Alert stream cropped to highlight actionable detections.",
-    label: "Actionable alert stream",
-    cropped: true,
-    objectPosition: "left top",
-  },
-  {
-    src: "/siteguard/dashboard.png",
-    alt: "Central SiteGuard dashboard overview.",
-    label: "Central command surface",
-  },
-];
-
-export const homeHeroSignals = [
-  {
-    title: "Existing CCTV",
-    description: "Deploy on the camera estate you already have, without a disruptive hardware reset.",
-  },
-  {
-    title: "15+ AI models",
-    description: "Cover safety, security, behavior, and operational events through one coordinated layer.",
-  },
-  {
-    title: "Evidence-led reporting",
-    description: "Move from raw footage to timestamped incidents and management-ready operational review.",
-  },
-];
-
-export const mobileAppSlides = [
-  {
-    src: "/mobile/dashboard.png",
-    alt: "SiteGuard AI mobile dashboard screen.",
-    label: "Mobile dashboard",
-    description: "A compact command view for camera health, alerts, and daily activity.",
-  },
-  {
-    src: "/mobile/live.png",
-    alt: "SiteGuard AI mobile live monitoring screen.",
-    label: "Live monitoring",
-    description: "Review active camera zones and visual detections in a handheld format.",
-  },
-  {
-    src: "/mobile/alerts.png",
-    alt: "SiteGuard AI mobile alert history screen.",
-    label: "Alert history",
-    description: "Scroll incident timelines, severity, and status updates from the field.",
-  },
-  {
-    src: "/mobile/reports.png",
-    alt: "SiteGuard AI mobile reports screen.",
-    label: "Reports",
-    description: "Track trends and distributions without needing the full desktop dashboard.",
-  },
-];
-
-export const solutionCategories = [
-  {
-    id: "safety",
-    eyebrow: "Safety and PPE",
-    name: "Worker protection and compliance",
-    icon: "hardHat" as IconName,
-    image: "/hero/solution-safety.svg",
-    description:
-      "Deploy continuous PPE and environment monitoring without relying on periodic inspections.",
-    items: ["Helmet compliance", "Safety vest detection", "Mask compliance", "Fire and flame detection"],
-  },
-  {
-    id: "security",
-    eyebrow: "Security and perimeter",
-    name: "Restricted access and incident control",
-    icon: "shield" as IconName,
-    image: "/hero/solution-security.svg",
-    description:
-      "Turn passive CCTV into a perimeter-aware supervision system with evidence-backed escalation.",
-    items: ["Intrusion detection", "Face recognition", "Altercation detection", "Abandoned object tracking"],
-  },
-  {
-    id: "behavior",
-    eyebrow: "Behavior and activity",
-    name: "Operational behavior awareness",
-    icon: "activity" as IconName,
-    image: "/hero/solution-behavior.svg",
-    description:
-      "Catch risky or non-compliant behavior that tends to happen between human supervision rounds.",
-    items: ["Sleep on duty", "Smoking detection", "Using phone detection", "Motion-based trigger logic"],
-  },
-  {
-    id: "people",
-    eyebrow: "People and movement",
-    name: "Density, occupancy, and zone intelligence",
-    icon: "users" as IconName,
-    image: "/hero/solution-people.svg",
-    description:
-      "Understand who is where, when occupancy risks build, and how traffic behaves across a site.",
-    items: ["Human counting", "Occupancy limits", "Heat-map potential", "Combined identity and movement tracking"],
-  },
-  {
-    id: "traffic",
-    eyebrow: "Traffic and access",
-    name: "Vehicle and zone discipline",
-    icon: "warehouse" as IconName,
-    image: "/hero/solution-traffic.svg",
-    description:
-      "Keep loading zones, emergency access routes, and sensitive site areas operationally clear.",
-    items: ["No-parking enforcement", "Vehicle dwell-time rules", "Zone-based escalation", "Central review trail"],
-  },
-];
-
-export const solutionCategoryTabs = [
-  {
-    id: "safety",
-    eyebrow: "Safety and PPE",
-    title: "Worker protection and compliance",
-    icon: "hardHat" as IconName,
-    description:
-      "Deploy continuous visual checks for PPE, life-safety, and hazardous-zone compliance without relying on manual rounds.",
-    bullets: [
-      "Ideal for construction, manufacturing, and contractor-heavy sites",
-      "Flags missing helmet, vest, or mask events in seconds",
-      "Keeps a timestamped evidence trail for response and reporting",
-    ],
-    slides: [
-      {
-        title: "PPE compliance",
-        description: "Live monitoring verifies helmets, vests, and worker safety compliance in active work zones.",
-        image: "/solutions/detections/ppe-detection-clean.png",
-        objectPosition: "center center",
-      },
-      {
-        title: "Safety vest detection",
-        description: "Visual rules help verify high-visibility gear in shared operational areas.",
-        image: "/solutions/detections/safety-vest.png",
-        objectPosition: "center top",
-      },
-      {
-        title: "Fire and flame alerting",
-        description: "Immediate escalation path for smoke and flame indicators with evidence context.",
-        image: "/solutions/detections/fire-alert.png",
-        objectPosition: "left top",
-      },
-    ],
-  },
-  {
-    id: "security",
-    eyebrow: "Security and perimeter",
-    title: "Restricted access and incident control",
-    icon: "shield" as IconName,
-    description:
-      "Convert passive CCTV into a perimeter-aware supervision layer that detects unauthorized entry, identity events, and unattended objects.",
-    bullets: [
-      "Supports after-hours monitoring and sensitive-zone supervision",
-      "Pairs movement, identity, and object rules in one alert flow",
-      "Works well for branches, gates, storage zones, and corridors",
-    ],
-    slides: [
-      {
-        title: "Intrusion detection",
-        description: "Restricted zones trigger attention as soon as motion breaks the rule boundary.",
-        image: "/solutions/detections/intrusion.png",
-        objectPosition: "center center",
-      },
-      {
-        title: "Face recognition",
-        description: "Identity-aware workflows help validate who entered and when.",
-        image: "/solutions/detections/face-recognition.png",
-        objectPosition: "right center",
-      },
-      {
-        title: "Abandoned object alert",
-        description: "Unattended items are escalated with a clean review trail.",
-        image: "/solutions/detections/abandoned-object.png",
-        objectPosition: "left top",
-      },
-    ],
-  },
-  {
-    id: "behavior",
-    eyebrow: "Behavior and activity",
-    title: "Operational behavior awareness",
-    icon: "activity" as IconName,
-    description:
-      "Monitor risky human behavior that usually happens between supervision rounds, from fatigue to distraction to smoking.",
-    bullets: [
-      "Built for floors, branches, control rooms, and gate operations",
-      "Brings together posture, movement, and behavior-based triggers",
-      "Useful for both safety culture and service-quality oversight",
-    ],
-    slides: [
-      {
-        title: "Sleep on duty",
-        description: "Fatigue patterns can be surfaced before they become operational failures.",
-        image: "/solutions/detections/sleep-on-duty.png",
-        objectPosition: "center center",
-      },
-      {
-        title: "Phone-use detection",
-        description: "Detects distracted behavior in restricted or high-focus environments.",
-        image: "/solutions/detections/phone-use.png",
-        objectPosition: "right center",
-      },
-      {
-        title: "Smoking detection",
-        description: "Combines visual behavior checks with zone-specific compliance rules.",
-        image: "/solutions/detections/smoking.png",
-        objectPosition: "left top",
-      },
-    ],
-  },
-  {
-    id: "people",
-    eyebrow: "People and movement",
-    title: "Density, occupancy, and zone intelligence",
-    icon: "users" as IconName,
-    description:
-      "Measure movement, occupancy pressure, and crowding trends so teams can understand how people are actually using a site.",
-    bullets: [
-      "Supports occupancy thresholds and high-footfall areas",
-      "Useful for branch floors, lobbies, production lines, and access points",
-      "Turns people flow into a reviewable operational signal",
-    ],
-    slides: [
-      {
-        title: "People counting",
-        description: "Counts footfall and detects crowd build-up in monitored zones.",
-        image: "/solutions/detections/total-number-count-clean.png",
-        objectPosition: "center center",
-      },
-      {
-        title: "Occupancy monitoring",
-        description: "Helps track density thresholds and queue conditions in real time.",
-        image: "/solutions/detections/total-number-count-clean.png",
-        objectPosition: "center top",
-      },
-      {
-        title: "Zone movement review",
-        description: "Shows how traffic moves through sensitive or high-throughput spaces.",
-        image: "/solutions/detections/total-number-count-clean.png",
-        objectPosition: "left center",
-      },
-    ],
-  },
-  {
-    id: "traffic",
-    eyebrow: "Traffic and access",
-    title: "Vehicle and zone discipline",
-    icon: "warehouse" as IconName,
-    description:
-      "Protect loading bays, emergency paths, parking rules, and access routes with clear visual enforcement and evidence capture.",
-    bullets: [
-      "Helps keep operations clear around service roads and restricted entry zones",
-      "Useful for logistics movements, no-parking rules, and zone breaches",
-      "Preserves image evidence for supervisors and management review",
-    ],
-    slides: [
-      {
-        title: "No-parking enforcement",
-        description: "Flags vehicles blocking emergency, service, or restricted access areas.",
-        image: "/solutions/detections/no-parking.png",
-        objectPosition: "left top",
-      },
-      {
-        title: "Vehicle dwell-time review",
-        description: "Measures how long vehicles remain in monitored bays or gate positions.",
-        image: "/solutions/detections/no-parking.png",
-        objectPosition: "center center",
-      },
-      {
-        title: "Zone-based escalation",
-        description: "Combines traffic visibility with event priorities for rapid response.",
-        image: "/solutions/detections/intrusion.png",
-        objectPosition: "right top",
-      },
-    ],
-  },
-];
-
-export const solutionExperienceDetections = [
-  {
-    id: "helmet-compliance",
-    title: "PPE compliance",
-    tag: "PPE",
-    categoryId: "safety",
-    image: "/solutions/detections/ppe-detection-clean.png",
-    objectPosition: "center center",
-    description: "Detects helmet, vest, and worker PPE compliance from live CCTV footage.",
-  },
-  {
-    id: "helmet-violation",
-    title: "Helmet violation",
-    tag: "PPE",
-    categoryId: "safety",
-    image: "/solutions/detections/no-helmet.png",
-    objectPosition: "left center",
-    description: "Escalates missing helmet events with evidence-ready visual context.",
-  },
-  {
-    id: "safety-vest",
-    title: "Safety vest detection",
-    tag: "PPE",
-    categoryId: "safety",
-    image: "/solutions/detections/safety-vest.png",
-    objectPosition: "center center",
-    description: "Verifies high-visibility vest compliance across shared operational zones.",
-  },
-  {
-    id: "intrusion-detection",
-    title: "Intrusion detection",
-    tag: "Security",
-    categoryId: "security",
-    image: "/solutions/detections/intrusion.png",
-    objectPosition: "center center",
-    description: "Flags movement inside restricted areas, perimeter zones, or closed spaces.",
-  },
-  {
-    id: "fire-flame",
-    title: "Fire and flame",
-    tag: "Life safety",
-    categoryId: "safety",
-    image: "/solutions/detections/fire-alert.png",
-    description: "Escalates fire, smoke, and flame indicators with evidence context.",
-    objectPosition: "left top",
-  },
-  {
-    id: "mask-compliance",
-    title: "Mask compliance",
-    tag: "PPE",
-    categoryId: "safety",
-    image: "/solutions/detections/ppe-detection-clean.png",
-    objectPosition: "center center",
-    description: "Supports visual checks for mask and worker protection rules in controlled areas.",
-  },
-  {
-    id: "face-recognition",
-    title: "Face recognition",
-    tag: "Identity",
-    categoryId: "security",
-    image: "/solutions/detections/face-recognition.png",
-    objectPosition: "right top",
-    description: "Supports identity-aware supervision for controlled environments.",
-  },
-  {
-    id: "abandoned-object",
-    title: "Abandoned object",
-    tag: "Risk",
-    categoryId: "security",
-    image: "/solutions/detections/abandoned-object.png",
-    objectPosition: "left top",
-    description: "Identifies unattended objects and keeps a timestamped review trail.",
-  },
-  {
-    id: "after-hours-entry",
-    title: "After-hours entry",
-    tag: "Security",
-    categoryId: "security",
-    image: "/solutions/detections/intrusion.png",
-    objectPosition: "center center",
-    description: "Flags unauthorized presence in restricted areas outside approved schedules.",
-  },
-  {
-    id: "people-counting",
-    title: "Human count",
-    tag: "Occupancy",
-    categoryId: "people",
-    image: "/solutions/detections/total-number-count-clean.png",
-    objectPosition: "center center",
-    description: "Measures movement, crowding, and zone occupancy for operational insight.",
-  },
-  {
-    id: "crowd-density",
-    title: "Crowd density",
-    tag: "Occupancy",
-    categoryId: "people",
-    image: "/solutions/detections/total-number-count-clean.png",
-    objectPosition: "center center",
-    description: "Highlights density build-up in lobbies, queues, work floors, and access points.",
-  },
-  {
-    id: "queue-monitoring",
-    title: "Queue monitoring",
-    tag: "People flow",
-    categoryId: "people",
-    image: "/solutions/detections/total-number-count-clean.png",
-    objectPosition: "center center",
-    description: "Tracks waiting-line pressure and service-area congestion through camera views.",
-  },
-  {
-    id: "sleep-on-duty",
-    title: "Sleep on duty",
-    tag: "Behavior",
-    categoryId: "behavior",
-    image: "/solutions/detections/sleep-on-duty.png",
-    objectPosition: "center center",
-    description: "Surfaces fatigue-related posture patterns in control rooms, guard posts, and service areas.",
-  },
-  {
-    id: "phone-use",
-    title: "Phone-use detection",
-    tag: "Behavior",
-    categoryId: "behavior",
-    image: "/solutions/detections/phone-use.png",
-    objectPosition: "right center",
-    description: "Detects distracted behavior in monitored areas where attention discipline matters.",
-  },
-  {
-    id: "smoking",
-    title: "Smoking detection",
-    tag: "Behavior",
-    categoryId: "behavior",
-    image: "/solutions/detections/smoking.png",
-    objectPosition: "center center",
-    description: "Highlights smoking events in restricted or safety-sensitive areas.",
-  },
-  {
-    id: "altercation-risk",
-    title: "Altercation risk",
-    tag: "Behavior",
-    categoryId: "behavior",
-    image: "/solutions/detections/face-recognition.png",
-    objectPosition: "right center",
-    description: "Supports visual review of aggressive or unusual behavior in public-facing zones.",
-  },
-  {
-    id: "no-parking",
-    title: "No-parking enforcement",
-    tag: "Traffic",
-    categoryId: "traffic",
-    image: "/solutions/detections/no-parking.png",
-    objectPosition: "left top",
-    description: "Tracks parked vehicles blocking controlled lanes, service points, or emergency access routes.",
-  },
-  {
-    id: "vehicle-dwell",
-    title: "Vehicle dwell-time",
-    tag: "Traffic",
-    categoryId: "traffic",
-    image: "/solutions/detections/no-parking.png",
-    objectPosition: "left top",
-    description: "Tracks how long vehicles remain in loading, gate, or emergency access positions.",
-  },
-  {
-    id: "restricted-zone",
-    title: "Restricted zone breach",
-    tag: "Traffic",
-    categoryId: "traffic",
-    image: "/solutions/detections/intrusion.png",
-    objectPosition: "right top",
-    description: "Escalates zone violations for pedestrians, vehicles, and controlled access routes.",
-  },
-];
-
-export const industryDetails = [
-  {
-    name: "Construction",
-    tag: "Complex field supervision",
-    icon: "hardHat" as IconName,
-    summary:
-      "Fast-changing environments, contractor turnover, heavy equipment, and uneven visibility make manual supervision fragile.",
-    challenges: [
-      "Heavy machinery hazards across active work zones",
-      "Short-term labor with inconsistent safety awareness",
-      "Blind spots over large multi-zone sites",
-      "Manual PPE checks that miss violations between rounds",
-    ],
-    focusAreas: [
-      "Helmet and vest compliance",
-      "Fire and smoke detection",
-      "Restricted-zone intrusion alerts",
-      "No-parking enforcement",
-    ],
-  },
-  {
-    name: "Manufacturing",
-    tag: "24/7 production environments",
-    icon: "factory" as IconName,
-    summary:
-      "Machine density, mixed workforces, and line-level safety obligations demand a more scalable layer of visual supervision.",
-    challenges: [
-      "Floor-wide blind spots between inspection cycles",
-      "Intrusions into machinery exclusion zones",
-      "Persistent PPE and mask non-compliance",
-      "Obstructions and abandoned items on the line",
-    ],
-    focusAreas: [
-      "Safety vest detection",
-      "Mask compliance",
-      "Phone-use detection",
-      "Abandoned object monitoring",
-    ],
-  },
-  {
-    name: "Banking",
-    tag: "Public-facing controlled spaces",
-    icon: "landmark" as IconName,
-    summary:
-      "Service quality, customer safety, compliance, and restricted-zone security all need to work together in real time.",
-    challenges: [
-      "Customer mis-service caused by unattended posts or fatigue",
-      "Aggressive behavior and restricted-zone incidents",
-      "Uniform and policy compliance gaps",
-      "Life-safety risks that traditional CCTV does not escalate",
-    ],
-    focusAreas: [
-      "Sleep-on-duty detection",
-      "Face recognition",
-      "Altercation detection",
-      "Uniform and intrusion monitoring",
-    ],
-  },
-];
-
-export const screenshotShowcase = {
-  dashboard: {
-    src: "/siteguard/dashboard.png",
-    alt: "SiteGuard AI dashboard screenshot showing alerts and graph panels.",
-  },
-};
-
-export const screenshotGallery = {
-  dashboard: {
-    src: "/siteguard/dashboard.png",
-    alt: "SiteGuard AI dashboard screen.",
-  },
-  live: {
-    src: "/siteguard/live-feed.png",
-    alt: "SiteGuard AI live feed grid across multiple camera views.",
-  },
-  alerts: {
-    src: "/siteguard/alerts.png",
-    alt: "SiteGuard AI alert history screen with filters and status columns.",
-  },
-  reports: {
-    src: "/siteguard/reports.png",
-    alt: "SiteGuard AI reports and analytics view with charts.",
-  },
-};
 
 export const platformStats = [
-  { label: "Live feeds", value: "Multi-zone" },
-  { label: "Alert latency", value: "0-3 sec" },
-  { label: "Evidence", value: "Timestamped" },
+  { num: "48 / 48", lbl: "Feeds online" },
+  { num: "0–3s", lbl: "Alert latency" },
+  { num: "569", lbl: "Alerts logged" },
 ];
 
-export const solutionArchitecture = [
-  {
-    title: "Front-end collecting",
-    description: "Integrated IP cameras, dome units, handheld cameras, and NVR sources feed the network edge.",
-  },
-  {
-    title: "Switches pooling",
-    description: "Switch and NVR streams are normalized through pooled network routing for stable ingest.",
-  },
-  {
-    title: "Edge data computing",
-    description: "Streaming media, storage services, and the SiteGuard AI Box run detection close to the source.",
-  },
-  {
-    title: "Platform accessing",
-    description: "Web, admin control, and mobile applications surface live status, evidence, and controls instantly.",
-  },
+/* ------------------------------------------------------ Experience center */
+export const experienceCategories: {
+  id: string;
+  name: string;
+  icon: IconName;
+}[] = [
+  { id: "people", name: "People & Access", icon: "users" },
+  { id: "threat", name: "Threat & Fire", icon: "flame" },
+  { id: "ppe", name: "PPE & Compliance", icon: "hardHat" },
+  { id: "behaviour", name: "Behaviour & Activity", icon: "activity" },
+  { id: "vehicle", name: "Vehicle & Traffic", icon: "car" },
+  { id: "environment", name: "Environment & Housekeeping", icon: "leaf" },
 ];
 
-export const solutionTechnicalAspects = [
-  "RTSP and ONVIF camera ingest across existing CCTV estates",
-  "NVR and switch-based pooling for resilient multi-camera routing",
-  "Edge AI box with media server and data storage layers",
-  "Web, admin, and mobile access for multi-role operations teams",
+export type ExperienceDetection = {
+  id: string;
+  categoryId: string;
+  name: string;
+  severity: "critical" | "warning" | "info" | "access";
+  image: string | null;
+  glyph: string;
+  description: string;
+};
+
+const DET = "/solutions/detections";
+
+export const experienceDetections: ExperienceDetection[] = [
+  // People & Access
+  { id: "face-recognition", categoryId: "people", name: "Face Recognition", severity: "access", image: `${DET}/face-recognition.png`, glyph: "/brand/face_recognition.png", description: "Matches faces against enrolled staff, visitor and watchlist records at entry points." },
+  { id: "people-counting", categoryId: "people", name: "People Counting", severity: "info", image: `${DET}/total-number-count-clean.png`, glyph: "/brand/human_counting.png", description: "Keeps an accurate, real-time headcount in any monitored area." },
+  { id: "human-count", categoryId: "people", name: "Occupancy & Footfall", severity: "info", image: `${DET}/human-count.png`, glyph: "/brand/human_counting.png", description: "Tracks live occupancy and footfall trends for capacity planning and peak-time insight." },
+  { id: "crowd-density", categoryId: "people", name: "Crowd Density", severity: "info", image: `${DET}/scenario-crowd-density.png`, glyph: "/brand/human_counting.png", description: "Flags density build-up in lobbies, halls, queues and access points." },
+  { id: "queue-monitoring", categoryId: "people", name: "Queue Monitoring", severity: "info", image: `${DET}/scenario-queue-monitoring.png`, glyph: "/brand/human_counting.png", description: "Tracks waiting-line pressure and service-area congestion." },
+  { id: "intrusion", categoryId: "people", name: "Intrusion", severity: "critical", image: `${DET}/intrusion.png`, glyph: "/brand/intrusion.png", description: "Flags movement inside restricted zones, perimeters or closed spaces." },
+  { id: "enter-leave", categoryId: "people", name: "Enter / Leave Area", severity: "info", image: null, glyph: "/brand/people-access.png", description: "Flags the moment a person enters or leaves a defined virtual zone." },
+  { id: "cross-line", categoryId: "people", name: "Cross-line", severity: "info", image: null, glyph: "/brand/people-access.png", description: "Detects a person or object crossing a drawn tripwire line." },
+  { id: "lpc", categoryId: "people", name: "License-Plate (LPC)", severity: "info", image: null, glyph: "/brand/cctv-camera.png", description: "Reads and logs vehicle plates at gates and entrances." },
+
+  // Threat & Fire
+  { id: "fire", categoryId: "threat", name: "Fire / Flame", severity: "critical", image: `${DET}/fire-alert.png`, glyph: "/brand/fire_flame.png", description: "Spots visible flame in any monitored area, indoors or out, day or night." },
+  { id: "abandoned-object", categoryId: "threat", name: "Abandoned Object", severity: "critical", image: `${DET}/abandoned-object.png`, glyph: "/brand/critical-threat.png", description: "Identifies unattended objects and keeps a timestamped review trail." },
+  { id: "knife-stick", categoryId: "threat", name: "Knife / Stick", severity: "critical", image: null, glyph: "/brand/no-weapons.png", description: "Identifies knives, sticks and similar handheld weapons on sight." },
+  { id: "fall", categoryId: "threat", name: "Fall Detection", severity: "critical", image: null, glyph: "/brand/critical-threat.png", description: "Recognises a person falling or collapsing anywhere in view." },
+  { id: "fight", categoryId: "threat", name: "Fight Detection", severity: "critical", image: null, glyph: "/brand/critical-threat.png", description: "Recognises aggressive grappling and striking between people." },
+  { id: "smoke-fume", categoryId: "threat", name: "Smoke & Fume", severity: "critical", image: null, glyph: "/brand/fire_flame.png", description: "Confirms genuine fire events from combined smoke and flame signatures." },
+  { id: "gas-leak", categoryId: "threat", name: "Gas Leak", severity: "critical", image: null, glyph: "/brand/hazard.png", description: "Flags visible gas or vapour escape in industrial settings." },
+
+  // PPE & Compliance
+  { id: "ppe-compliance", categoryId: "ppe", name: "PPE Compliance", severity: "warning", image: `${DET}/ppe-detection-clean.png`, glyph: "/brand/hazard.png", description: "Verifies helmets, vests and worker PPE compliance in live footage." },
+  { id: "no-helmet", categoryId: "ppe", name: "No Helmet", severity: "warning", image: `${DET}/no-helmet.png`, glyph: "/brand/hazard.png", description: "Escalates missing-helmet events with evidence-ready context." },
+  { id: "helmet-violation", categoryId: "ppe", name: "Helmet Violation", severity: "warning", image: `${DET}/scenario-helmet-violation.png`, glyph: "/brand/hazard.png", description: "Flags helmet non-compliance across active work zones." },
+  { id: "hi-vis", categoryId: "ppe", name: "Hi-Vis Vest", severity: "warning", image: `${DET}/safety-vest.png`, glyph: "/brand/people-access.png", description: "Verifies high-visibility vest compliance in shared zones." },
+  { id: "mask", categoryId: "ppe", name: "Mask Compliance", severity: "warning", image: `${DET}/scenario-mask-compliance.png`, glyph: "/brand/hazard.png", description: "Flags missing face masks in zones where one is required." },
+  { id: "ppe-scene", categoryId: "ppe", name: "Multi-Worker PPE Check", severity: "warning", image: `${DET}/scenario-ppe-compliance.png`, glyph: "/brand/hazard.png", description: "Whole-scene PPE check across multiple workers at once." },
+  { id: "harness", categoryId: "ppe", name: "Safety Harness", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Checks for a worn safety harness when working at height." },
+  { id: "gloves-goggles", categoryId: "ppe", name: "Gloves & Goggles", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Verifies hand and eye protection in hazardous tasks." },
+
+  // Behaviour & Activity
+  { id: "smoking", categoryId: "behaviour", name: "Smoking", severity: "warning", image: `${DET}/smoking.png`, glyph: "/brand/smoking.png", description: "Identifies lit cigarettes, vapes and e-cigarettes anywhere in view." },
+  { id: "phone-use", categoryId: "behaviour", name: "Phone Use", severity: "warning", image: `${DET}/phone-use.png`, glyph: "/brand/using_phone.png", description: "Recognises hand-to-screen and phone-holding postures." },
+  { id: "sleeping", categoryId: "behaviour", name: "Sleeping / Absence", severity: "warning", image: `${DET}/sleep-on-duty.png`, glyph: "/brand/behaviour.png", description: "Spots head-down, prolonged-stillness postures or an empty post." },
+  { id: "gathering", categoryId: "behaviour", name: "People Gathering", severity: "info", image: null, glyph: "/brand/behaviour.png", description: "Flags sudden or abnormal grouping and crowd formation — distinct from steady headcount." },
+  { id: "long-stay", categoryId: "behaviour", name: "Long Stay", severity: "info", image: null, glyph: "/brand/behaviour.png", description: "Detects a person loitering in an area beyond a set duration." },
+  { id: "quick-moving", categoryId: "behaviour", name: "Quick Moving", severity: "warning", image: null, glyph: "/brand/behaviour.png", description: "Detects sudden running or scattering that can signal panic." },
+
+  // Vehicle & Traffic
+  { id: "illegal-parking", categoryId: "vehicle", name: "Illegal Parking", severity: "warning", image: `${DET}/no-parking.png`, glyph: "/brand/cctv-camera.png", description: "Flags vehicles blocking emergency, service or restricted access." },
+  { id: "overspeed", categoryId: "vehicle", name: "Overspeed", severity: "warning", image: null, glyph: "/brand/cctv-camera.png", description: "Flags vehicles moving too fast on access roads and lots." },
+  { id: "forklift", categoryId: "vehicle", name: "Forklift", severity: "info", image: null, glyph: "/brand/cctv-camera.png", description: "Detects forklift presence and movement near pedestrians." },
+  { id: "wrong-way", categoryId: "vehicle", name: "Wrong-Way", severity: "critical", image: null, glyph: "/brand/cctv-camera.png", description: "Flags vehicles driving against the permitted direction." },
+
+  // Environment & Housekeeping
+  { id: "trash-overflow", categoryId: "environment", name: "Trash Overflow", severity: "info", image: null, glyph: "/brand/hazard.png", description: "Detects overflowing bins and exposed waste for housekeeping." },
+  { id: "bare-soil", categoryId: "environment", name: "Bare Soil", severity: "info", image: null, glyph: "/brand/hazard.png", description: "Flags uncovered bare soil that should be sheeted on site." },
+  { id: "debris", categoryId: "environment", name: "Debris Stacking", severity: "info", image: null, glyph: "/brand/hazard.png", description: "Detects improper debris and material stacking in walkways." },
 ];
 
-export const solutionStats = [
-  {
-    value: "15+",
-    label: "Detection systems",
-    description: "Safety, security, behavior, and access intelligence in one platform.",
+/* ----------------------------------------------------------------- Schools */
+export const schools = {
+  kicker: "Tracking · 11 live models",
+  title: "AI-powered campus safety",
+  lead: "Turn the cameras you already have into a 24/7 safety system — protecting students on every corridor, gate and yard, around the clock.",
+  heroFrame: {
+    category: "critical" as const,
+    cam: "CAM 01 · GATE A",
+    zone: "ZONE A",
+    timestamp: "29 JUN 2026 · 13:47:34",
+    objectTag: "OBJ-01 · KNIFE",
+    model: "KnifeStickDetection",
+    label: "Weapon detected",
+    confidence: "96",
+    glyph: "/brand/no-weapons.png",
   },
-  {
-    value: "0",
-    label: "New cameras required",
-    description: "Deploy on top of the existing CCTV estate without replacing hardware.",
-  },
-  {
-    value: "24/7",
-    label: "Continuous monitoring",
-    description: "Always-on event awareness with evidence-backed alerting.",
-  },
-  {
-    value: "30 days",
-    label: "Visible ROI",
-    description: "Rapid operational value through automation, response time, and compliance.",
-  },
-];
+  stats: [
+    { num: "11", lbl: "Live detection models" },
+    { num: "0–3s", lbl: "Event to the right person" },
+    { num: "24/7", lbl: "Coverage, zero fatigue" },
+  ],
+  challenge: [
+    {
+      step: "01",
+      title: "Many cameras, few eyes",
+      description: "One or two staff cannot watch dozens of corridors, gates and yards at once.",
+    },
+    {
+      step: "02",
+      title: "Incidents happen between rounds",
+      description: "Trespassing, vaping and hazards occur in the seconds nobody is looking.",
+    },
+    {
+      step: "03",
+      title: "Footage is reviewed too late",
+      description: "CCTV records the past — it cannot warn anyone, or prevent harm, in the moment.",
+    },
+    {
+      step: "04",
+      title: "Duty of care keeps rising",
+      description: "Parents, boards and regulators expect demonstrable, around-the-clock safeguarding.",
+    },
+  ],
+  categories: [
+    { key: "critical", label: "Critical Threats" },
+    { key: "hazard", label: "Hazard & Health" },
+    { key: "behaviour", label: "Behaviour & Wellbeing" },
+    { key: "access", label: "People & Access" },
+  ],
+  detections: [
+    {
+      category: "critical" as const,
+      title: "Weapon Detection",
+      model: "KnifeStickDetection",
+      cam: "CAM 01 · GATE A",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 13:47:34",
+      objectTag: "OBJ · KNIFE",
+      confidence: "96",
+      glyph: "/brand/no-weapons.png",
+      lead: "Identifies knives, sticks and similar handheld weapons the moment they appear in view.",
+      onCampus: [
+        "Gate and entrance screening without slow, manual bag searches.",
+        "Instant alert can trigger lockdown and notify security and police.",
+        "After-hours intruders carrying weapons caught, even in low light.",
+      ],
+      impact: "The earliest possible warning for the highest-stakes threat a school can face.",
+    },
+    {
+      category: "critical" as const,
+      title: "Fire Detection",
+      model: "FireDetection",
+      cam: "CAM 09 · SCIENCE LAB 2",
+      zone: "ZONE C",
+      timestamp: "29 JUN 2026 · 09:14:51",
+      objectTag: "OBJ · FLAME",
+      confidence: "97",
+      glyph: "/brand/fire_flame.png",
+      lead: "Spots visible flame in any monitored area — indoors or outdoors, day or night.",
+      onCampus: [
+        "Covers labs, kitchens, boiler rooms and storage — the usual ignition points.",
+        "Often faster than smoke detectors in open halls and outdoor areas.",
+        "Pinpoints the exact room to speed a calm, targeted evacuation.",
+      ],
+      impact: "Seconds of early warning, before a small flame becomes a full evacuation.",
+    },
+    {
+      category: "critical" as const,
+      title: "Smoke & Fume Event",
+      model: "SmokeAndFireDetectionEvent",
+      cam: "CAM 12 · WORKSHOP",
+      zone: "ZONE C",
+      timestamp: "29 JUN 2026 · 09:18:20",
+      objectTag: "OBJ · SMOKE",
+      confidence: "95",
+      glyph: "/brand/critical-threat.png",
+      lead: "Confirms genuine fire events from combined smoke and flame signatures — built to cut false alarms.",
+      onCampus: [
+        "Tells a real fire apart from steam, dust or a vape cloud.",
+        "Can trigger the fire alarm and public-address system automatically.",
+        "Covers blind spots between conventional smoke detectors.",
+      ],
+      impact: "Escalation you can trust: fewer false alarms, faster response to real ones.",
+    },
+    {
+      category: "hazard" as const,
+      title: "Smoking Detection",
+      model: "SmokingAlarm",
+      cam: "CAM 15 · WASHROOM 3",
+      zone: "ZONE B",
+      timestamp: "29 JUN 2026 · 12:40:51",
+      objectTag: "OBJ · CIGARETTE",
+      confidence: "93",
+      glyph: "/brand/smoking.png",
+      lead: "Identifies lit cigarettes, vapes and e-cigarettes anywhere a camera can see.",
+      onCampus: [
+        "Covers washrooms, stairwells and back fields — the vaping hotspots.",
+        "Logs repeat offenders to support pastoral follow-up.",
+        "Enforces a smoke-free policy without stationing staff at every door.",
+      ],
+      impact: "A healthier, smoke-free campus, enforced consistently and without patrols.",
+    },
+    {
+      category: "hazard" as const,
+      title: "Mask Compliance",
+      model: "NoMaskAlarm",
+      cam: "CAM 02 · SICK BAY",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 11:05:30",
+      objectTag: "FACE · NO MASK",
+      confidence: "92",
+      glyph: "/brand/hazard.png",
+      lead: "Flags anyone without a face mask in zones where one is required.",
+      onCampus: [
+        "Switch on instantly during a flu season or health emergency.",
+        "Keep it on permanently for clinic, sick-bay and lab zones.",
+        "Flexible rules per zone and per period — no blanket policy needed.",
+      ],
+      impact: "Stand up a health protocol overnight, and show evidence of compliance.",
+    },
+    {
+      category: "behaviour" as const,
+      title: "Phone Use Detection",
+      model: "PlayMobilePhoneDetection",
+      cam: "CAM 18 · EXAM HALL",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 10:22:08",
+      objectTag: "OBJ · PHONE",
+      confidence: "95",
+      glyph: "/brand/using_phone.png",
+      lead: "Recognises hand-to-screen and phone-holding postures during lessons and exams.",
+      onCampus: [
+        "Enforce phone-free exam halls and classrooms automatically.",
+        "Flag distraction during lessons for the teacher to address.",
+        "Provide time-stamped evidence to support exam-integrity cases.",
+      ],
+      impact: "Protect learning time and exam fairness without confiscation battles.",
+    },
+    {
+      category: "behaviour" as const,
+      title: "Sleeping Detection",
+      model: "SleepingDetectionAlarm",
+      cam: "CAM 22 · LIBRARY",
+      zone: "ZONE B",
+      timestamp: "29 JUN 2026 · 14:02:44",
+      objectTag: "POSE · HEAD-DOWN",
+      confidence: "90",
+      glyph: "/brand/behaviour.png",
+      lead: "Spots head-down, prolonged-stillness postures that may signal a problem.",
+      onCampus: [
+        "A pupil unwell or asleep in class or the library gets noticed.",
+        "Night security or boarding supervisors asleep on duty are flagged.",
+        "Prompts a quiet welfare check rather than a public call-out.",
+      ],
+      impact: "Surface wellbeing and duty-of-care concerns early, before they're missed.",
+    },
+    {
+      category: "access" as const,
+      title: "Area Entry",
+      model: "EnterArea",
+      cam: "CAM 11 · ROOFTOP DOOR",
+      zone: "ZONE D",
+      timestamp: "29 JUN 2026 · 19:31:02",
+      objectTag: "ZONE · ENTER",
+      confidence: "96",
+      glyph: "/brand/intrusion.png",
+      lead: "Flags the moment a person enters a defined virtual zone on any camera.",
+      onCampus: [
+        "Protect out-of-bounds areas — rooftops, plant rooms, pools and labs.",
+        "Alert on after-hours access to classrooms, offices and stores.",
+        "Draw and redraw zones in software — no fences or sensors to fit.",
+      ],
+      impact: "Virtual fencing on any camera, protecting off-limits areas with no new hardware.",
+    },
+    {
+      category: "access" as const,
+      title: "Area Exit",
+      model: "LeaveArea",
+      cam: "CAM 03 · PERIMETER WEST",
+      zone: "ZONE D",
+      timestamp: "29 JUN 2026 · 15:12:55",
+      objectTag: "ZONE · LEAVE",
+      confidence: "95",
+      glyph: "/brand/people-access.png",
+      lead: "Flags the moment a person leaves a defined zone or crosses the perimeter.",
+      onCampus: [
+        "Catch a pupil wandering off-campus or out of a supervised area.",
+        "Alert on perimeter and gate breaches the instant they happen.",
+        "Extra safeguarding for early-years and SEN pupils who may stray.",
+      ],
+      impact: "Know the moment a child leaves a safe zone, and act before they're gone.",
+    },
+    {
+      category: "access" as const,
+      title: "People Counting",
+      model: "AreaPeopleCounting",
+      cam: "CAM 06 · MAIN HALL",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 08:31:12",
+      objectTag: "COUNT · 132 / 150",
+      confidence: "—",
+      glyph: "/brand/human_counting.png",
+      lead: "Keeps an accurate, real-time headcount in any area, indoors or outdoors.",
+      onCampus: [
+        "Enforce assembly, hall and lab capacity limits automatically.",
+        "Support evacuation roll-call with a live zone-by-zone count.",
+        "Plan canteen and corridor flow around real peak-time data.",
+      ],
+      impact: "Live occupancy you can act on, for safety today and planning tomorrow.",
+    },
+    {
+      category: "access" as const,
+      title: "Face Recognition",
+      model: "FaceRecognition",
+      cam: "CAM 01 · MAIN ENTRANCE",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 07:58:14",
+      objectTag: "MATCH · WATCHLIST",
+      confidence: "99",
+      glyph: "/brand/face_recognition.png",
+      lead: "Matches faces against enrolled staff, visitor and watchlist records at entry points.",
+      onCampus: [
+        "Flag banned or non-custodial individuals at the gate, silently.",
+        "Automate staff and visitor access logs — no manual sign-in.",
+        "Recognise expected visitors for a faster, warmer welcome.",
+      ],
+      impact: "Know who is on campus, automatically, with consent-based, configurable enrolment.",
+    },
+  ],
+  roadmap: [
+    { num: "01", title: "Uniform compliance", description: "Flags students out of dress code in monitored zones." },
+    { num: "02", title: "Shirtless person", description: "Detects exposed-torso individuals in public areas." },
+    { num: "03", title: "Illegal parking", description: "Spots vehicles stopped in fire lanes, gates and no-park zones." },
+    { num: "04", title: "Exposed long hair", description: "Flags untied long hair near labs, machinery and kitchens." },
+    { num: "05", title: "Climbing detection", description: "Catches climbing on fences, gates, roofs and railings." },
+    { num: "06", title: "Fight detection", description: "Recognises aggressive grappling and striking between people." },
+    { num: "07", title: "Quick movement", description: "Detects sudden running or scattering that signals panic." },
+    { num: "08", title: "Overspeed detection", description: "Flags vehicles moving too fast on access roads and lots." },
+  ],
+};
 
-export const contactDetails = [
-  {
-    label: "Contact person",
-    value: "Md Ashraf Siddiquee",
-    icon: "user" as IconName,
+/* -------------------------------------------------------------- Construction */
+export const construction = {
+  kicker: "Construction Site pack · Live",
+  lead: "Fast-changing, multi-zone sites with contractor turnover and heavy plant are hard to supervise by eye. SiteGuard enforces PPE, catches falls and intrusion, and keeps vehicles in check — on the cameras already on site.",
+  heroFrame: {
+    category: "hazard" as const,
+    cam: "CAM 04 · TOWER CRANE ZONE",
+    zone: "ZONE B",
+    timestamp: "29 JUN 2026 · 08:12:40",
+    objectTag: "PPE · NO HELMET",
+    model: "NoHelmetDetection",
+    label: "No helmet",
+    confidence: "94",
+    glyph: "/brand/hazard.png",
   },
-  {
-    label: "Email",
-    value: "ashraf.siddiquee@maxgroup-bd.com",
-    icon: "mail" as IconName,
-  },
-  {
-    label: "Phone",
-    value: "01730589252",
-    icon: "phone" as IconName,
-  },
-  {
-    label: "Address",
-    value: "House B186, Road 20, Mohakhali DOHS, Dhaka 1206, Bangladesh",
-    icon: "mapPin" as IconName,
-  },
-  {
-    label: "Website",
-    value: "site-guard.ai",
-    icon: "radar" as IconName,
-  },
+  stats: [
+    { num: "12+", lbl: "Models in the pack" },
+    { num: "0–3s", lbl: "Event to the right person" },
+    { num: "24/7", lbl: "Coverage, zero fatigue" },
+  ],
+  challenge: [
+    {
+      step: "01",
+      title: "Heavy machinery hazards",
+      description: "Plant, lifts and exclusion zones create constant risk across active work areas.",
+    },
+    {
+      step: "02",
+      title: "Short-term, mixed crews",
+      description: "Contractor turnover means inconsistent safety awareness and PPE discipline.",
+    },
+    {
+      step: "03",
+      title: "Blind spots over large sites",
+      description: "Multi-zone, multi-level sites can't be watched by one or two pairs of eyes.",
+    },
+    {
+      step: "04",
+      title: "Manual checks miss violations",
+      description: "PPE walk-rounds catch a moment; breaches happen in the gaps between them.",
+    },
+  ],
+  detections: [
+    {
+      category: "hazard" as const,
+      title: "Helmet Compliance",
+      model: "NoHelmetDetection",
+      cam: "CAM 04 · TOWER CRANE ZONE",
+      zone: "ZONE B",
+      timestamp: "29 JUN 2026 · 08:12:40",
+      objectTag: "PPE · NO HELMET",
+      confidence: "94",
+      glyph: "/brand/hazard.png",
+      lead: "Flags workers without a hard hat in any zone where one is mandatory.",
+      onCampus: [
+        "Enforce hard-hat rules at gates, lifts and active zones.",
+        "Log repeat breaches by zone for toolbox-talk follow-up.",
+        "No marshal needed at every entry point.",
+      ],
+      impact: "Continuous helmet enforcement, not a once-a-shift walk-round.",
+    },
+    {
+      category: "hazard" as const,
+      title: "Hi-Vis Vest Detection",
+      model: "NoReflectiveClothing",
+      cam: "CAM 07 · HAUL ROAD",
+      zone: "ZONE C",
+      timestamp: "29 JUN 2026 · 08:31:55",
+      objectTag: "PPE · NO VEST",
+      confidence: "92",
+      glyph: "/brand/people-access.png",
+      lead: "Verifies high-visibility clothing around plant, traffic and haul roads.",
+      onCampus: [
+        "Keep workers visible to vehicle and crane operators.",
+        "Tighten rules on haul roads and loading zones.",
+        "Pair with intrusion rules for exclusion areas.",
+      ],
+      impact: "Visibility enforced where a missed step meets a moving machine.",
+    },
+    {
+      category: "hazard" as const,
+      title: "Safety Harness Detection",
+      model: "NoSafetyHarness",
+      cam: "CAM 11 · SCAFFOLD L4",
+      zone: "ZONE D",
+      timestamp: "29 JUN 2026 · 09:48:12",
+      objectTag: "PPE · NO HARNESS",
+      confidence: "93",
+      glyph: "/brand/hazard.png",
+      lead: "Checks for a worn safety harness when working at height.",
+      onCampus: [
+        "Watch scaffold levels, edges and elevated platforms.",
+        "Catch unclipped work before a fall, not after.",
+        "Evidence trail for height-work compliance audits.",
+      ],
+      impact: "Address the leading cause of construction fatalities, proactively.",
+    },
+    {
+      category: "critical" as const,
+      title: "Fall Detection",
+      model: "FallDetection",
+      cam: "CAM 09 · EXCAVATION EDGE",
+      zone: "ZONE D",
+      timestamp: "29 JUN 2026 · 10:05:30",
+      objectTag: "POSE · FALL",
+      confidence: "95",
+      glyph: "/brand/critical-threat.png",
+      lead: "Recognises a person falling or collapsing anywhere in view.",
+      onCampus: [
+        "Trigger an immediate medical response with the exact location.",
+        "Cover excavations, edges, voids and lone-worker zones.",
+        "Day or night, indoors or out.",
+      ],
+      impact: "Seconds saved on a fall response can be the whole outcome.",
+    },
+    {
+      category: "critical" as const,
+      title: "Fire & Extinguisher",
+      model: "FireDetection",
+      cam: "CAM 02 · FUEL STORE",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 11:20:08",
+      objectTag: "OBJ · FLAME",
+      confidence: "97",
+      glyph: "/brand/fire_flame.png",
+      lead: "Spots visible flame and flags missing or blocked fire extinguishers.",
+      onCampus: [
+        "Cover fuel stores, hot-works and cabins.",
+        "Flag a missing or removed extinguisher at its station.",
+        "Faster than waiting for someone to raise the alarm.",
+      ],
+      impact: "Early fire warning where ignition sources cluster.",
+    },
+    {
+      category: "access" as const,
+      title: "Restricted-Zone Intrusion",
+      model: "EnterArea",
+      cam: "CAM 14 · NORTH PERIMETER",
+      zone: "ZONE E",
+      timestamp: "29 JUN 2026 · 21:42:17",
+      objectTag: "ZONE · ENTER",
+      confidence: "96",
+      glyph: "/brand/intrusion.png",
+      lead: "Flags people entering exclusion zones or the site after hours.",
+      onCampus: [
+        "Virtual fencing around plant and exclusion zones.",
+        "After-hours intrusion and theft alerts on existing cameras.",
+        "Draw and redraw zones in software — no physical barriers.",
+      ],
+      impact: "Perimeter and exclusion-zone security with zero new hardware.",
+    },
+    {
+      category: "behaviour" as const,
+      title: "Dump-Truck Tarp",
+      model: "DumpTruckWithoutTarp",
+      cam: "CAM 18 · SITE EXIT",
+      zone: "ZONE C",
+      timestamp: "29 JUN 2026 · 14:09:44",
+      objectTag: "VEH · NO TARP",
+      confidence: "90",
+      glyph: "/brand/cctv-camera.png",
+      lead: "Detects dump trucks leaving with an uncovered load.",
+      onCampus: [
+        "Enforce covered-load rules at the site exit.",
+        "Reduce spillage, dust and roadway complaints.",
+        "Support environmental and local-authority compliance.",
+      ],
+      impact: "Keep loads covered and the site's reputation clean.",
+    },
+    {
+      category: "access" as const,
+      title: "Site Headcount",
+      model: "AreaPeopleCounting",
+      cam: "CAM 01 · MUSTER POINT",
+      zone: "ZONE A",
+      timestamp: "29 JUN 2026 · 07:02:11",
+      objectTag: "COUNT · 38 / 40",
+      confidence: "—",
+      glyph: "/brand/human_counting.png",
+      lead: "Keeps a live headcount for muster points and zone capacity.",
+      onCampus: [
+        "Support evacuation roll-call with a live count.",
+        "Track who is in which zone for permit-to-work.",
+        "Plan welfare and access around real peak data.",
+      ],
+      impact: "A reliable headcount when an evacuation actually happens.",
+    },
+  ],
+};
+
+/* ------------------------------------------------------------------ Contact */
+export const contactDetails: { label: string; value: string; icon: IconName }[] = [
+  { label: "Contact person", value: "Md Ashraf Siddiquee", icon: "user" },
+  { label: "Email", value: "ashraf.siddiquee@maxgroup-bd.com", icon: "mail" },
+  { label: "General enquiries", value: "info@site-guard.ai", icon: "mail" },
+  { label: "Phone", value: "01730589252", icon: "phone" },
+  { label: "Address", value: "House B186, Road 20, Mohakhali DOHS, Dhaka 1206, Bangladesh", icon: "mapPin" },
+  { label: "Website", value: "site-guard.ai", icon: "radar" },
 ];
 
 export const footerInfo = {
-  developer: "This solution is developed by NYK Advance Ltd.",
-  address: "House B186, Road 20, Mohakhali DOHS, Dhaka 1206, Bangladesh",
-  email: "ashraf.siddiquee@maxgroup-bd.com",
+  developer: "Developed by NYK Advance Ltd.",
+  email: "info@site-guard.ai",
+  salesEmail: "ashraf.siddiquee@maxgroup-bd.com",
   phone: "01730589252",
   website: "site-guard.ai",
+  address: "House B186, Road 20, Mohakhali DOHS, Dhaka 1206, Bangladesh",
 };
 
 export const footerSections = [
   {
     title: "Platform",
     links: [
-      { href: "/product", label: "Platform overview" },
-      { href: "/solutions", label: "Detection systems" },
-      { href: "/industries", label: "Industry use cases" },
+      { href: "/product", label: "Detection models" },
+      { href: "/product", label: "Live monitoring" },
+      { href: "/product", label: "Alerts & reports" },
+      { href: "/product", label: "Face recognition" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { href: "/industries/schools", label: "Schools" },
+      { href: "/industries/construction", label: "Construction" },
+      { href: "/industries", label: "Healthcare" },
+      { href: "/industries", label: "Retail & more" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "/contact", label: "Contact" },
-      { href: `https://${footerInfo.website}`, label: "Website" },
-      { href: `mailto:${footerInfo.email}`, label: "Email NYK Advance" },
+      { href: "/solutions", label: "Detection library" },
+      { href: "/contact", label: "Book a demo" },
+      { href: "mailto:info@site-guard.ai", label: "info@site-guard.ai" },
+      { href: "https://site-guard.ai", label: "site-guard.ai" },
     ],
   },
 ];

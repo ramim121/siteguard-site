@@ -15,10 +15,10 @@ export function ScreenshotFrame({
   label,
   priority = false,
   cropped = false,
-  objectPosition = "center",
+  objectPosition = "top center",
 }: ScreenshotFrameProps) {
   return (
-    <figure className="screenshot-frame">
+    <figure className="screenshot-frame reveal">
       <div className="screenshot-topbar">
         <span />
         <span />
@@ -32,17 +32,12 @@ export function ScreenshotFrame({
             alt={alt}
             fill
             priority={priority}
+            sizes="(max-width: 1024px) 100vw, 60vw"
             style={{ objectFit: "cover", objectPosition }}
           />
         </div>
       ) : (
-        <Image
-          src={src}
-          alt={alt}
-          width={1600}
-          height={900}
-          priority={priority}
-        />
+        <Image src={src} alt={alt} width={1920} height={1080} priority={priority} />
       )}
     </figure>
   );

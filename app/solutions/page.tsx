@@ -1,91 +1,187 @@
+import type { CSSProperties } from "react";
+import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { HeroVisual } from "@/components/hero-visual";
+import { DetectionFrame } from "@/components/detection-frame";
 import { SectionHeading } from "@/components/section-heading";
-import { SolutionsInteractive } from "@/components/solutions-interactive";
+import { IconMark } from "@/components/icon-mark";
 import {
-  solutionArchitecture,
-  solutionStats,
-  solutionTechnicalAspects,
+  detectionFamilies,
+  scenarioPacks,
+  sectionFrames,
+  severityLevels,
 } from "@/lib/content";
-import Image from "next/image";
+
+const solutionStats = [
+  { num: "90+", lbl: "Detection models" },
+  { num: "6", lbl: "Functional families" },
+  { num: "11", lbl: "Scenario packs" },
+  { num: "0–3s", lbl: "Event to alert" },
+];
 
 export default function SolutionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Solutions"
-        title="A refined library of visual detection systems."
-        description="SiteGuard groups its AI models into practical supervision categories so teams can deploy what matters without complexity."
+        eyebrow="Detection library"
+        title={
+          <>
+            90+ models, <span className="accent">one platform.</span>
+          </>
+        }
+        description="SiteGuard's intelligence is a library of detection models, grouped into six functional families and packaged into pre-tuned scenario packs per environment."
         primaryCta={{ href: "/contact", label: "Discuss your use case" }}
         secondaryCta={{ href: "/industries", label: "Compare industries" }}
-        compact
-        visual={
-          <HeroVisual
-            src="/hero/solutions-hero.png"
-            alt="Generated SiteGuard solutions hero showing connected AI detection systems for safety, security, behavior, people, and vehicles."
-            label="Various detection systems"
-            accent="orb-teal"
-            chips={["PPE", "Intrusion", "Behavior", "People flow", "Parking"]}
-          />
-        }
+        visual={<DetectionFrame frame={sectionFrames[1]} priority />}
       />
 
+      {/* ---------------------------------------------------- Stats */}
+      <section className="section section-compact">
+        <div className="section-inner">
+          <div className="stat-strip stat-strip-4">
+            {solutionStats.map((stat) => (
+              <article className="stat-tile reveal" key={stat.lbl}>
+                <div className="num">{stat.num}</div>
+                <div className="lbl">{stat.lbl}</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- Families */}
       <section className="section">
         <div className="section-inner">
           <SectionHeading
-            eyebrow="Detection stack"
-            title="Operational coverage at a glance"
-            description="The platform monitors more than 15 event types while keeping deployment and escalation simple to understand."
+            eyebrow="By family"
+            title="Six families carry colour and meaning."
+            description="The brand presents the library by family — never as an undifferentiated list — so teams deploy what matters without complexity."
           />
-          <div className="solution-stat-grid">
-            {solutionStats.map((stat) => (
-              <article className="solution-stat-card reveal rise" key={stat.label}>
-                <span>{stat.value}</span>
-                <h3>{stat.label}</h3>
-                <p>{stat.description}</p>
+          <div className="family-grid">
+            {detectionFamilies.map((family) => (
+              <article
+                className="family-card reveal"
+                key={family.id}
+                style={{ "--fam": family.color } as CSSProperties}
+              >
+                <div className="fam-head">
+                  <span className="icon-tile">
+                    <IconMark name={family.icon} />
+                  </span>
+                  <span className="count">{family.count}</span>
+                </div>
+                <h3>{family.name}</h3>
+                <p style={{ color: "var(--sg-text-muted)", fontSize: 14 }}>
+                  {family.description}
+                </p>
+                <div className="models">
+                  {family.models.map((model) => (
+                    <span className="model-chip" key={model}>
+                      {model}
+                    </span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <SolutionsInteractive />
-
+      {/* ---------------------------------------------------- Severity */}
       <section className="section section-tinted">
-        <div className="section-inner solution-architecture-layout">
-          <div className="solution-architecture-copy reveal rise">
+        <div className="section-inner">
+          <SectionHeading
+            eyebrow="Severity & alerts"
+            title="One severity language, everywhere."
+            description="Every detection resolves to exactly one of four severities. That severity drives its colour, icon, sound and routing — identically across ticker, toasts, tables and dashboards."
+          />
+          <div className="severity-grid">
+            {severityLevels.map((level) => (
+              <article className="severity-card reveal" key={level.key}>
+                <span className={`severity-pill s-${level.key}`}>
+                  <span className={`sev-dot sev-${level.key}`} />
+                  {level.code}
+                </span>
+                <h3>{level.name}</h3>
+                <p>{level.description}</p>
+                <span className="eg">{level.examples}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- Scenario packs */}
+      <section className="section section-ink">
+        <div className="section-inner">
+          <SectionHeading
+            eyebrow="Scenario packs"
+            title="Pre-tuned bundles per environment."
+            description="Each pack ships a curated subset of models, thresholds and zones tuned for that setting — deployed as a software profile, with no new hardware."
+          />
+          <div className="scenario-grid">
+            {scenarioPacks.map((pack) => (
+              <article className="scenario-card reveal" key={pack.name}>
+                <span className="sc-icon">
+                  <IconMark name={pack.icon} />
+                </span>
+                <h4>{pack.name}</h4>
+                <p>{pack.count}</p>
+                <p
+                  style={{
+                    textTransform: "none",
+                    letterSpacing: 0,
+                    fontFamily: "var(--sg-font-body)",
+                    color: "var(--sg-ink-text-muted)",
+                  }}
+                >
+                  {pack.focus}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- Deployment */}
+      <section className="section">
+        <div className="section-inner split">
+          <div className="reveal">
             <SectionHeading
-              eyebrow="Solution overview"
-              title="A technical architecture built for existing camera infrastructure."
-              description="The platform can be deployed without replacing the current video estate by combining camera ingest, switch pooling, edge AI compute, and multi-surface platform access."
+              eyebrow="Deployment"
+              title="A technical layer built for the cameras you already run."
+              description="SiteGuard deploys without replacing the existing video estate — combining camera ingest, switch pooling, edge AI compute and multi-surface access."
             />
-            <ul className="technical-list">
-              {solutionTechnicalAspects.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+            <ul className="check-list">
+              <li>RTSP and ONVIF ingest across existing CCTV estates</li>
+              <li>NVR and switch-based pooling for resilient multi-camera routing</li>
+              <li>Edge AI box with media server and local data storage</li>
+              <li>Web, admin and mobile access for multi-role teams</li>
             </ul>
           </div>
-          <div className="solution-architecture-visual reveal rise">
-            <Image
-              src="/solution-overview/diagram.jpg"
-              alt="SiteGuard solution overview architecture diagram."
-              width={1267}
-              height={689}
-            />
+          <div className="reveal" style={{ display: "grid", gap: 18 }}>
+            <DetectionFrame frame={sectionFrames[2]} />
+            <DetectionFrame frame={sectionFrames[3]} />
           </div>
         </div>
       </section>
 
-      <section className="section">
+      {/* ---------------------------------------------------- CTA */}
+      <section className="section section-compact">
         <div className="section-inner">
-          <div className="timeline-grid timeline-grid-architecture">
-            {solutionArchitecture.map((step, index) => (
-              <article className="timeline-card reveal rise" key={step.title}>
-                <span className="timeline-step">0{index + 1}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </article>
-            ))}
+          <div className="cta-panel reveal">
+            <div>
+              <span className="eyebrow">Find your pack</span>
+              <h2 style={{ marginTop: 14 }}>Tell us your site. We'll tune the models.</h2>
+              <p>Get a scenario pack matched to your environment and risk profile.</p>
+            </div>
+            <div className="cta-actions">
+              <Link className="button button-primary button-lg" href="/contact">
+                Talk to us
+              </Link>
+              <Link className="button button-secondary-ink button-lg" href="/industries">
+                Browse industries
+              </Link>
+            </div>
           </div>
         </div>
       </section>

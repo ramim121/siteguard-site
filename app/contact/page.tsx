@@ -1,48 +1,42 @@
-import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { HeroVisual } from "@/components/hero-visual";
-import { IconMark } from "@/components/icon-mark";
 import { SectionHeading } from "@/components/section-heading";
+import { IconMark } from "@/components/icon-mark";
+import { ContactForm } from "@/components/contact-form";
 import { contactDetails } from "@/lib/content";
+
+const mailto =
+  "mailto:info@site-guard.ai?subject=SiteGuard%20AI%20demo%20request";
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
         eyebrow="Contact"
-        title="Connect with SiteGuard AI."
-        description="Share your site type and priorities."
-        primaryCta={{
-          href: "mailto:ashraf.siddiquee@maxgroup-bd.com?subject=SiteGuard%20AI%20demo%20request",
-          label: "Email SiteGuard AI",
-        }}
-        secondaryCta={{ href: "/solutions", label: "Review capabilities" }}
-        compact
-        visual={
-          <HeroVisual
-            src="/hero/contact-hero.png"
-            alt="Generated SiteGuard contact hero showing direct contact details and deployment inquiry interface."
-            label="Direct contact"
-            accent="orb-teal"
-            chips={["ashraf.siddiquee@maxgroup-bd.com", "01730589252", "site-guard.ai"]}
-          />
+        title={
+          <>
+            Let's turn your cameras into a{" "}
+            <span className="accent">safety system.</span>
+          </>
         }
+        description="Share your site type and priorities and we'll line up a live demo with a scenario pack tuned to your environment."
+        primaryCta={{ href: mailto, label: "Email SiteGuard" }}
+        secondaryCta={{ href: "/solutions", label: "Review capabilities" }}
       />
 
       <section className="section">
         <div className="section-inner contact-layout">
-          <div className="contact-copy reveal rise">
+          <div className="reveal">
             <SectionHeading
-              eyebrow="Let's talk"
-              title="Contact details"
+              eyebrow="Direct line"
+              title="Talk to the team."
               description="Fast handoff for demos and deployment discussions."
             />
-            <div className="contact-points contact-points-compact">
+            <div className="contact-points">
               {contactDetails.map((detail) => (
-                <article className="contact-point-card contact-point-card-compact" key={detail.label}>
-                  <div className="card-icon">
+                <article className="contact-point" key={detail.label}>
+                  <span className="icon-tile icon-tile-sm">
                     <IconMark name={detail.icon} />
-                  </div>
+                  </span>
                   <div>
                     <h3>{detail.label}</h3>
                     <p>{detail.value}</p>
@@ -51,47 +45,8 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          <div className="contact-form-shell reveal rise">
-            <form className="contact-form">
-              <label>
-                Name
-                <input type="text" placeholder="Your name" />
-              </label>
-              <label>
-                Company
-                <input type="text" placeholder="Organization name" />
-              </label>
-              <label>
-                Work email
-                <input type="email" placeholder="name@company.com" />
-              </label>
-              <label>
-                Primary industry
-                <select defaultValue="">
-                  <option value="" disabled>
-                    Select one
-                  </option>
-                  <option>Construction</option>
-                  <option>Manufacturing</option>
-                  <option>Banking</option>
-                  <option>Enterprise facilities</option>
-                </select>
-              </label>
-              <label>
-                What do you want to monitor?
-                <textarea
-                  rows={4}
-                  placeholder="PPE, intrusion, fire, reporting, or multi-site visibility."
-                />
-              </label>
-              <Link
-                className="button button-primary"
-                href="mailto:ashraf.siddiquee@maxgroup-bd.com?subject=SiteGuard%20AI%20demo%20request"
-              >
-                Open email draft
-              </Link>
-            </form>
-          </div>
+
+          <ContactForm />
         </div>
       </section>
     </>

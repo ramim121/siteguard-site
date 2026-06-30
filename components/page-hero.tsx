@@ -1,21 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Cta = {
-  href: string;
-  label: string;
-};
+type Cta = { href: string; label: string };
 
 type PageHeroProps = {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description: string;
   primaryCta: Cta;
-  secondaryCta: Cta;
-  compact?: boolean;
+  secondaryCta?: Cta;
   visual?: ReactNode;
-  panelTitle?: string;
-  panelPoints?: string[];
 };
 
 export function PageHero({
@@ -24,47 +18,27 @@ export function PageHero({
   description,
   primaryCta,
   secondaryCta,
-  compact = false,
   visual,
-  panelTitle = "Always-on outcomes",
-  panelPoints = [
-    "Existing CCTV. No new camera estate required.",
-    "15+ event categories across safety, behavior, and security.",
-    "Instant evidence clips and executive-ready reporting.",
-  ],
 }: PageHeroProps) {
   return (
-    <section className={compact ? "hero hero-compact" : "hero"}>
-      <div className="hero-shell">
-        <div className="hero-backdrop" />
-      </div>
-      <div className="section-inner hero-inner">
-        <div className="hero-copy reveal rise">
+    <section className="page-hero on-ink">
+      <div className={visual ? "section-inner page-hero-inner" : "section-inner page-hero-inner single"}>
+        <div className="hero-copy reveal">
           <span className="eyebrow">{eyebrow}</span>
           <h1>{title}</h1>
           <p>{description}</p>
           <div className="hero-actions">
-            <Link className="button button-primary" href={primaryCta.href}>
+            <Link className="button button-primary button-lg" href={primaryCta.href}>
               {primaryCta.label}
             </Link>
-            <Link className="button button-secondary" href={secondaryCta.href}>
-              {secondaryCta.label}
-            </Link>
+            {secondaryCta ? (
+              <Link className="button button-secondary button-lg" href={secondaryCta.href}>
+                {secondaryCta.label}
+              </Link>
+            ) : null}
           </div>
         </div>
-        <div className="hero-aside">
-          {!compact && panelPoints.length > 0 ? (
-            <div className="glass-panel">
-              <span className="eyebrow">{panelTitle}</span>
-              <ul className="hero-list">
-                {panelPoints.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-          {visual}
-        </div>
+        {visual ? <div className="hero-visual reveal">{visual}</div> : null}
       </div>
     </section>
   );

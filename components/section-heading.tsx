@@ -1,19 +1,16 @@
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
+  center?: boolean;
 };
 
-export function SectionHeading({
-  eyebrow,
-  title,
-  description,
-}: SectionHeadingProps) {
+export function SectionHeading({ eyebrow, title, description, center }: SectionHeadingProps) {
   return (
-    <div className="section-heading reveal rise">
+    <div className={center ? "section-heading center reveal" : "section-heading reveal"}>
       <span className="eyebrow">{eyebrow}</span>
       <h2>{title}</h2>
-      <p>{description}</p>
+      {description ? <p>{description}</p> : null}
     </div>
   );
 }
