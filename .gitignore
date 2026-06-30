@@ -7,3 +7,6 @@ pnpm-debug.log*
 *.log
 dist
 out
+
+# build info
+*.tsbuildinfo

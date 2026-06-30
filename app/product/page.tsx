@@ -1,184 +1,229 @@
-import { AutoCarousel } from "@/components/auto-carousel";
-import { ImageCarousel } from "@/components/image-carousel";
+import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { HeroVisual } from "@/components/hero-visual";
-import { IconMark } from "@/components/icon-mark";
-import { ScreenshotFrame } from "@/components/screenshot-frame";
-import { SectionHeading } from "@/components/section-heading";
+import { DetectionFrame } from "@/components/detection-frame";
+import { MobileMock } from "@/components/mobile-mock";
+import { ExperienceCenter } from "@/components/experience-center";
 import {
-  architectureSteps,
-  mobileAppSlides,
-  platformMoments,
-  workflowCarouselSlides,
-  screenshotGallery,
-  platformStats,
-} from "@/lib/content";
+  CommandMock,
+  LiveWallMock,
+  AlertDetailMock,
+  AnalyticsMock,
+  FaceMatchMock,
+} from "@/components/platform-mocks";
+import { SectionHeading } from "@/components/section-heading";
+import { IconMark } from "@/components/icon-mark";
+import { platformMoments, platformStats, sectionFrames, systemArchitecture } from "@/lib/content";
 
 export default function ProductPage() {
   return (
     <>
       <PageHero
         eyebrow="Platform"
-        title="A composed platform for live supervision, evidence, and response."
-        description="Every detection moves through a single product experience: live video, real-time alerts, evidence clips, trend reporting, and management visibility."
+        title={
+          <>
+            One command surface for <span className="accent">live supervision</span>,
+            evidence and response.
+          </>
+        }
+        description="Every detection moves through a single product experience: a live camera wall, real-time alerts with evidence, face recognition, exportable analytics, and a mobile app that pushes the moment something matters."
         primaryCta={{ href: "/contact", label: "See the platform live" }}
         secondaryCta={{ href: "/solutions", label: "Review capabilities" }}
-        compact
-        visual={
-          <HeroVisual
-            src="/hero/platform-hero.png"
-            alt="Generated SiteGuard platform hero showing live camera monitoring, recent alerts, and operational command panels."
-            label="Platform overview"
-            accent="orb-amber"
-            chips={["Live view", "Instant alerts", "Reports & analytics"]}
-          />
-        }
+        visual={<DetectionFrame frame={sectionFrames[0]} priority />}
       />
 
-      <section className="section">
-        <div className="section-inner">
-          <div className="workflow-layout">
-            <div className="workflow-copy reveal rise">
-              <SectionHeading
-                eyebrow="Workflow"
-                title="Built for decisive action, not passive monitoring."
-                description="Each part of the interface is designed to shorten the path from detection to response."
-              />
-              <div className="moment-grid moment-grid-compact">
-                {platformMoments.map((moment) => (
-                  <article className="moment-card reveal rise" key={moment.title}>
-                    <div className="card-icon">
-                      <IconMark name={moment.icon} />
-                    </div>
-                    <span>{moment.eyebrow}</span>
-                    <h3>{moment.title}</h3>
-                    <p>{moment.description}</p>
-                  </article>
-                ))}
-              </div>
-              <div className="platform-stat-row platform-stat-row-compact">
-                {platformStats.map((stat) => (
-                  <article className="platform-stat-card reveal rise" key={stat.label}>
-                    <span>{stat.label}</span>
-                    <h3>{stat.value}</h3>
-                  </article>
-                ))}
-              </div>
-            </div>
-            <div className="workflow-media reveal rise">
-              <AutoCarousel slides={workflowCarouselSlides} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-tinted">
-        <div className="section-inner media-layout product-mobile-showcase">
-          <div className="media-copy reveal rise">
-            <SectionHeading
-              eyebrow="Mobile app"
-              title="Take live supervision into the field with a mobile command surface."
-              description="The SiteGuard AI mobile experience brings dashboard visibility, live review, alert history, and reports into a compact phone workflow."
-            />
-            <p>
-              Supervisors can review active zones, inspect incidents, and track
-              shifts without needing to stay at the central console.
-            </p>
-          </div>
-          <div className="media-column reveal rise">
-            <ImageCarousel slides={mobileAppSlides} variant="phone" />
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-inner media-layout">
-          <div className="media-column reveal rise">
-            <ScreenshotFrame
-              src={screenshotGallery.live.src}
-              alt={screenshotGallery.live.alt}
-              label="Live operations"
-            />
-          </div>
-          <div className="media-copy reveal rise">
-            <SectionHeading
-              eyebrow="Live feed"
-              title="Monitor multiple zones without losing the human sense of the site."
-              description="SiteGuard presents live camera surfaces, active incidents, and zone context in a way that remains readable under pressure."
-            />
-            <p>
-              Operators can move from a high-level view into the exact location,
-              camera, and moment that triggered the event without wading through
-              raw footage manually.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-inner media-layout reverse">
-          <div className="media-copy reveal rise">
-            <SectionHeading
-              eyebrow="Alerts"
-              title="Escalation designed around trust, evidence, and timing."
-              description="Severity, event type, camera source, and timestamped evidence are visible immediately so teams can prioritize the right response."
-            />
-            <p>
-              Alerts can power notifications across supervisors, security teams,
-              and operations leaders while preserving a full audit trail.
-            </p>
-          </div>
-          <div className="media-column reveal rise">
-            <ScreenshotFrame
-              src={screenshotGallery.alerts.src}
-              alt={screenshotGallery.alerts.alt}
-              label="Alert history"
-              cropped
-              objectPosition="left top"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-tinted">
-        <div className="section-inner media-layout">
-          <div className="media-column reveal rise">
-            <ScreenshotFrame
-              src={screenshotGallery.reports.src}
-              alt={screenshotGallery.reports.alt}
-              label="Reports and analytics"
-            />
-          </div>
-          <div className="media-copy reveal rise">
-            <SectionHeading
-              eyebrow="Analytics"
-              title="Move from incidents to patterns with reporting that management can actually use."
-              description="Track repeated violations, zone risk, peak event windows, and compliance performance across teams and sites."
-            />
-            <p>
-              This gives leadership a clean path from daily monitoring to
-              strategic improvement, insurance conversations, and audit
-              readiness.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      {/* ---------------------------------------------------- Workflow */}
       <section className="section">
         <div className="section-inner">
           <SectionHeading
-            eyebrow="Architecture"
-            title="Quietly layered across edge analysis, instant alerts, and centralized review."
-            description="The underlying product flow remains simple, even when the AI workload is sophisticated."
+            eyebrow="Workflow"
+            title="Built for decisive action, not passive monitoring."
+            description="Each part of the interface is designed to shorten the path from detection to response."
           />
-          <div className="timeline-grid timeline-grid-architecture">
-            {architectureSteps.map((step) => (
-              <article className="timeline-card reveal rise" key={step.step}>
+          <div className="pillar-grid">
+            {platformMoments.map((moment) => (
+              <article className="feature-card reveal" key={moment.title}>
+                <span className="icon-tile">
+                  <IconMark name={moment.icon} />
+                </span>
+                <span className="eyebrow no-rule">{moment.eyebrow}</span>
+                <h3>{moment.title}</h3>
+                <p>{moment.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="stat-strip" style={{ marginTop: 28 }}>
+            {platformStats.map((stat) => (
+              <article className="stat-tile reveal" key={stat.lbl}>
+                <div className="num">{stat.num}</div>
+                <div className="lbl">{stat.lbl}</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------- Experience center */}
+      <section className="section section-tinted">
+        <div className="section-inner">
+          <SectionHeading
+            eyebrow="Experience center · interactive"
+            title="Explore the detections, live."
+            description="Pick a category, choose a detection, and see a real example from the SiteGuard system. 30+ models across six families, all on the cameras you already have."
+          />
+          <ExperienceCenter />
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Live wall */}
+      <section className="section">
+        <div className="section-inner split">
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Live monitoring"
+              title="A clean multi-camera live wall."
+              description="Monitor several critical zones at once without losing legibility, with AI labels and category-coloured detection frames on every feed."
+            />
+            <ul className="check-list">
+              <li>Configurable 1×1 up to multi-zone grids</li>
+              <li>Full-screen and per-camera focus</li>
+              <li>Live labels for identity, fire, PPE and intrusion</li>
+            </ul>
+          </div>
+          <LiveWallMock />
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Command surface */}
+      <section className="section section-tinted">
+        <div className="section-inner split reverse">
+          <CommandMock />
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Command dashboard"
+              title="Is the system healthy, what just happened, what needs me now."
+              description="Big Archivo numbers, mono labels, and the same severity colours everywhere — answered in seconds, with the most severe data reading first."
+            />
+            <ul className="check-list">
+              <li>Live camera-health and severity counts</li>
+              <li>24-hour alert trend at a glance</li>
+              <li>Recent alerts with evidence thumbnails</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Alert detail */}
+      <section className="section">
+        <div className="section-inner split">
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Alert intelligence"
+              title="Every incident arrives with the evidence."
+              description="Opening an alert puts the detection frame first — a bounding box tagged with object class, ID and confidence — paired with everything needed to act."
+            />
+            <ul className="check-list">
+              <li>Model, camera, zone, location, confidence and timestamp</li>
+              <li>Acknowledge or escalate with one primary action</li>
+              <li>Full audit trail: pending → acknowledged → resolved</li>
+            </ul>
+          </div>
+          <AlertDetailMock />
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Analytics */}
+      <section className="section section-tinted">
+        <div className="section-inner split reverse">
+          <AnalyticsMock />
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Reports & analytics"
+              title="From incidents to patterns leadership can use."
+              description="Alert distribution by family, per-camera severity, and trends across any date range — turning daily monitoring into strategic improvement and audit readiness."
+            />
+            <ul className="check-list">
+              <li>Distribution by detection family</li>
+              <li>Per-camera severity stacks</li>
+              <li>Exportable, time-stamped evidence records</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Face recognition */}
+      <section className="section">
+        <div className="section-inner split">
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Face recognition"
+              title="Know who is on site, automatically."
+              description="Match faces against enrolled staff, visitor and watchlist records at entry points — with consent-based, configurable enrolment."
+            />
+            <ul className="check-list">
+              <li>Silent watchlist flags at the gate</li>
+              <li>Automated staff and visitor access logs</li>
+              <li>Attributes and match confidence on every event</li>
+            </ul>
+          </div>
+          <FaceMatchMock />
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Mobile + push */}
+      <section className="section section-tinted">
+        <div className="section-inner mobile-layout">
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Mobile app · push alerts"
+              title="The right person, notified in seconds."
+              description="Take live supervision into the field. The instant a critical detection fires, SiteGuard pushes a notification — with the camera, model and confidence — straight to the right phone."
+            />
+            <ul className="check-list">
+              <li>Instant push, SMS or email on every critical event</li>
+              <li>Sound and vibrate reserved for critical only — never noise</li>
+              <li>Tap a notification to jump straight to the live feed</li>
+            </ul>
+          </div>
+          <div className="reveal">
+            <MobileMock />
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ Architecture */}
+      <section className="section section-ink">
+        <div className="section-inner">
+          <SectionHeading
+            eyebrow="System architecture"
+            title="From camera to alert, end to end."
+            description="Four stages turn the feeds from the cameras you already have into real-time alerts on any device."
+          />
+          <div className="timeline-grid">
+            {systemArchitecture.map((step) => (
+              <article className="timeline-card reveal" key={step.step}>
                 <span className="timeline-step">{step.step}</span>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------ CTA */}
+      <section className="section section-compact">
+        <div className="section-inner">
+          <div className="cta-panel reveal">
+            <div>
+              <span className="eyebrow">See it on your feed</span>
+              <h2 style={{ marginTop: 14 }}>Watch the platform run on a live camera.</h2>
+              <p>Book a walkthrough and we will tune a scenario pack to your site.</p>
+            </div>
+            <div className="cta-actions">
+              <Link className="button button-primary button-lg" href="/contact">
+                Book a demo
+              </Link>
+            </div>
           </div>
         </div>
       </section>

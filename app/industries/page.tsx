@@ -1,98 +1,98 @@
+import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { HeroVisual } from "@/components/hero-visual";
-import { IconMark } from "@/components/icon-mark";
+import { DetectionFrame } from "@/components/detection-frame";
 import { SectionHeading } from "@/components/section-heading";
-import { industryDetails } from "@/lib/content";
+import { IndustryCard } from "@/components/industry-card";
+import { industries, sectionFrames } from "@/lib/content";
 
 export default function IndustriesPage() {
   return (
     <>
       <PageHero
         eyebrow="Industries"
-        title="Different industries, unified through elegant operational intelligence."
-        description="SiteGuard supports high-risk, high-throughput environments where manual supervision consistently falls short."
-        primaryCta={{ href: "/contact", label: "Plan your rollout" }}
-        secondaryCta={{ href: "/product", label: "See the platform" }}
-        compact
-        visual={
-          <HeroVisual
-            src="/hero/industries-hero-icons.png"
-            alt="Generated SiteGuard industries hero showing construction, manufacturing, and banking supervision environments."
-            label="Industry-ready deployment"
-            accent="orb-amber"
-            chips={["Construction", "Manufacturing", "Banking"]}
-          />
+        title={
+          <>
+            Different industries, unified by one{" "}
+            <span className="accent">safety layer.</span>
+          </>
         }
+        description="SiteGuard is industry-agnostic — any site with cameras and a duty of care. The same platform fits every lead vertical through pre-tuned scenario packs."
+        primaryCta={{ href: "/industries/schools", label: "Explore Schools" }}
+        secondaryCta={{ href: "/contact", label: "Plan your rollout" }}
+        visual={<DetectionFrame frame={sectionFrames[3]} priority />}
       />
 
+      {/* ---------------------------------------------------- Grid */}
       <section className="section">
         <div className="section-inner">
           <SectionHeading
-            eyebrow="Deployment fit"
-            title="Designed for the operational language of each environment."
-            description="Each sector brings a different supervision burden, compliance posture, and response model."
+            eyebrow="Lead verticals"
+            title="Six environments, one platform."
+            description="Each vertical deploys a curated scenario pack — models, thresholds and zones tuned for that setting, delivered as a software profile."
           />
-          <div className="industry-overview-grid">
-            {industryDetails.map((industry) => (
-              <article className="industry-overview-card reveal rise" key={industry.name}>
-                <div className="industry-overview-head">
-                  <div className="card-icon card-icon-small-accent">
-                    <IconMark name={industry.icon} />
-                  </div>
-                  <div>
-                    <span>{industry.tag}</span>
-                    <h3>{industry.name}</h3>
-                  </div>
-                </div>
-                <p>{industry.summary}</p>
-                <ul>
-                  {industry.focusAreas.slice(0, 3).map((focus) => (
-                    <li key={focus}>{focus}</li>
-                  ))}
-                </ul>
-              </article>
+          <div className="ind-grid">
+            {industries.map((industry) => (
+              <IndustryCard key={industry.slug} industry={industry} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section-tinted">
+      {/* ---------------------------------------------------- Schools spotlight */}
+      <section className="section section-ink">
+        <div className="section-inner split">
+          <div className="reveal">
+            <span className="eyebrow">Live now · Schools</span>
+            <h2 style={{ marginBlock: "16px 16px", fontSize: "clamp(28px,3.6vw,40px)" }}>
+              AI-powered campus safety, built from a real deployment.
+            </h2>
+            <p style={{ color: "var(--sg-ink-text-soft)", fontSize: 17, lineHeight: 1.6 }}>
+              Eleven live detection models on the cameras a school already has —
+              from weapon and fire detection to vaping, wandering and access —
+              with eight more in active development.
+            </p>
+            <div className="hero-actions">
+              <Link className="button button-primary button-lg" href="/industries/schools">
+                Explore the Schools solution
+              </Link>
+            </div>
+          </div>
+          <DetectionFrame
+            frame={{
+              category: "behaviour",
+              cam: "CAM 18 · EXAM HALL",
+              zone: "ZONE A",
+              timestamp: "29 JUN 2026 · 10:22:08",
+              objectTag: "OBJ · PHONE",
+              model: "PlayMobilePhoneDetection",
+              label: "Phone in use",
+              confidence: "95",
+              glyph: "/brand/using_phone.png",
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- CTA */}
+      <section className="section section-compact">
         <div className="section-inner">
-          <div className="industry-detail-grid industry-detail-grid-redesigned">
-            {industryDetails.map((industry) => (
-              <article className="industry-detail-card reveal rise" key={`${industry.name}-detail`}>
-                <div className="industry-detail-head industry-detail-head-redesigned">
-                  <div className="industry-heading-row">
-                    <div className="card-icon card-icon-title">
-                      <IconMark name={industry.icon} />
-                    </div>
-                    <div>
-                      <span>{industry.tag}</span>
-                      <h3>{industry.name}</h3>
-                    </div>
-                  </div>
-                  <p>{industry.summary}</p>
-                </div>
-                <div className="industry-columns">
-                  <div>
-                    <h4>Core site challenges</h4>
-                    <ul>
-                      {industry.challenges.map((challenge) => (
-                        <li key={challenge}>{challenge}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4>Best-fit detections</h4>
-                    <ul>
-                      {industry.focusAreas.map((focus) => (
-                        <li key={focus}>{focus}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <div className="cta-panel reveal">
+            <div>
+              <span className="eyebrow">Your sector next</span>
+              <h2 style={{ marginTop: 14 }}>Don't see your environment yet?</h2>
+              <p>
+                Every vertical starts from the same 90+ model library. Tell us
+                your site and we'll assemble the right pack.
+              </p>
+            </div>
+            <div className="cta-actions">
+              <Link className="button button-primary button-lg" href="/contact">
+                Talk to us
+              </Link>
+              <Link className="button button-secondary-ink button-lg" href="/solutions">
+                View detection library
+              </Link>
+            </div>
           </div>
         </div>
       </section>
