@@ -66,7 +66,7 @@ export function IndustryShowcase() {
               Explore {current.name.split(" ")[0]}
             </Link>
           ) : (
-            <Link className="button button-secondary" href="/contact">
+            <Link className="button button-secondary-ink" href="/contact">
               Request early access
             </Link>
           )}
