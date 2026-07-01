@@ -3138,6 +3138,441 @@ main {
   gap: 12px;
 }
 
+/* ====================================================================
+   Industry showcase (tabbed) — industries page + homepage
+   ==================================================================== */
+.showcase {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.sc-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.sc-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--hairline-paper);
+  background: var(--sg-white);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--sg-font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--sg-text-soft);
+  transition: border-color 0.16s ease, background 0.16s ease, color 0.16s ease;
+}
+
+.sc-tab:hover {
+  border-color: var(--sg-teal);
+  color: var(--sg-text-ink);
+}
+
+.sc-tab-on {
+  background: var(--sg-ink-900);
+  border-color: var(--sg-ink-900);
+  color: var(--sg-ink-text);
+}
+
+.sc-tab-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(28, 140, 122, 0.1);
+  color: var(--sg-teal-hover);
+  flex-shrink: 0;
+}
+
+.sc-tab-on .sc-tab-icon {
+  background: rgba(95, 191, 169, 0.16);
+  color: var(--sg-teal-bright);
+}
+
+.sc-tab-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sc-tab-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.sc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sc-dot.live {
+  background: var(--sg-teal-bright);
+}
+
+.sc-dot.soon {
+  background: transparent;
+  border: 1px solid var(--sg-text-muted);
+}
+
+.sc-tab-on .sc-dot.soon {
+  border-color: var(--sg-ink-text-muted);
+}
+
+.sc-panel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--hairline-ink);
+  background: linear-gradient(160deg, var(--sg-ink-800), var(--sg-ink-900));
+  color: var(--sg-ink-text);
+  padding: clamp(24px, 3vw, 40px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--shadow-ink);
+}
+
+.sc-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.sc-panel > * {
+  position: relative;
+}
+
+.sc-panel-head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.sc-panel-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(95, 191, 169, 0.14);
+  border: 1px solid rgba(95, 191, 169, 0.3);
+  color: var(--sg-teal-bright);
+  flex-shrink: 0;
+}
+
+.sc-panel-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.sc-panel-head h3 {
+  font-size: clamp(22px, 3vw, 28px);
+  letter-spacing: -0.02em;
+  color: var(--sg-ink-text);
+  margin: 10px 0 5px;
+}
+
+.sc-tag {
+  font-family: var(--sg-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sg-ink-text-muted);
+}
+
+.sc-summary {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--sg-ink-text-soft);
+  max-width: 62ch;
+}
+
+.sc-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sc-foot {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.sc-pack {
+  font-family: var(--sg-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sg-teal-bright);
+}
+
+/* model chips on ink surfaces */
+.sc-panel .model-chip,
+.scx-detail .model-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--hairline-ink);
+  color: var(--sg-ink-text-soft);
+}
+
+/* ====================================================================
+   Scenario explorer (interactive) — solutions page (on ink)
+   ==================================================================== */
+.scx {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.scx-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.scx-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--hairline-ink);
+  background: var(--sg-ink-800);
+  cursor: pointer;
+  text-align: left;
+  color: var(--sg-ink-text);
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.scx-tile:hover {
+  border-color: rgba(95, 191, 169, 0.5);
+  background: var(--sg-ink-700);
+}
+
+.scx-tile-on {
+  border-color: var(--sg-teal-bright);
+  background: var(--sg-ink-700);
+  box-shadow: inset 0 0 0 1px var(--sg-teal-bright);
+}
+
+.scx-tile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: rgba(95, 191, 169, 0.14);
+  color: var(--sg-teal-bright);
+}
+
+.scx-tile-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.scx-tile-name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.scx-tile-count {
+  font-family: var(--sg-font-mono);
+  font-size: 11px;
+  color: var(--sg-ink-text-muted);
+}
+
+.scx-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--sg-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--sg-teal-bright);
+  color: var(--sg-ink-900);
+  font-weight: 600;
+}
+
+.scx-badge.inline {
+  position: static;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.scx-detail {
+  position: sticky;
+  top: 88px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--hairline-ink);
+  background: var(--sg-ink-800);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scx-detail-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.scx-detail-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: rgba(95, 191, 169, 0.14);
+  border: 1px solid rgba(95, 191, 169, 0.3);
+  color: var(--sg-teal-bright);
+  flex-shrink: 0;
+}
+
+.scx-detail-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.scx-detail-head h3 {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--sg-ink-text);
+}
+
+.scx-focus {
+  font-family: var(--sg-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--sg-ink-text-muted);
+}
+
+.scx-why {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--sg-ink-text-soft);
+}
+
+.scx-models-label {
+  display: block;
+  font-family: var(--sg-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sg-ink-text-muted);
+  margin-bottom: 10px;
+}
+
+.scx-model-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.scx-detail .button {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+/* ====================================================================
+   Office map card — contact page
+   ==================================================================== */
+.map-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--hairline-paper);
+  overflow: hidden;
+  box-shadow: var(--shadow-rest);
+  background: var(--sg-white);
+}
+
+.map-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--hairline-paper);
+}
+
+.map-pin {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(28, 140, 122, 0.1);
+  color: var(--sg-teal-hover);
+  flex-shrink: 0;
+}
+
+.map-pin svg {
+  width: 20px;
+  height: 20px;
+}
+
+.map-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.map-meta strong {
+  font-family: var(--sg-font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--sg-text-ink);
+}
+
+.map-meta span {
+  font-size: 13px;
+  color: var(--sg-text-muted);
+}
+
+.map-head .button {
+  flex-shrink: 0;
+}
+
+.map-frame {
+  position: relative;
+  height: 420px;
+  background: var(--sg-ink-900);
+}
+
+.map-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* --------------------------------------------------------- Reveal anim */
 .reveal {
   opacity: 0;
@@ -3308,5 +3743,44 @@ main {
   }
   .xc-cat {
     flex: 1 1 100%;
+  }
+}
+
+/* Showcase / scenario explorer / map responsive */
+@media (max-width: 1024px) {
+  .showcase {
+    grid-template-columns: 1fr;
+  }
+  .sc-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: none;
+  }
+  .sc-tab {
+    flex: 1 1 40%;
+  }
+  .scx {
+    grid-template-columns: 1fr;
+  }
+  .scx-detail {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .sc-tab {
+    flex: 1 1 100%;
+  }
+  .scx-tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+  .map-head {
+    flex-wrap: wrap;
+  }
+  .map-head .button {
+    width: 100%;
+  }
+  .map-frame {
+    height: 320px;
   }
 }

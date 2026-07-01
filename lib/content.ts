@@ -282,18 +282,127 @@ export const detectionFamilies: {
 ];
 
 /* ------------------------------------------------------------- Scenario packs */
-export const scenarioPacks: { name: string; count: string; icon: IconName; focus: string }[] = [
-  { name: "Safe School", count: "16 models", icon: "school", focus: "Safeguarding, behaviour, access" },
-  { name: "Smart Hospital", count: "18 models", icon: "heart", focus: "Falls, wandering, ward safety" },
-  { name: "Construction Site", count: "12 models", icon: "hardHat", focus: "Helmet/vest, intrusion, falls" },
-  { name: "Bright Kitchen", count: "10 models", icon: "chefHat", focus: "Hygiene, uniform, fire" },
-  { name: "Safe Community", count: "19 models", icon: "building", focus: "Housekeeping, access, behaviour" },
-  { name: "Safe Production", count: "18 models", icon: "factory", focus: "PPE, leaks, restricted zones" },
-  { name: "Gas Station", count: "10 models", icon: "fuel", focus: "Fueling safety, fire, loitering" },
-  { name: "Highway", count: "15 models", icon: "route", focus: "Accidents, wrong-way, congestion" },
-  { name: "Expressway Service", count: "18 models", icon: "warehouse", focus: "Housekeeping, behaviour, vehicles" },
-  { name: "Rural Road", count: "12 models", icon: "truck", focus: "Dumping, vehicles, gatherings" },
-  { name: "Common", count: "20 models", icon: "radar", focus: "The cross-industry baseline pack" },
+export type ScenarioPack = {
+  slug: string;
+  name: string;
+  count: string;
+  icon: IconName;
+  focus: string;
+  models: string[];
+  why: string;
+  badge?: string;
+};
+
+export const scenarioPacks: ScenarioPack[] = [
+  {
+    slug: "safe-school",
+    name: "Safe School",
+    count: "16 models",
+    icon: "school",
+    focus: "Safeguarding, behaviour, access",
+    models: ["Knife / Stick", "Fire", "Smoke & Fume", "Smoking", "Phone / Calling", "Sleeping / Absence", "Enter / Leave Area", "People Counting", "Face Recognition", "Fall", "Intrusion", "Fight"],
+    why: "Schools carry a duty of care across corridors, gates and yards that no team can watch at once. This pack front-loads life-safety detections — weapons, fire and falls — alongside safeguarding and access models, so staff are alerted in seconds and every event is evidence-backed for later review.",
+  },
+  {
+    slug: "smart-hospital",
+    name: "Smart Hospital",
+    count: "18 models",
+    icon: "heart",
+    focus: "Falls, wandering, ward safety",
+    models: ["Fall", "Long Stay", "People Gathering", "Enter / Leave Area", "Intrusion", "Face Mask", "Face Recognition", "Smoking", "Fire", "Abandoned Object"],
+    why: "Wards balance patient welfare with restricted-area control. The pack watches for falls, wandering and gatherings as a quiet welfare check rather than a public alarm, while guarding drug stores and staff-only zones — helping thin overnight teams reach the right patient faster.",
+  },
+  {
+    slug: "construction-site",
+    name: "Construction Site",
+    count: "12 models",
+    icon: "hardHat",
+    focus: "Helmet/vest, intrusion, falls",
+    models: ["Helmet", "Hi-Vis Vest", "Safety Belt", "Fall", "Intrusion", "Fire", "Forklift", "Illegal Parking", "Dump-Truck Tarp", "People Counting"],
+    why: "Fast-changing sites with contractor turnover make manual PPE checks impossible to sustain. The pack enforces helmet, vest and harness compliance, flags falls and after-hours intrusion, and keeps plant and vehicles in order — cutting incidents and evidencing compliance without a marshal at every gate.",
+  },
+  {
+    slug: "bright-kitchen",
+    name: "Bright Kitchen",
+    count: "10 models",
+    icon: "chefHat",
+    focus: "Hygiene, uniform, fire",
+    models: ["Chef Hat / Uniform", "Face Mask", "Gloves", "Exposed Long Hair", "Smoking", "Phone / Calling", "Fire", "Rat", "Work Clothes"],
+    why: "Commercial kitchens must prove hygiene and fire discipline continuously. The pack verifies chef hats, masks, gloves and uniform, flags smoking or phone use on the line, and watches for fire and pests — turning occasional spot-checks into constant, auditable assurance.",
+  },
+  {
+    slug: "safe-community",
+    name: "Safe Community",
+    count: "19 models",
+    icon: "building",
+    focus: "Housekeeping, access, behaviour",
+    models: ["Trash Overflow", "Debris Stacking", "Exposed / Bagged Trash", "Water Accumulation", "Illegal Parking", "Intrusion", "People Gathering", "Dog", "Fire", "Face Recognition"],
+    why: "Residential and mixed-use estates juggle housekeeping, access and safety. The pack blends sanitation and upkeep detection with perimeter, parking and gathering awareness, so facilities teams act on issues before residents report them and keep shared spaces orderly.",
+  },
+  {
+    slug: "safe-production",
+    name: "Safe Production",
+    count: "18 models",
+    icon: "factory",
+    focus: "PPE, leaks, restricted zones",
+    models: ["Helmet", "Hi-Vis Vest", "Gloves", "Goggles", "Gas Leak", "Oil Leak", "Fire", "Forklift", "Intrusion", "Fall"],
+    why: "Production floors combine PPE rules, exclusion zones and leak risk. The pack enforces protective equipment, guards machinery zones, and raises gas, oil and fire events instantly — reducing recordable incidents and downtime without new hardware on the floor.",
+  },
+  {
+    slug: "gas-station",
+    name: "Gas Station",
+    count: "10 models",
+    icon: "fuel",
+    focus: "Fuelling safety, fire, loitering",
+    models: ["Smoking", "Fire", "Phone / Calling", "Fall", "Intrusion", "People Counting", "Illegal Parking", "Congestion", "Long Stay"],
+    why: "Forecourts mix fuel, vehicles and the public — a high-consequence environment. The pack enforces no-smoking and no-phone rules at the pump, watches for fire and falls, and manages vehicle flow and after-hours loitering, protecting people and property around the clock.",
+  },
+  {
+    slug: "highway",
+    name: "Highway",
+    count: "15 models",
+    icon: "route",
+    focus: "Accidents, wrong-way, congestion",
+    models: ["Traffic Accident", "Wrong-Way", "Congestion", "Overspeed", "Emergency Lane", "Pedestrian Intrusion", "Illegal Parking", "Debris Stacking"],
+    why: "Highways need incidents seen the moment they happen. The pack detects accidents, wrong-way driving, congestion and emergency-lane abuse across long stretches, feeding control rooms faster than patrol or manual review and shortening response to keep traffic moving.",
+  },
+  {
+    slug: "expressway-service",
+    name: "Expressway Service",
+    count: "18 models",
+    icon: "warehouse",
+    focus: "Housekeeping, behaviour, vehicles",
+    models: ["Illegal Parking", "People Gathering", "Trash Overflow", "Smoking", "Fire", "Intrusion", "People Counting", "Congestion"],
+    why: "Service areas are busy public sites attached to fast roads. The pack keeps housekeeping, behaviour and parking in order while guarding fuel and building safety, so a small team can run a large footprint with consistent standards.",
+  },
+  {
+    slug: "rural-road",
+    name: "Rural Road",
+    count: "12 models",
+    icon: "truck",
+    focus: "Dumping, vehicles, gatherings",
+    models: ["Debris Stacking", "Congestion", "Wrong-Way", "People Gathering", "Overspeed", "Intrusion", "Traffic Accident"],
+    why: "Rural roads are lightly staffed but still see illegal dumping, accidents and unsafe driving. The pack brings automated oversight to spread-out routes, flagging dumping, congestion and collisions without a control room on site.",
+  },
+  {
+    slug: "banking",
+    name: "Banking & Finance",
+    count: "New pack",
+    icon: "landmark",
+    focus: "Intrusion, watchlist, queues",
+    badge: "New",
+    models: ["Intrusion", "Face Recognition", "Long Stay", "Abandoned Object", "Enter / Leave Area", "Fall", "People Gathering", "Congestion", "Fight"],
+    why: "Branches and ATM lobbies need discreet security and service insight in equal measure. The pack watches for intrusion, loitering and abandoned objects, flags watchlist faces and tailgating at secure doors, and measures queues — protecting people and cash while improving the customer experience.",
+  },
+  {
+    slug: "common",
+    name: "Common",
+    count: "20 models",
+    icon: "radar",
+    focus: "The cross-industry baseline",
+    models: ["Face Recognition", "People Counting", "Intrusion", "Enter / Leave Area", "Fire", "Smoke & Fume", "Fall", "Smoking", "Illegal Parking", "Abandoned Object"],
+    why: "The cross-industry baseline. Common bundles the detections almost every site needs — identity, occupancy, intrusion, fire and core safety — as a starting profile you extend with sector-specific models as requirements grow.",
+  },
 ];
 
 /* ------------------------------------------------------------- Severity model */
@@ -358,10 +467,22 @@ export const industries: {
     icon: "school",
     pack: "Safe School pack",
     summary:
-      "Turn corridors, gates and yards into a 24/7 safety system — weapons, fire, vaping, wandering and access, all detected in seconds.",
+      "Corridors, gates and yards become a continuous safety system — weapons, fire, vaping, wandering and access detected in seconds.",
     focus: ["Weapon & fire", "Vaping & phones", "Area entry / exit", "Face recognition"],
     status: "live",
     href: "/industries/schools",
+  },
+  {
+    slug: "construction",
+    name: "Construction Sites",
+    tag: "PPE · intrusion · falls",
+    icon: "hardHat",
+    pack: "Construction Site pack",
+    summary:
+      "Fast-changing, multi-zone sites get continuous PPE enforcement, fall and intrusion alerts, and clear vehicle discipline.",
+    focus: ["Helmet & harness", "Fall detection", "Intrusion", "Dump-truck tarp"],
+    status: "live",
+    href: "/industries/construction",
   },
   {
     slug: "manufacturing",
@@ -370,21 +491,9 @@ export const industries: {
     icon: "factory",
     pack: "Safe Production pack",
     summary:
-      "Floor-wide visual supervision for PPE compliance, machinery exclusion zones, leaks and unsafe behaviour without adding hardware.",
+      "Floor-wide supervision for PPE compliance, machinery exclusion zones, leaks and unsafe behaviour — with no added hardware.",
     focus: ["Helmet & vest", "Gas / oil leak", "Forklift safety", "Restricted zones"],
     status: "soon",
-  },
-  {
-    slug: "construction",
-    name: "Construction Sites",
-    tag: "Helmet/vest · intrusion · falls",
-    icon: "hardHat",
-    pack: "Construction Site pack",
-    summary:
-      "Fast-changing, multi-zone sites get continuous PPE enforcement, fall and intrusion alerts, and clear vehicle discipline.",
-    focus: ["Helmet & harness", "Fall detection", "Intrusion", "Dump-truck tarp"],
-    status: "live",
-    href: "/industries/construction",
   },
   {
     slug: "healthcare",
@@ -400,12 +509,34 @@ export const industries: {
   {
     slug: "retail",
     name: "Retail & Commercial",
-    tag: "Theft · crowding · queue analytics",
+    tag: "Loss prevention · crowding · queues",
     icon: "store",
     pack: "Common pack",
     summary:
-      "Service-floor visibility that pairs loss-prevention, crowd and queue analytics with perimeter and incident awareness.",
+      "Service-floor visibility that pairs loss prevention with crowd and queue analytics, plus perimeter and incident awareness.",
     focus: ["Intrusion", "Crowd density", "Queue analytics", "Face recognition"],
+    status: "soon",
+  },
+  {
+    slug: "hospitality",
+    name: "Hospitality & Kitchens",
+    tag: "Hygiene · uniform · fire",
+    icon: "chefHat",
+    pack: "Bright Kitchen pack",
+    summary:
+      "Commercial kitchens prove hygiene and fire discipline continuously — chef hats, masks, gloves and uniform, with smoking and fire alerts.",
+    focus: ["Chef hat & mask", "Gloves", "Smoking", "Fire & pests"],
+    status: "soon",
+  },
+  {
+    slug: "community",
+    name: "Communities & Facilities",
+    tag: "Housekeeping · access · behaviour",
+    icon: "building",
+    pack: "Safe Community pack",
+    summary:
+      "Residential and mixed-use estates combine sanitation and upkeep detection with perimeter, parking and gathering awareness.",
+    focus: ["Housekeeping", "Intrusion", "Illegal parking", "People gathering"],
     status: "soon",
   },
   {
@@ -413,10 +544,43 @@ export const industries: {
     name: "Transport & Logistics",
     tag: "Perimeter · vehicles · loading bays",
     icon: "truck",
-    pack: "Highway / Expressway pack",
+    pack: "Expressway Service pack",
     summary:
-      "Perimeter security, vehicle discipline and loading-bay supervision across yards, depots and access routes.",
+      "Perimeter security, vehicle discipline and loading-bay supervision across yards, depots and service areas.",
     focus: ["Perimeter", "Overspeed", "Wrong-way", "Loading bays"],
+    status: "soon",
+  },
+  {
+    slug: "roads",
+    name: "Roads & Highways",
+    tag: "Accidents · wrong-way · congestion",
+    icon: "route",
+    pack: "Highway pack",
+    summary:
+      "Traffic incidents seen the moment they happen — accidents, wrong-way driving, congestion and emergency-lane abuse across long stretches.",
+    focus: ["Accident", "Wrong-way", "Congestion", "Emergency lane"],
+    status: "soon",
+  },
+  {
+    slug: "fuel",
+    name: "Fuel & Energy",
+    tag: "Fuelling safety · fire · loitering",
+    icon: "fuel",
+    pack: "Gas Station pack",
+    summary:
+      "High-consequence forecourts enforce no-smoking and no-phone rules at the pump, watch for fire and falls, and manage vehicle flow.",
+    focus: ["No smoking", "Fire", "Vehicle flow", "Loitering"],
+    status: "soon",
+  },
+  {
+    slug: "banking",
+    name: "Banking & Finance",
+    tag: "Intrusion · watchlist · queues",
+    icon: "landmark",
+    pack: "Banking pack",
+    summary:
+      "Branches and ATM lobbies get discreet security and service insight — intrusion, loitering, abandoned objects, watchlist faces and queue analytics.",
+    focus: ["Intrusion", "Loitering", "Abandoned object", "Queue analytics"],
     status: "soon",
   },
 ];

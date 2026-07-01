@@ -3,18 +3,14 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { DetectionFrame } from "@/components/detection-frame";
 import { SectionHeading } from "@/components/section-heading";
+import { ScenarioExplorer } from "@/components/scenario-explorer";
 import { IconMark } from "@/components/icon-mark";
-import {
-  detectionFamilies,
-  scenarioPacks,
-  sectionFrames,
-  severityLevels,
-} from "@/lib/content";
+import { detectionFamilies, sectionFrames, severityLevels } from "@/lib/content";
 
 const solutionStats = [
   { num: "90+", lbl: "Detection models" },
   { num: "6", lbl: "Functional families" },
-  { num: "11", lbl: "Scenario packs" },
+  { num: "12", lbl: "Scenario packs" },
   { num: "0–3s", lbl: "Event to alert" },
 ];
 
@@ -116,29 +112,9 @@ export default function SolutionsPage() {
           <SectionHeading
             eyebrow="Scenario packs"
             title="Pre-tuned bundles per environment."
-            description="Each pack ships a curated subset of models, thresholds and zones tuned for that setting — deployed as a software profile, with no new hardware."
+            description="Select a pack to see the models it deploys and why it fits that setting. Each ships a curated subset of models, thresholds and zones as a software profile — with no new hardware."
           />
-          <div className="scenario-grid">
-            {scenarioPacks.map((pack) => (
-              <article className="scenario-card reveal" key={pack.name}>
-                <span className="sc-icon">
-                  <IconMark name={pack.icon} />
-                </span>
-                <h4>{pack.name}</h4>
-                <p>{pack.count}</p>
-                <p
-                  style={{
-                    textTransform: "none",
-                    letterSpacing: 0,
-                    fontFamily: "var(--sg-font-body)",
-                    color: "var(--sg-ink-text-muted)",
-                  }}
-                >
-                  {pack.focus}
-                </p>
-              </article>
-            ))}
-          </div>
+          <ScenarioExplorer />
         </div>
       </section>
 

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { DetectionFrame } from "@/components/detection-frame";
 import { SectionHeading } from "@/components/section-heading";
-import { IndustryCard } from "@/components/industry-card";
-import { industries, sectionFrames } from "@/lib/content";
+import { IndustryShowcase } from "@/components/industry-showcase";
+import { sectionFrames } from "@/lib/content";
 
 export default function IndustriesPage() {
   return (
@@ -27,14 +27,10 @@ export default function IndustriesPage() {
         <div className="section-inner">
           <SectionHeading
             eyebrow="Lead verticals"
-            title="Six environments, one platform."
-            description="Each vertical deploys a curated scenario pack — models, thresholds and zones tuned for that setting, delivered as a software profile."
+            title="One platform, tuned for every environment."
+            description="Select a vertical to see how the same detection library is packaged into a curated scenario pack — models, thresholds and zones tuned for that setting."
           />
-          <div className="ind-grid">
-            {industries.map((industry) => (
-              <IndustryCard key={industry.slug} industry={industry} />
-            ))}
-          </div>
+          <IndustryShowcase />
         </div>
       </section>
 

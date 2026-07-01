@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { DetectionFrame } from "@/components/detection-frame";
 import { CommandMock } from "@/components/platform-mocks";
-import { IndustryCard } from "@/components/industry-card";
+import { IndustryShowcase } from "@/components/industry-showcase";
 import { SectionHeading } from "@/components/section-heading";
 import { IconMark } from "@/components/icon-mark";
 import {
@@ -11,7 +11,6 @@ import {
   heroFrames,
   homeMetrics,
   howItWorks,
-  industries,
   operationalPillars,
   outcomes,
   sectionFrames,
@@ -246,11 +245,7 @@ export default function HomePage() {
             title="Industry-agnostic — any site with cameras and a duty of care."
             description="The same platform fits every lead vertical through pre-tuned scenario packs deployed as software profiles."
           />
-          <div className="ind-grid">
-            {industries.map((industry) => (
-              <IndustryCard key={industry.slug} industry={industry} showFocus={false} />
-            ))}
-          </div>
+          <IndustryShowcase />
         </div>
       </section>
 
