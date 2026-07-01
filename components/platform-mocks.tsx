@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import { DetectionFrame } from "@/components/detection-frame";
 import { heroFrames, sectionFrames, type FrameData } from "@/lib/content";
 
@@ -86,7 +87,7 @@ export function LiveWallMock() {
       <div className="mock-bar">
         <span className="wordmark">
           Site<span className="wm-guard">Guard</span>
-          <span style={{ color: "var(--sg-ink-text-muted)", fontWeight: 400 }}> · Live · 3×2</span>
+          <span style={{ color: "var(--sg-ink-text-muted)", fontWeight: 400 }}> · Live wall</span>
         </span>
         <span className="status">
           <span className="dot" />
@@ -96,7 +97,23 @@ export function LiveWallMock() {
       <div className="mock-body">
         <div className="mock-wall">
           {tiles.map((f) => (
-            <DetectionFrame key={f.model} frame={f} />
+            <div className={`wall-tile cat-${f.category}`} key={f.model}>
+              <span className="wt-glyph">
+                <Image src={f.glyph} alt="" width={72} height={72} />
+              </span>
+              <div className="wt-top">
+                <span className="wt-live">
+                  <span className="wt-dot" />
+                  LIVE
+                </span>
+                <span className="wt-cam">{f.cam.split("·")[0].trim()}</span>
+              </div>
+              <span className="wt-chip">{f.label}</span>
+              <span className="wt-conf">
+                {f.confidence}
+                {f.confidence !== "—" ? "%" : ""}
+              </span>
+            </div>
           ))}
         </div>
       </div>
