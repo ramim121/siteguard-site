@@ -73,7 +73,7 @@ export function ExperienceCenter() {
             >
               <span className={`xc-sev sev-${d.severity}`} />
               {d.name}
-              {!d.image ? <span className="xc-soon">requested</span> : null}
+              {!d.image ? <span className="xc-soon">sample</span> : null}
             </button>
           );
         })}
@@ -105,7 +105,7 @@ export function ExperienceCenter() {
               {active ? (
                 <Image src={active.glyph} alt="" width={64} height={64} aria-hidden />
               ) : null}
-              <span>Sample image requested</span>
+              <span>Representative scene</span>
             </div>
           )}
 
@@ -121,7 +121,7 @@ export function ExperienceCenter() {
               {sevLabel[active?.severity ?? "access"]}
             </span>
             {active && !active.image ? (
-              <span className="xc-soon">Detection image requested</span>
+              <span className="xc-soon">Sample imagery</span>
             ) : null}
           </div>
         </div>

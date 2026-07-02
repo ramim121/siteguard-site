@@ -146,11 +146,44 @@ main {
 .section-tinted {
   background: var(--sg-paper-2);
   border-block: 1px solid var(--sg-hairline);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-tinted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 45% at 100% 0%, rgba(28, 140, 122, 0.06), transparent 62%);
+  pointer-events: none;
+}
+
+.section-tinted > .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .section-ink {
   background: var(--sg-ink-900);
   color: var(--sg-ink-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-ink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(78% 60% at 88% -5%, rgba(28, 140, 122, 0.13), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 46px 46px, 46px 46px;
+  pointer-events: none;
+}
+
+.section-ink > .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .section-ink h1,
@@ -2452,16 +2485,27 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: 0.6;
+  background-image: radial-gradient(58% 52% at 50% 46%, color-mix(in srgb, var(--cat) 20%, transparent), transparent 66%),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 36px 36px;
+  opacity: 0.9;
+}
+
+.xc-empty::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--cat) 38%, transparent);
+  animation: pulse 2.6s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .xc-empty img {
-  width: 64px;
-  height: 64px;
-  opacity: 0.55;
+  width: 66px;
+  height: 66px;
+  opacity: 0.72;
   position: relative;
 }
 
