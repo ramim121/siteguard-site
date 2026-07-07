@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { DetectionFrame } from "@/components/detection-frame";
@@ -182,6 +183,26 @@ export default function SchoolsPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------- One platform, many industries */}
+      <section className="section section-tinted section-compact">
+        <div className="section-inner">
+          <SectionHeading
+            eyebrow="Beyond schools"
+            title="The same platform serves 30+ industries."
+            description="The Safe School pack draws on a proprietary library of 400+ algorithms, proven across construction, industry, transport and more."
+          />
+          <figure className="bank-figure reveal">
+            <Image
+              src="/bank/library-arch.jpg"
+              alt="SiteGuard proprietary AI visual analytics: 30+ industries and 400+ algorithms"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 1100px) 100vw, 1060px"
+            />
+          </figure>
         </div>
       </section>
 

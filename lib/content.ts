@@ -840,12 +840,12 @@ export const experienceDetections: ExperienceDetection[] = [
   { id: "gas-leak", categoryId: "threat", name: "Gas Leak", severity: "critical", image: null, glyph: "/brand/hazard.png", description: "Flags visible gas or vapour escape in industrial settings." },
 
   // PPE & Compliance
-  { id: "ppe-compliance", categoryId: "ppe", name: "PPE Compliance", severity: "warning", image: `${DET}/ppe-detection-clean.png`, glyph: "/brand/hazard.png", description: "Verifies helmets, vests and worker PPE compliance in live footage." },
-  { id: "no-helmet", categoryId: "ppe", name: "No Helmet", severity: "warning", image: `${DET}/no-helmet.png`, glyph: "/brand/hazard.png", description: "Escalates missing-helmet events with evidence-ready context." },
-  { id: "helmet-violation", categoryId: "ppe", name: "Helmet Violation", severity: "warning", image: `${DET}/scenario-helmet-violation.png`, glyph: "/brand/hazard.png", description: "Flags helmet non-compliance across active work zones." },
+  { id: "ppe-compliance", categoryId: "ppe", name: "PPE Compliance", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Verifies helmets, vests and worker PPE compliance in live footage." },
+  { id: "no-helmet", categoryId: "ppe", name: "No Helmet", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Escalates missing-helmet events with evidence-ready context." },
+  { id: "helmet-violation", categoryId: "ppe", name: "Helmet Violation", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Flags helmet non-compliance across active work zones." },
   { id: "hi-vis", categoryId: "ppe", name: "Hi-Vis Vest", severity: "warning", image: `${DET}/safety-vest.png`, glyph: "/brand/people-access.png", description: "Verifies high-visibility vest compliance in shared zones." },
   { id: "mask", categoryId: "ppe", name: "Mask Compliance", severity: "warning", image: `${DET}/scenario-mask-compliance.png`, glyph: "/brand/hazard.png", description: "Flags missing face masks in zones where one is required." },
-  { id: "ppe-scene", categoryId: "ppe", name: "Multi-Worker PPE Check", severity: "warning", image: `${DET}/scenario-ppe-compliance.png`, glyph: "/brand/hazard.png", description: "Whole-scene PPE check across multiple workers at once." },
+  { id: "ppe-scene", categoryId: "ppe", name: "Multi-Worker PPE Check", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Whole-scene PPE check across multiple workers at once." },
   { id: "harness", categoryId: "ppe", name: "Safety Harness", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Checks for a worn safety harness when working at height." },
   { id: "gloves-goggles", categoryId: "ppe", name: "Gloves & Goggles", severity: "warning", image: null, glyph: "/brand/hazard.png", description: "Verifies hand and eye protection in hazardous tasks." },
 
@@ -1392,6 +1392,14 @@ export const bank = {
       description: "Camera positioning is codified from field experience — counter, cash-replenishment room and behaviour zones tuned per area, on the equipment you already run.",
       image: "/bank/deployed-standard.jpg",
       alt: "Real SiteGuard bank deployment: counter area, cash replenishment room, smoking and sleeping detection",
+    },
+    {
+      id: "deployments",
+      eyebrow: "In the field",
+      title: "Warnings that work in production.",
+      description: "Fight, loitering, suspicious-person, entry/exit, fall, device-tampering and fire warnings — running live across branch and ATM deployments.",
+      image: "/bank/deployments.jpg",
+      alt: "SiteGuard deployment examples: fight, loitering, suspicious person, entry and exit, fall, device tampering and fire warnings",
     },
   ],
   fraud: {

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { DetectionFrame } from "@/components/detection-frame";
@@ -41,6 +42,15 @@ export default function SolutionsPage() {
               </article>
             ))}
           </div>
+          <figure className="bank-figure reveal" style={{ marginTop: 28 }}>
+            <Image
+              src="/bank/library-arch.jpg"
+              alt="SiteGuard proprietary AI visual analytics: 30+ industries and 400+ algorithms across construction, chemical, mining, industrial parks and gas stations"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 1100px) 100vw, 1060px"
+            />
+          </figure>
         </div>
       </section>
 
