@@ -1333,7 +1333,7 @@ export const bank = {
     model: "CashHandoffDetection",
     label: "Cash handoff verified",
     confidence: "97",
-    glyph: "/brand/people-access.png",
+    glyph: "/brand/human_counting.png",
   },
   stats: [
     { num: "400+", lbl: "Algorithms in the library" },

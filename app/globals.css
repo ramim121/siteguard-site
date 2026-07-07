@@ -702,6 +702,7 @@ main {
   box-shadow: var(--shadow-ink);
   overflow: hidden;
   aspect-ratio: 4 / 3;
+  container-type: inline-size;
   --cat: var(--sg-critical);
 }
 
@@ -738,37 +739,41 @@ main {
 
 .df-glyph img {
   width: 44%;
+  max-height: 56%;
   height: auto;
+  object-fit: contain;
   filter: grayscale(0.2) brightness(1.1);
   opacity: 0.85;
 }
 
 .df-top {
   position: absolute;
-  inset: 14px 14px auto 14px;
+  inset: max(9px, 3.2cqi) max(9px, 3.2cqi) auto max(9px, 3.2cqi);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: max(8px, 2cqi);
   z-index: 2;
 }
 
 .df-live {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: max(4px, 1.6cqi);
   font-family: var(--sg-font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
+  font-size: max(8px, 2.4cqi);
+  letter-spacing: 0.14em;
   font-weight: 600;
   color: #fff;
   background: rgba(214, 69, 60, 0.92);
-  padding: 4px 10px;
+  padding: max(2px, 0.9cqi) max(6px, 2.3cqi);
   border-radius: var(--radius-pill);
+  flex-shrink: 0;
 }
 
 .df-live .dot {
-  width: 6px;
-  height: 6px;
+  width: max(4px, 1.4cqi);
+  height: max(4px, 1.4cqi);
   border-radius: 50%;
   background: #fff;
   animation: pulse 1.8s infinite;
@@ -777,10 +782,11 @@ main {
 .df-cam {
   text-align: right;
   font-family: var(--sg-font-mono);
-  font-size: 10px;
+  font-size: max(8px, 2.3cqi);
   line-height: 1.5;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   color: var(--sg-ink-text-soft);
+  min-width: 0;
 }
 
 .df-cam span {
@@ -788,21 +794,23 @@ main {
   color: var(--sg-ink-text-muted);
 }
 
-/* corner brackets */
+/* corner brackets — always centred around the glyph */
 .df-box {
   position: absolute;
-  left: 18%;
-  top: 26%;
-  width: 46%;
-  height: 46%;
+  left: 50%;
+  top: 52%;
+  width: 54%;
+  aspect-ratio: 1 / 1;
+  max-height: 62%;
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 .df-box i {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2.5px solid var(--cat);
+  width: max(12px, 4.6cqi);
+  height: max(12px, 4.6cqi);
+  border: max(2px, 0.55cqi) solid var(--cat);
 }
 
 .df-box i:nth-child(1) {
@@ -832,31 +840,33 @@ main {
 
 .df-box .tag {
   position: absolute;
-  top: -22px;
+  top: calc(-1 * max(17px, 5.4cqi));
   left: -2px;
   font-family: var(--sg-font-mono);
-  font-size: 9.5px;
+  font-size: max(8px, 2.3cqi);
   letter-spacing: 0.08em;
   color: #fff;
   background: var(--cat);
-  padding: 2px 7px;
+  padding: max(1px, 0.5cqi) max(5px, 1.7cqi);
   border-radius: 3px;
   white-space: nowrap;
 }
 
 .df-bottom {
   position: absolute;
-  inset: auto 14px 14px 14px;
+  inset: auto max(9px, 3.2cqi) max(9px, 3.2cqi) max(9px, 3.2cqi);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: max(8px, 2cqi);
   z-index: 2;
 }
 
 .df-result {
   display: inline-flex;
   flex-direction: column;
-  gap: 4px;
+  gap: max(3px, 1cqi);
+  min-width: 0;
 }
 
 .df-result .chip {
@@ -868,29 +878,34 @@ main {
   color: #fff;
   font-family: var(--sg-font-display);
   font-weight: 700;
-  font-size: 13px;
+  font-size: max(10px, 3.1cqi);
   letter-spacing: -0.01em;
-  padding: 5px 12px;
+  padding: max(3px, 1.2cqi) max(8px, 2.9cqi);
   border-radius: var(--radius-sm);
 }
 
 .df-result .model {
   font-family: var(--sg-font-mono);
-  font-size: 10px;
+  font-size: max(8px, 2.3cqi);
   letter-spacing: 0.06em;
   color: var(--sg-ink-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .df-conf {
   font-family: var(--sg-font-display);
   font-weight: 800;
-  font-size: 30px;
+  font-size: max(17px, 7cqi);
   color: #fff;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .df-conf span {
-  font-size: 14px;
+  font-size: max(9px, 3.3cqi);
   color: var(--sg-ink-text-muted);
 }
 
