@@ -93,7 +93,7 @@ export default function BankingPage() {
           id={section.id}
         >
           <div className="section-inner">
-            <div className="section-heading reveal" style={{ maxWidth: 640 }}>
+            <div className="section-heading reveal">
               <span className="eyebrow">{section.eyebrow}</span>
               <h2>{section.title}</h2>
               <p>{section.description}</p>
