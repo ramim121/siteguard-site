@@ -60,9 +60,20 @@ export function ScenarioExplorer() {
           </div>
         </div>
 
-        <Link className="button button-primary" href="/contact">
-          Deploy the {current.name} pack
-        </Link>
+        {current.href ? (
+          <div className="scx-actions">
+            <Link className="button button-primary" href={current.href}>
+              Explore SiteGuard for Banking
+            </Link>
+            <Link className="button button-secondary-ink" href="/contact">
+              Talk to us
+            </Link>
+          </div>
+        ) : (
+          <Link className="button button-primary" href="/contact">
+            Deploy the {current.name} pack
+          </Link>
+        )}
       </div>
     </div>
   );

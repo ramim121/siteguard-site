@@ -8,10 +8,10 @@ import { IconMark } from "@/components/icon-mark";
 import { detectionFamilies, sectionFrames, severityLevels } from "@/lib/content";
 
 const solutionStats = [
-  { num: "90+", lbl: "Detection models" },
-  { num: "6", lbl: "Functional families" },
+  { num: "400+", lbl: "Algorithms in the library" },
+  { num: "90+", lbl: "Detection models live" },
   { num: "12", lbl: "Scenario packs" },
-  { num: "0–3s", lbl: "Event to alert" },
+  { num: "30+", lbl: "Industries deployed" },
 ];
 
 export default function SolutionsPage() {

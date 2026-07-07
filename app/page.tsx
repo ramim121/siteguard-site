@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { DetectionFrame } from "@/components/detection-frame";
+import { HeroShowcase } from "@/components/hero-showcase";
 import { CommandMock } from "@/components/platform-mocks";
 import { IndustryShowcase } from "@/components/industry-showcase";
 import { SectionHeading } from "@/components/section-heading";
@@ -8,7 +9,6 @@ import { IconMark } from "@/components/icon-mark";
 import {
   brandPillars,
   detectionFamilies,
-  heroFrames,
   homeMetrics,
   howItWorks,
   operationalPillars,
@@ -55,8 +55,7 @@ export default function HomePage() {
           </div>
 
           <div className="hero-visual reveal">
-            <DetectionFrame frame={heroFrames[0]} priority />
-            <DetectionFrame frame={heroFrames[1]} className="mini-frame" />
+            <HeroShowcase />
           </div>
         </div>
       </section>

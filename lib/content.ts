@@ -291,6 +291,7 @@ export type ScenarioPack = {
   models: string[];
   why: string;
   badge?: string;
+  href?: string;
 };
 
 export const scenarioPacks: ScenarioPack[] = [
@@ -386,13 +387,14 @@ export const scenarioPacks: ScenarioPack[] = [
   },
   {
     slug: "banking",
-    name: "Banking & Finance",
-    count: "New pack",
+    name: "Smart Banking",
+    count: "Live pack",
     icon: "landmark",
-    focus: "Intrusion, watchlist, queues",
-    badge: "New",
-    models: ["Intrusion", "Face Recognition", "Long Stay", "Abandoned Object", "Enter / Leave Area", "Fall", "People Gathering", "Congestion", "Fight"],
-    why: "Branches and ATM lobbies need discreet security and service insight in equal measure. The pack watches for intrusion, loitering and abandoned objects, flags watchlist faces and tailgating at secure doors, and measures queues — protecting people and cash while improving the customer experience.",
+    focus: "Counter, cash, ATM, anti-fraud",
+    badge: "Live",
+    href: "/industries/banking",
+    models: ["Cash Handoff & Count", "No Staff at Counter", "Sleeping / Phone Use", "Machine-Room Door", "Fight", "Fall", "Abandoned Object", "Fire & Smoke", "Watchlist Face", "Loitering"],
+    why: "Banks own dozens of cameras per branch, yet supervision stays manual and reactive. The Smart Banking pack links video to the transaction record — verifying counter conduct and cash handling, guarding ATMs and cash rooms, and fusing branch and ATM cues into real-time anti-fraud warnings.",
   },
   {
     slug: "common",
@@ -485,6 +487,18 @@ export const industries: {
     href: "/industries/construction",
   },
   {
+    slug: "banking",
+    name: "Banking & Finance",
+    tag: "Counter conduct · cash · ATM security",
+    icon: "landmark",
+    pack: "Smart Banking pack",
+    summary:
+      "Branches, cash rooms and ATMs become an always-on supervision system — counter conduct, cash handling, fraud cues and after-hours intrusion, on the cameras the bank already runs.",
+    focus: ["Counter & cash handling", "ATM security", "Anti-fraud warning", "Watchlist faces"],
+    status: "live",
+    href: "/industries/banking",
+  },
+  {
     slug: "manufacturing",
     name: "Manufacturing & Warehousing",
     tag: "PPE · hazards · restricted zones",
@@ -570,17 +584,6 @@ export const industries: {
     summary:
       "High-consequence forecourts enforce no-smoking and no-phone rules at the pump, watch for fire and falls, and manage vehicle flow.",
     focus: ["No smoking", "Fire", "Vehicle flow", "Loitering"],
-    status: "soon",
-  },
-  {
-    slug: "banking",
-    name: "Banking & Finance",
-    tag: "Intrusion · watchlist · queues",
-    icon: "landmark",
-    pack: "Banking pack",
-    summary:
-      "Branches and ATM lobbies get discreet security and service insight — intrusion, loitering, abandoned objects, watchlist faces and queue analytics.",
-    focus: ["Intrusion", "Loitering", "Abandoned object", "Queue analytics"],
     status: "soon",
   },
 ];
@@ -823,7 +826,7 @@ export const experienceDetections: ExperienceDetection[] = [
   { id: "crowd-density", categoryId: "people", name: "Crowd Density", severity: "info", image: `${DET}/scenario-crowd-density.png`, glyph: "/brand/human_counting.png", description: "Flags density build-up in lobbies, halls, queues and access points." },
   { id: "queue-monitoring", categoryId: "people", name: "Queue Monitoring", severity: "info", image: `${DET}/scenario-queue-monitoring.png`, glyph: "/brand/human_counting.png", description: "Tracks waiting-line pressure and service-area congestion." },
   { id: "intrusion", categoryId: "people", name: "Intrusion", severity: "critical", image: `${DET}/intrusion.png`, glyph: "/brand/intrusion.png", description: "Flags movement inside restricted zones, perimeters or closed spaces." },
-  { id: "enter-leave", categoryId: "people", name: "Enter / Leave Area", severity: "info", image: null, glyph: "/brand/people-access.png", description: "Flags the moment a person enters or leaves a defined virtual zone." },
+  { id: "enter-leave", categoryId: "people", name: "Enter / Leave Area", severity: "info", image: `${DET}/enter-leave-area.png`, glyph: "/brand/people-access.png", description: "Flags the moment a person enters or leaves a defined virtual zone." },
   { id: "cross-line", categoryId: "people", name: "Cross-line", severity: "info", image: null, glyph: "/brand/people-access.png", description: "Detects a person or object crossing a drawn tripwire line." },
   { id: "lpc", categoryId: "people", name: "License-Plate (LPC)", severity: "info", image: null, glyph: "/brand/cctv-camera.png", description: "Reads and logs vehicle plates at gates and entrances." },
 
@@ -831,9 +834,9 @@ export const experienceDetections: ExperienceDetection[] = [
   { id: "fire", categoryId: "threat", name: "Fire / Flame", severity: "critical", image: `${DET}/fire-alert.png`, glyph: "/brand/fire_flame.png", description: "Spots visible flame in any monitored area, indoors or out, day or night." },
   { id: "abandoned-object", categoryId: "threat", name: "Abandoned Object", severity: "critical", image: `${DET}/abandoned-object.png`, glyph: "/brand/critical-threat.png", description: "Identifies unattended objects and keeps a timestamped review trail." },
   { id: "knife-stick", categoryId: "threat", name: "Knife / Stick", severity: "critical", image: null, glyph: "/brand/no-weapons.png", description: "Identifies knives, sticks and similar handheld weapons on sight." },
-  { id: "fall", categoryId: "threat", name: "Fall Detection", severity: "critical", image: null, glyph: "/brand/critical-threat.png", description: "Recognises a person falling or collapsing anywhere in view." },
-  { id: "fight", categoryId: "threat", name: "Fight Detection", severity: "critical", image: null, glyph: "/brand/critical-threat.png", description: "Recognises aggressive grappling and striking between people." },
-  { id: "smoke-fume", categoryId: "threat", name: "Smoke & Fume", severity: "critical", image: null, glyph: "/brand/fire_flame.png", description: "Confirms genuine fire events from combined smoke and flame signatures." },
+  { id: "fall", categoryId: "threat", name: "Fall Detection", severity: "critical", image: `${DET}/fall.png`, glyph: "/brand/critical-threat.png", description: "Recognises a person falling or collapsing anywhere in view." },
+  { id: "fight", categoryId: "threat", name: "Fight Detection", severity: "critical", image: `${DET}/fight.png`, glyph: "/brand/critical-threat.png", description: "Recognises aggressive grappling and striking between people." },
+  { id: "smoke-fume", categoryId: "threat", name: "Smoke & Fume", severity: "critical", image: `${DET}/smoke-fume.png`, glyph: "/brand/fire_flame.png", description: "Confirms genuine fire events from combined smoke and flame signatures." },
   { id: "gas-leak", categoryId: "threat", name: "Gas Leak", severity: "critical", image: null, glyph: "/brand/hazard.png", description: "Flags visible gas or vapour escape in industrial settings." },
 
   // PPE & Compliance
@@ -850,8 +853,8 @@ export const experienceDetections: ExperienceDetection[] = [
   { id: "smoking", categoryId: "behaviour", name: "Smoking", severity: "warning", image: `${DET}/smoking.png`, glyph: "/brand/smoking.png", description: "Identifies lit cigarettes, vapes and e-cigarettes anywhere in view." },
   { id: "phone-use", categoryId: "behaviour", name: "Phone Use", severity: "warning", image: `${DET}/phone-use.png`, glyph: "/brand/using_phone.png", description: "Recognises hand-to-screen and phone-holding postures." },
   { id: "sleeping", categoryId: "behaviour", name: "Sleeping / Absence", severity: "warning", image: `${DET}/sleep-on-duty.png`, glyph: "/brand/behaviour.png", description: "Spots head-down, prolonged-stillness postures or an empty post." },
-  { id: "gathering", categoryId: "behaviour", name: "People Gathering", severity: "info", image: null, glyph: "/brand/behaviour.png", description: "Flags sudden or abnormal grouping and crowd formation — distinct from steady headcount." },
-  { id: "long-stay", categoryId: "behaviour", name: "Long Stay", severity: "info", image: null, glyph: "/brand/behaviour.png", description: "Detects a person loitering in an area beyond a set duration." },
+  { id: "gathering", categoryId: "behaviour", name: "People Gathering", severity: "info", image: `${DET}/people-gathering.png`, glyph: "/brand/behaviour.png", description: "Flags sudden or abnormal grouping and crowd formation — distinct from steady headcount." },
+  { id: "long-stay", categoryId: "behaviour", name: "Long Stay", severity: "info", image: `${DET}/long-stay.png`, glyph: "/brand/behaviour.png", description: "Detects a person loitering in an area beyond a set duration." },
   { id: "quick-moving", categoryId: "behaviour", name: "Quick Moving", severity: "warning", image: null, glyph: "/brand/behaviour.png", description: "Detects sudden running or scattering that can signal panic." },
 
   // Vehicle & Traffic
@@ -1317,6 +1320,99 @@ export const construction = {
   ],
 };
 
+/* ------------------------------------------------------------------ Banking */
+export const bank = {
+  kicker: "Smart Banking pack · Live",
+  lead: "A bank already owns dozens of cameras per branch, yet supervision stays fragmented, reactive and manual. SiteGuard links that video to business operations — turning the existing security estate into an intelligent supervision system, with no rip-and-replace.",
+  heroFrame: {
+    category: "access" as const,
+    cam: "CAM 03 · COUNTER 02",
+    zone: "ZONE B",
+    timestamp: "06 JUL 2026 · 11:04:52",
+    objectTag: "PROC · CASH HANDOFF",
+    model: "CashHandoffDetection",
+    label: "Cash handoff verified",
+    confidence: "97",
+    glyph: "/brand/people-access.png",
+  },
+  stats: [
+    { num: "400+", lbl: "Algorithms in the library" },
+    { num: "95%", lbl: "Production accuracy" },
+    { num: "100%", lbl: "Transaction coverage" },
+  ],
+  gaps: [
+    { step: "01", title: "Siloed departments", description: "Ops, security and compliance each review the same footage separately." },
+    { step: "02", title: "Supervision lags events", description: "Spot checks surface problems only after they've happened." },
+    { step: "03", title: "Manpower-bound coverage", description: "Too many branches, too few staff — only sampling is realistic." },
+    { step: "04", title: "Video that's never watched", description: "Recorders fill with footage no one ever analyses." },
+  ],
+  zones: [
+    { name: "Lobby", icon: "users" as IconName, description: "Queue build-up, crowding, falls and after-hours intrusion across the public hall." },
+    { name: "Inside counter", icon: "user" as IconName, description: "Teller conduct, cash handoffs and counts, attire and away-from-post time." },
+    { name: "Cash room", icon: "shield" as IconName, description: "Dual-control checks, door-open duration and out-of-hours access alerts." },
+    { name: "ATM area", icon: "cpu" as IconName, description: "Fighting, falls, gatherings, abandoned items, fire and watchlist matches." },
+  ],
+  sections: [
+    {
+      id: "coverage",
+      eyebrow: "Coverage",
+      title: "Every zone of the branch, covered.",
+      description: "One inference platform, tailored per area — lobby, counter, cash room and ATM, with cameras and algorithms matched to what each zone needs to see.",
+      image: "/bank/coverage-map.jpg",
+      alt: "Branch layout showing SiteGuard coverage of lobby, inside counter, cash room and ATM area",
+    },
+    {
+      id: "counter",
+      eyebrow: "Counter & cash",
+      title: "Every counter step, verified on camera.",
+      description: "Cash handoff, count check and deposit are detected and tied to the transaction record — with live customer counts and serving and waiting times per counter.",
+      image: "/bank/counter-detections.jpg",
+      alt: "Bank counter detection models: cash handoff, count check, cash receive and customer service times",
+    },
+    {
+      id: "personnel",
+      eyebrow: "Personnel & compliance",
+      title: "Conduct flagged as it happens.",
+      description: "Empty counters, improper attire, phone use, sleeping on duty, staff arrival times and machine-room doors — continuous, evidence-backed and auditable.",
+      image: "/bank/personnel-detections.jpg",
+      alt: "Banking personnel detection models: no staff at counter, machine-room door, screen lock, attire, sleeping, phone use",
+    },
+    {
+      id: "atm",
+      eyebrow: "ATM security",
+      title: "The ATM and its backroom, watched around the clock.",
+      description: "Fighting, falls, crowd gathering, abandoned items, fire and smoke, restricted-entry breaches and blacklisted-face matches — most exposed exactly when no one is looking.",
+      image: "/bank/atm-detections.jpg",
+      alt: "ATM detection models: fighting, fall, restricted backroom entry, crowd gathering, abandoned item, fire and smoke, wandering, blacklist",
+    },
+    {
+      id: "practice",
+      eyebrow: "In practice",
+      title: "Deployed to a proven standard.",
+      description: "Camera positioning is codified from field experience — counter, cash-replenishment room and behaviour zones tuned per area, on the equipment you already run.",
+      image: "/bank/deployed-standard.jpg",
+      alt: "Real SiteGuard bank deployment: counter area, cash replenishment room, smoking and sleeping detection",
+    },
+  ],
+  fraud: {
+    title: "Anti-fraud early warning",
+    description: "The model fuses risk cues across the counter and the machine to flag telecom and social-engineering fraud patterns in real time.",
+    branch: ["Same individual visiting frequently", "Mask + cap + large withdrawal"],
+    atm: ["Unusually long ATM session", "Mask + baseball cap", "Frequent card swapping"],
+  },
+  security: [
+    { title: "Physical isolation", description: "One-way transmission behind data diodes — never touching the core banking system." },
+    { title: "Non-sensitive only", description: "Matching uses transaction codes, numbers and times. Identity and accounts are never captured." },
+    { title: "Internal network", description: "Runs without connecting to the public internet — no data-leakage path." },
+    { title: "Encrypted & logged", description: "Encrypted in motion and at rest; every action recorded and permission-controlled." },
+  ],
+  roi: [
+    { num: "10×", lbl: "More violations detected", sub: "5–10× the efficiency of manual spot-checks" },
+    { num: "90%", lbl: "Lower manpower cost", sub: "About one-tenth of traditional review time" },
+    { num: "100%", lbl: "Transaction coverage", sub: "Every item reviewed continuously, not sampled" },
+  ],
+};
+
 /* ------------------------------------------------------------------ Contact */
 export const contactDetails: { label: string; value: string; icon: IconName }[] = [
   { label: "Contact person", value: "Md Ashraf Siddiquee", icon: "user" },
@@ -1351,8 +1447,8 @@ export const footerSections = [
     links: [
       { href: "/industries/schools", label: "Schools" },
       { href: "/industries/construction", label: "Construction" },
-      { href: "/industries", label: "Healthcare" },
-      { href: "/industries", label: "Retail & more" },
+      { href: "/industries/banking", label: "Banking" },
+      { href: "/industries", label: "All industries" },
     ],
   },
   {
