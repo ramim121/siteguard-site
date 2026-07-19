@@ -51,10 +51,12 @@ export function DetectionFrame({ frame, priority = false, className }: Detection
           <span className="chip">{frame.label}</span>
           <span className="model">{frame.model}</span>
         </span>
-        <span className="df-conf">
-          {frame.confidence}
-          {frame.confidence !== "—" ? <span>%</span> : null}
-        </span>
+        {frame.confidence !== "—" ? (
+          <span className="df-conf">
+            {frame.confidence}
+            <span>%</span>
+          </span>
+        ) : null}
       </div>
     </div>
   );
